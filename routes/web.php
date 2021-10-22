@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('User.index');
 });
 
 Route::group(['middleware' => ['auth']], function(){
@@ -31,3 +31,11 @@ Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
 Route::get('/logout', 'LoginController@logout')->name('logout');
 
 Route::get('/homeadmin', 'HomeAdminController@index');
+
+Route::get('/about', 'AboutController@about');
+
+Route::get('/faq', 'FaqController@faq');
+
+Route::get('/produk', 'ProdukController@produk');
+
+Route::get('/produkDetail', 'ProdukDetailController@produkdetail');
