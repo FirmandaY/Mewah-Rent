@@ -39,3 +39,7 @@ Route::get('/faq', 'FaqController@faq');
 Route::get('/produk', 'ProdukController@produk');
 
 Route::get('/produkDetail', 'ProdukDetailController@produkdetail');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

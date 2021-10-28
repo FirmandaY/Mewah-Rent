@@ -8,6 +8,6 @@ class HomeAdminController extends Controller
 {
     public function index()
     {
-        return view('HomeAdmin.homeAdmin');
+        return view('Admin.homeAdmin');
     }
 }

@@ -14,7 +14,7 @@ class BerandaController extends Controller
     public function index()
     {
         $var_nama = "Mutiara Rent";
-        return view('HalamanDepan.beranda',compact('var_nama'));
+        return view('Admin.beranda',compact('var_nama'));
     }
 
     /**
