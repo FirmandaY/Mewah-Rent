@@ -22,9 +22,11 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/beranda','BerandaController@index');
 });
 
+/*
 Route::get('/login', function () {
     return view('Admin.login');
 })->name('login');
+*/
 
 Route::post('/postlogin', 'LoginController@postlogin')->name('postlogin');
 
