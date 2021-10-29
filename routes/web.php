@@ -45,3 +45,5 @@ Route::get('/produkDetail', 'ProdukDetailController@produkdetail');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/Admin/adminPC', 'PCController@index')->name('adminPC');
