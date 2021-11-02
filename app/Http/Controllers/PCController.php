@@ -29,7 +29,7 @@ class PCController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.create');
     }
 
     /**
@@ -40,7 +40,19 @@ class PCController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'judul' => 'required|string',
+            'penulis' => 'required|string|max:30',
+            'harga' => 'required|numeric',
+            'tgl_terbit' => 'required|date'
+        ]);
+        $buku = new Buku;
+        $buku->judul = $request->judul;
+        $buku->penulis = $request->penulis;
+        $buku->harga = $request->harga;
+        $buku->tgl_terbit = $request->tgl_terbit;
+        $buku->save();
+        return redirect('/buku')->with('pesan','Data Buku Berhasil di Simpan');
     }
 
     /**
