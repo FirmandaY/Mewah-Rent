@@ -359,7 +359,7 @@ button {
 }
 
 .banner_main{
-    background-color: #2c363d;
+    background-color: #ffffff;
 }
 
 .titleFAQ{
@@ -388,7 +388,7 @@ button {
 
 .faq {
     
-     background: #2c363d;
+     background: #ffffff;
      padding: 60px 0;
      padding-top: 10px;
 	overflow:visible;
@@ -435,10 +435,10 @@ button {
 .faq-container li label{
      width: 500px;
 
-	font-family: 'Baloo Chettan', cursive;
+	font-family: 'Poppins', cursive;
 	font-weight: 400;
 	font-size: 16px;
-	text-shadow: 1px 1px 1px #666;
+	/* text-shadow: 1px 1px 1px #666; */
 	background: -webkit-linear-gradient(top, rgba(52, 201, 109, 0.5) 30%, rgba(7, 233, 177, 0.507) 100%);
 	background: -moz-linear-gradient(top, rgba(52, 201, 109, 0.5) 30%, rgba(7, 233, 177, 0.507) 100%);
 	background: linear-gradient(top, rgba(52, 201, 109, 0.5) 30%, rgba(7, 233, 177, 0.507) 100%);
@@ -449,7 +449,7 @@ button {
      -o-transition: all 1s;
      transition: all 1s;
 
-	color: #fff;
+	color: #000000;
 	display: block;
 	padding: 10px;
 	cursor: pointer;
@@ -476,7 +476,7 @@ button {
 	transition: all 0.3s ease-in-out;
      
 	border-radius:0 0 5px 5px;
-	color:#f7f7f7;
+	color:#000000;
 	font-family: 'Baloo Chettan', cursive;
 	font-size:13px;
 }
@@ -500,8 +500,14 @@ button {
 
 .multi {
      color: #f2fffa;
-     font-weight: bold;
+     font-weight: normal;
      font-size: 40px;
+}
+
+.address {
+     color: #f2fffa;
+     font-weight: normal;
+     font-size: 20px;
 }
 
 .footer {
