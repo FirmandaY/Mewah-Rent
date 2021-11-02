@@ -23,6 +23,19 @@
   border-radius: 20px;
 }
 
+/*form inputan box*/
+
+fieldset{
+  width: 70%;
+  background-color: #c3e1fc;
+}
+.boxisi{
+  width: 100mm;
+}
+.inedit{
+  margin-left: 5px;
+}
+
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;

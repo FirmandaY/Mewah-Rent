@@ -46,4 +46,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/Admin/adminPC', 'PCController@index')->name('adminPC');
+
+
+
+
+Route::get('/adminPC', 'PCController@index')->name('adminPC');
+
+Route::get('/adminPC/create', 'PCController@create')->name('adminPC.create');
+
+Route::post('/adminPC', 'PCController@store')->name('adminPC.store');
+
+Route::post('/adminPC/delete/{id}', 'PCController@destroy')->name('adminPC.destroy');
+
+Route::get('/adminPC/edit/{id}', 'PCController@edit')->name('adminPC.edit');
+
+Route::post('/adminPC/{id}', 'PCController@update')->name('adminPC.update');
+
+Route::get('/adminPC/search', 'PCController@search')->name('adminPC.search');

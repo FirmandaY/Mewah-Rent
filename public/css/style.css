@@ -564,7 +564,11 @@ button {
      -webkit-transform: scale(1.08);
      transform: scale(1.08);
      background: #2ff1aa;
+     -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+     box-shadow: 0 12px 6px -6px #777;
 }
+
 
 .best_box h4 {
      color: #fff;
@@ -574,6 +578,7 @@ button {
      font-weight: 500;
      padding: 0;
 }
+
 
 .best_box p {
      color: #fff;
@@ -656,8 +661,8 @@ button {
 .request .main_form .send_btn {
      font-size: 17px;
      transition: ease-in all 0.5s;
-     background-color: #000;
-     color: #fff;
+     background-color:#fdd430;
+     color: rgb(0, 0, 0);
      padding: 13px 0px;
      margin: 0 auto;
      max-width: 200px;
@@ -668,9 +673,11 @@ button {
 }
 
 .request .main_form .send_btn:hover {
-     background-color: #2bcc91;
-     transition: ease-in all 0.5s;
-     color: #fff;
+     background-color: #003566;
+     /* transition: ease-in all 0.5s; */
+     color: rgb(255, 255, 255);
+     -webkit-transform: scale(1.08);
+     transform: scale(1.08);
      border-radius: 26px;
 }
 
