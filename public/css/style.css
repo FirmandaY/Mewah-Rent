@@ -404,14 +404,16 @@ button {
      max-width: 190px;
      text-align: center;
      display: inline-block;
-     transition: ease-in all 0.5s;
+     transition: 0.4s ease;
      border-radius: 15px;
 }
 
 .text-bg a:hover {
-     background-color: #2bcc91;
-     color: #fff;
-     transition: ease-in all 0.5s;
+     background-color: #37dfa1;
+     color: rgb(0, 0, 0);
+     /* transition: ease-in all 0.5s; */
+     -webkit-transform: scale(1.08);
+     transform: scale(1.08);
      border-radius: 26px;
 }
 
@@ -511,9 +513,9 @@ button {
 .about .about_box .read_more {
      background: #003566;
      color: #fff;
-     border-radius: 15px;
      -webkit-transition: 0.4s ease;
      transition: 0.4s ease;
+     border-radius: 15px;
 }
 
 .about .about_box .read_more:hover {
@@ -521,6 +523,7 @@ button {
      color:#000;
      -webkit-transform: scale(1.08);
      transform: scale(1.08);
+     border-radius: 26px;
 }
 
 
