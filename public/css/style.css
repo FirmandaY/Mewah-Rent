@@ -554,17 +554,17 @@ button {
      border-radius: 20px;
      padding: 30px 30px;
      margin-bottom: 30px;
+     -webkit-transition: 0.4s ease;
+     transition: 0.4s ease;
 
 }
 
 
-/* .best_box:hover {
-     width: 374px;
-     height: 450px;
-     border: thick;
-     color:black;
-     background-color: #6B9AC4;
-} */
+.best_box:hover {
+     -webkit-transform: scale(1.08);
+     transform: scale(1.08);
+     background: #fdd430;
+}
 
 .best_box h4 {
      color: #fff;
