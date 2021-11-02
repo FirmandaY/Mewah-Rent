@@ -224,7 +224,8 @@
                   </div>
                   <div class="col-md-6">
                      <div class="cont_call">
-                        <h6> <strong class="multi">Office</strong><br>
+                     <img src="images/iconmap.png" width="500px" height="500px">
+                        <h6><strong class="multi">Office</strong><br>
                            Jl. Lembarawa, Sawah, Krasak, Kec. Brebes, Kabupaten Brebes, Jawa Tengah 52219
                         </h6>
                         <h6> <strong class="multi">Contact Us</strong><br>

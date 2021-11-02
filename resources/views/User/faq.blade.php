@@ -160,10 +160,11 @@
                   </div>
                   <div class="col-md-6">
                      <div class="cont_call">
-                        <h3> <strong class="multi">Office</strong><br>
+                        <h3><strong class="multi">Contact Us On</strong><br>
+                        <h5><strong class="multi"><img src="images/placeholder.png" height="30" width="30">
                            Jl. Lembarawa, Sawah, Krasak, Kec. Brebes, Kabupaten Brebes, Jawa Tengah 52219
-                        </h3>
-                        <h3> <strong class="multi">Contact Us</strong><br>
+                        </h5>
+                        <h3><img src="images/placeholder.png" height="30" width="30">
                            0823-2288-1233
                          </h3>
                      </div>
