@@ -563,7 +563,7 @@ button {
 .best_box:hover {
      -webkit-transform: scale(1.08);
      transform: scale(1.08);
-     background: #fdd430;
+     background: #2bcc91;
 }
 
 .best_box h4 {
