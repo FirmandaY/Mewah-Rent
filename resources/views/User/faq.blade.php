@@ -160,13 +160,18 @@
                   </div>
                   <div class="col-md-6">
                      <div class="cont_call">
-                        <h3><strong class="multi">Contact Us On</strong><br>
-                        <h5><strong class="address"><img src="images/placeholder(1).png" height="30" width="30">
+                        <h3><strong class="multi">Contact Us On</strong></h3><br>
+                        <h5><strong class="contact"><img src="images/pin.png" height="30" width="30">
                            Jl. Lembarawa, Sawah, Krasak, Kec. Brebes, Kabupaten Brebes, Jawa Tengah 52219
                         </h5>
-                        <h3><img src="images/placeholder.png" height="30" width="30">
+                        <h5><strong class="contact"><img src="images/telephone.png" height="30" width="30">
                            0823-2288-1233
-                         </h3>
+                           </strong>
+                        </h5>
+                        <h5><strong class="contact"><img src="images/email.png" height="30" width="30">
+                           mewahrent@gmail.com
+                           </strong>
+                        </h5>
                      </div>
                   </div>
                </div>

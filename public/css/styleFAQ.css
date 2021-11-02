@@ -434,7 +434,7 @@ button {
 
 .faq-container li label{
      width: 500px;
-
+     font-weight: bold;
 	font-family: 'Poppins', cursive;
 	font-weight: 400;
 	font-size: 16px;
@@ -500,14 +500,16 @@ button {
 
 .multi {
      color: #f2fffa;
-     font-weight: normal;
+     font-weight: bold;
      font-size: 40px;
+     font-family: Poppins;
 }
 
-.address {
+.contact {
      color: #f2fffa;
      font-weight: normal;
      font-size: 20px;
+     font-family: Poppins;
 }
 
 .footer {

@@ -515,6 +515,14 @@ button {
      color: #f2fffa;
      font-weight: bold;
      font-size: 40px;
+     font-family: Poppins;
+}
+
+.contact {
+     color: #f2fffa;
+     font-weight: normal;
+     font-size: 20px;
+     font-family: Poppins;
 }
 
 .footer {
