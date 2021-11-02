@@ -7,6 +7,22 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+/*style untuk index buku*/
+.mr-auto{
+  margin-left: 5px;
+}
+.linkin{
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px 20px 5px 20px;
+  color: #000;
+}
+.linkin:hover{
+  background-color: #113049;
+  color: #fff;
+  border-radius: 20px;
+}
+
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;

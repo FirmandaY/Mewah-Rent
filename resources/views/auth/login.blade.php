@@ -96,7 +96,7 @@
                     <div class="signin-content">
                         <div class="signin-image">
                             <figure><img src="templog/images/signin-image.jpg" alt="sing up image"></figure>
-                            <a href="#" class="signup-image-link">Need help with log-in?</a>
+                            
                         </div>
 
                         <div class="signin-form">
@@ -142,7 +142,7 @@
 
 
                                 <div class="form-group form-button">
-                                    <div class="col-md-8 offset-md-6">
+                                    <div class="col-md-8 offset-md-4">
                                         <div class="form-group form-button">
                                             <input type="submit" name="signin" id="signin" class="form-submit" value="Log-in"/>
                                         </div>

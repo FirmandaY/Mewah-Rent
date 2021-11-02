@@ -132,7 +132,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-                            <li><a class="linkin" href="/">Home</a></li>
+                            <li><a class="linkin" href="/home">Home</a></li>
                             <li><a class="linkin" href="/buku">Buku</a></li>
                             <li><a class="linkin" href="/about">About</a></li>
                             <li><a class="linkin" href="/news">News</a></li>
