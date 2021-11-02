@@ -512,11 +512,15 @@ button {
      background: #003566;
      color: #fff;
      border-radius: 15px;
+     -webkit-transition: 0.4s ease;
+     transition: 0.4s ease;
 }
 
 .about .about_box .read_more:hover {
      background: #fdd430;
      color:#000;
+     -webkit-transform: scale(1.08);
+     transform: scale(1.08);
 }
 
 
