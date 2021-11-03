@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="signin-form">
-                            <h2 class="form-title">Log-in dulu kuy...</h2>
+                            <h2 class="form-title">Admin Log-in</h2>
                             <form method="POST" action="{{ route('login') }}" class="register-form" id="login-form">
                             @csrf
 
