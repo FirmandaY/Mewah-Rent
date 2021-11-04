@@ -41,18 +41,37 @@ class PCController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'judul' => 'required|string',
-            'penulis' => 'required|string|max:30',
-            'harga' => 'required|numeric',
-            'tgl_terbit' => 'required|date'
+            'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'merk' => 'required|string|max:30',
+            'cpu' => 'required|string',
+            'gpu' => 'required|string',
+            'ram' => 'required|string',
+            'storage' => 'required|string',
+            'os' => 'required|string',
+            'deskripsi' => 'required|string',
+            'harga' => 'required|string',
+            'jml_unit' => 'required|string'
         ]);
-        $buku = new Buku;
-        $buku->judul = $request->judul;
-        $buku->penulis = $request->penulis;
-        $buku->harga = $request->harga;
-        $buku->tgl_terbit = $request->tgl_terbit;
-        $buku->save();
-        return redirect('/buku')->with('pesan','Data Buku Berhasil di Simpan');
+
+        $file = $request->file('gambar');
+        $nama_file = time()."_".$file->getClientOriginalName();
+        dd($file);
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload, $nama_file);
+
+        $pc = new ProdukPC;
+        $pc->gambar = $request->gambar;
+        $pc->merk = $request->merk;
+        $pc->cpu = $request->cpu;
+        $pc->gpu = $request->gpu;
+        $pc->ram = $request->ram;
+        $pc->storage = $request->storage;
+        $pc->os = $request->os;
+        $pc->deskripsi = $request->deskripsi;
+        $pc->harga = $request->harga;
+        $pc->jml_unit = $request->jml_unit;
+        $pc->save();
+        return redirect('/adminPC')->with('pesan','Data PC Berhasil di Tambahkan');
     }
 
     /**

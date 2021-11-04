@@ -10,7 +10,7 @@
         
 
         <div class="container">
-            <h4>Tambah User</h4>
+            <h4>Tambah Produk PC</h4>
             @if (count($errors)>0)
                 <ul class="alert alert-danger">
                     @foreach ($errors->all() as $error)
@@ -19,24 +19,48 @@
                 </ul>
             @endif
             <fieldset>
-                <legend>Silahkan Lengkapi Data User Berikut :</legend>
-                    <form method="post" action="{{route('adminPC.store')}}">
+                <legend>Silahkan Lengkapi Data PC Berikut :</legend>
+                    <form method="post" action="{{route('adminPC.store')}}" enctype="multipart/form-data">
                     @csrf
                         <p> 
-                            <label>Name</label> <br>
-                            <input class="boxisi" type="text" name="name">
+                            <label>Gambar</label> <br>
+                            <input class="boxisi" type="file" name="gambar">
                         </p>
                         <p> 
-                            <label>Email</label> <br>
-                            <input class="boxisi" type="email" name="email">
+                            <label>Merk</label> <br>
+                            <input class="boxisi" type="text" name="merk">
                         </p>
                         <p> 
-                            <label>Password</label> <br>
-                            <input class="boxisi" type="password" name="password" >
+                            <label>Prosessor</label> <br>
+                            <input class="boxisi" type="text" name="cpu" >
                         </p>
                         <p> 
-                            <label>Level</label> <br>
-                            <input class="boxisi" type="text" name="level">
+                            <label>Kartu Grafis</label> <br>
+                            <input class="boxisi" type="text" name="gpu">
+                        </p>
+                        <p> 
+                            <label>RAM</label> <br>
+                            <input class="boxisi" type="text" name="ram">
+                        </p>
+                        <p> 
+                            <label>Penyimpanan</label> <br>
+                            <input class="boxisi" type="text" name="storage">
+                        </p>
+                        <p> 
+                            <label>Sistem Operasi</label> <br>
+                            <input class="boxisi" type="text" name="os">
+                        </p>
+                        <p> 
+                            <label>Deskripsi</label> <br>
+                            <textarea class="boxisi" name="deskripsi"></textarea>
+                        </p>
+                        <p> 
+                            <label>Harga Sewa</label> <br>
+                            <input class="boxisi" type="text" name="harga">
+                        </p>
+                        <p> 
+                            <label>Jumlah Unit</label> <br>
+                            <input class="boxisi" type="text" name="jml_unit">
                         </p>
                         <div>
                             <button type="submit">Simpan</button>
