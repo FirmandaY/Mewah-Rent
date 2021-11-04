@@ -361,7 +361,7 @@ button {
 .titleAbout{
      font-family: 'Baloo Chettan', cursive;
      color: #003566;
-     font-size: 65px;
+     font-size: 48px;
      font-weight: bold;
      padding: auto;
      margin-top: 20mm;
@@ -403,7 +403,7 @@ button {
 
 .about {
      margin-top: 90px;
-     background: #97D8C4;
+     background: #000000;
      padding: 60px 0;
 }
 
@@ -417,19 +417,12 @@ button {
      font-size: 17px;
 }
 
-.aboutimg1{
-    background-color: #97D8C4;
-}
 .aboutcomment1, .h3{
     padding: auto;
     color: rgb(255, 255, 255);
     text-align: center;
 }
 
-.aboutimg2{
-    margin-top: 25mm;
-    background-color: #97D8C4;
-}
 .aboutcomment2, h3{
     margin-top: 15mm;
     color: rgb(255, 255, 255);
