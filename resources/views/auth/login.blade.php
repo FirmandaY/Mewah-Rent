@@ -95,7 +95,9 @@
                 <div class="container">
                     <div class="signin-content">
                         <div class="signin-image">
-                            <figure><img src="templog/images/signin-image.jpg" alt="sing up image"></figure>
+                        
+                            <figure><img src="{{asset('images/logomewah.png')}}" alt="sing up image"></figure>
+                            <figure><img src="{{ asset('templog/images/signin-image.jpg') }}" alt="sing up image"></figure>
                             
                         </div>
 
