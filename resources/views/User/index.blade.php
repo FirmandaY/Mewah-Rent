@@ -48,7 +48,7 @@
                         <div class="full">
                            <div class="center-desk">
                               <div class="logo">
-                                 <a href="index.html"><img src="images/LogoMutiaraC.png" height="200" width="200" alt="#" /></a>
+                                 <a href="index.html"><img src="images/logomewah.png" height="200" width="200" alt="#" /></a>
                               </div>
                            </div>
                         </div>
@@ -99,8 +99,7 @@
                      </div>
                      <div class="col-md-7 padding_right1">
                         <div class="text-img"> <!--ini adalah wadah untuk bentuk banner utama-->
-                           <figure><img src="images/top_img.png" alt="#"/></figure>
-                           <h3>01</h3>
+                           <figure><img src="images/homepic1.png" alt="#"/></figure>
                         </div>
                      </div>
                   </div>
@@ -115,8 +114,9 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>About Mutiara Rent</h2>
-                     <span>Cari tahu lebih banyak tentang kami</span>
+                     <br>
+                     <h2>About Mewah Rent</h2>
+                     <span>Let's get to know more about us!</span>
                   </div>
                </div>
             </div>
@@ -137,7 +137,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Produk Kami </h2>
+                     <h2>Our Products</h2>
                      <span>Berikut adalah produk-produk multimedia yang kami sewakan</span>
                   </div>
                </div>

@@ -294,7 +294,7 @@ button {
      position: fixed;
      width: 100%;
      z-index: 1;
-     background-color: #ffc400c7;
+     background-color: #A0C4FF;
      padding: 2mm;
      border-radius: 30px;
 }
@@ -311,7 +311,7 @@ button {
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #fdd430;
+     color: #A0C4FF;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -409,7 +409,7 @@ button {
 }
 
 .text-bg a:hover {
-     background-color: #fdd430;
+     background-color: #A0C4FF;
      color: rgb(0, 0, 0);
      /* transition: ease-in all 0.5s; */
      -webkit-transform: scale(1.08);
@@ -420,7 +420,7 @@ button {
 .text-img {
      height: 750px;
      width: 100%;
-     background: linear-gradient(to bottom, #FFC300 0%, #FFC300 100%);
+     background: linear-gradient(to bottom, #A0C4FF 0%, #A0C4FF 100%);
      border-radius: 300px 0px 0px 350px;
      padding: 132px 20px 0px 50px;
 }
@@ -447,7 +447,7 @@ button {
     color: #fff;
     padding: 7px 12px;
     font-size: 21px;
-    border: #FFC300 solid 7px;}
+    border: #A0C4FF solid 7px;}
 
 
 
@@ -511,7 +511,7 @@ button {
 }
 
 .about .about_box .read_more {
-     background: #003566;
+     background: #8093F1;
      color: #fff;
      -webkit-transition: 0.4s ease;
      transition: 0.4s ease;
@@ -519,7 +519,7 @@ button {
 }
 
 .about .about_box .read_more:hover {
-     background: #fdd430;
+     background: #A0C4FF;
      color:#000;
      -webkit-transform: scale(1.08);
      transform: scale(1.08);
