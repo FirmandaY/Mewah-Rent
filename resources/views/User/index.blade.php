@@ -123,7 +123,7 @@
             <div class="row">
                <div class="col-md-8 offset-md-2 ">
                   <div class="about_box ">
-                     <figure><img src="images/imac2hd.png" alt="#"/></figure>
+                     <figure><img src="images/HomeAbout.png" width="300" height="200" alt="#"/></figure>
                      <a class="read_more" href="/about">Read more</a>
                   </div>
                </div>
