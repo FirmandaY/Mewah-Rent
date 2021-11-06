@@ -54,7 +54,7 @@
                                     <a class="nav-link" href="/"> <b> Home </b> </a>
                                  </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="#about"> <b> About Us </b></a>
+                                    <a class="nav-link" href="/about"> <b> About Us </b></a>
                                  </li>
                                  <li class="nav-item">
                                     <a class="nav-link" href="/product"> <b> Product </b></a>

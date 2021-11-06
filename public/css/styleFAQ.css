@@ -224,7 +224,7 @@ button {
 }
 
 .theme_bg {
-     background: #38c8a8;
+     background: #A0C4FF ;
 }
 
 .margin_top_30 {
@@ -308,7 +308,7 @@ button {
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #fdd430;
+     color: #A0C4FF ;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -365,15 +365,15 @@ button {
 .titleFAQ{
      font-family: 'Baloo Chettan', cursive;
      color: #003566;
-     font-size: 65px;
+     font-size: 45px;
      font-weight: bold;
      padding: auto;
      margin-top: 20mm;
      margin-left: 0;
-     padding-left: 150mm;
+     padding-left: 125mm;
      padding-right: 30mm;
      width: 300mm;
-     background-color: #FFC300 ;
+     background-color: #A0C4FF  ;
      right: 250px;
      border-radius: 0px 60px 60px 0px;
      
@@ -435,7 +435,7 @@ button {
 .faq-container li label{
      width: 500px;
      font-weight: bold;
-	font-family: 'Poppins', cursive;
+	font-family: 'Baloo Chettan', cursive;
 	font-weight: 400;
 	font-size: 16px;
 	/* text-shadow: 1px 1px 1px #666; */

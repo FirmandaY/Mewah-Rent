@@ -114,6 +114,10 @@
                         </div>  
                     </div>
                </div>
+               <br>
+               <br>
+               <br>
+               <br>
                <div class="col-md-12">
                     <div class="row">
                         <div class="aboutcomment2 col-md-6">
