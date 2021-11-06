@@ -38,6 +38,7 @@
       </div>
       <!-- end loader -->
       <!-- header -->
+
       <header>
          <!-- header inner -->
          <div  class="head_top">
@@ -48,7 +49,7 @@
                         <div class="full">
                            <div class="center-desk">
                               <div class="logo">
-                                 <a href="/"><img src="images/logomewah.png" height="200" width="200" alt="#" /></a>
+                                 <a href="/"><img src="images/logomewahfix.png" alt="#" /></a>
                               </div>
                            </div>
                         </div>
@@ -74,9 +75,6 @@
                                  </li>
                                  <li class="nav-item">
                                     <a class="nav-link" href="/faq">FAQ</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="/faq">ADMIN</a>
                                  </li>
                               </ul>
                               <!--<div class="sign_btn"><a href="#contact">Contact Us</a></div>-->

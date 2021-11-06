@@ -354,15 +354,9 @@ button {
      z-index: 999;
 
 }
-
-.container{
-     margin-left: 10px;
-     margin-right: 10px;
-}
-
-
-.logo{
-     margin-top: 10px;
+.container .logo{
+     padding-top: 5px;
+     width: 60%;
 }
 .logo a {
      font-size: 40px;
@@ -372,10 +366,10 @@ button {
      line-height: 40px;
      
 }
-/* 
-.col-md-5{
-     
-} */
+
+.col-md-4{
+     padding-left: 10px;
+}
 
 .text-bg {
      text-align: left;
