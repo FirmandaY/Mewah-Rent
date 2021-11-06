@@ -128,6 +128,7 @@
                         </div>
                     </div>
                 </div>
+               <img src="images/image7.png"
             </div>
             
             

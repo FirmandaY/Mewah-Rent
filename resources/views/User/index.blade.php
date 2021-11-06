@@ -91,7 +91,7 @@
                   <div class="row d_flex">
                      <div class="col-md-5">
                         <div class="text-bg">
-                           <h1>Tempatnya Sewa <br>Komputer</h1>
+                           <h1>Get to own <br>Komputer</h1>
                            <strong>Peminjaman dan Persewaan Komputer</strong>
                            <span>Multimedia ? Juga ada!</span>
                            <a href="#product">Sewa Sekarang</a>
@@ -114,7 +114,6 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <br>
                      <h2>About Mewah Rent</h2>
                      <span>Let's get to know more about us!</span>
                   </div>
@@ -123,7 +122,7 @@
             <div class="row">
                <div class="col-md-8 offset-md-2 ">
                   <div class="about_box ">
-                     <figure><img src="images/HomeAbout.png" width="300" height="200" alt="#"/></figure>
+                     <figure><img src="images/HomeAbout.png" width="500" height="350" alt="#"/></figure>
                      <a class="read_more" href="/about">Read more</a>
                   </div>
                </div>
