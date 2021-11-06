@@ -44,11 +44,11 @@
             <div class="header">
                <div class="container">
                   <div class="row">
-                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 logo_section">
                         <div class="full">
                            <div class="center-desk">
                               <div class="logo">
-                                 <a href="index.html"><img src="images/logomewah.png" height="200" width="200" alt="#" /></a>
+                                 <a href="/"><img src="images/logomewah.png" height="200" width="200" alt="#" /></a>
                               </div>
                            </div>
                         </div>
@@ -75,6 +75,9 @@
                                  <li class="nav-item">
                                     <a class="nav-link" href="/faq">FAQ</a>
                                  </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="/faq">ADMIN</a>
+                                 </li>
                               </ul>
                               <!--<div class="sign_btn"><a href="#contact">Contact Us</a></div>-->
                            </div>
@@ -89,15 +92,15 @@
             <section class="banner_main">
                <div class="containr-fluid">
                   <div class="row d_flex">
-                     <div class="col-md-5">
+                     <div class="col-md-4">
                         <div class="text-bg">
-                           <h2>Get to own your<br>Computer here!!</h2>
+                           <h3>Get to own your<br>Computer here!!</h3>
                            <strong>Peminjaman dan Persewaan Komputer</strong>
                            <span>Multimedia ? Juga ada!</span>
                            <a href="#product">Sewa Sekarang</a>
                         </div>
                      </div>
-                     <div class="col-md-7 padding_right1">
+                     <div class="col-md-8">
                         <div class="text-img"> <!--ini adalah wadah untuk bentuk banner utama-->
                            <figure><img src="images/homepic1.png" alt="#"/></figure>
                         </div>
