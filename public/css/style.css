@@ -352,13 +352,16 @@ button {
      position: absolute;
      z-index: 999;
 }
-
+.logo{
+     margin-top: 10px;
+}
 .logo a {
      font-size: 40px;
      font-weight: bold;
      text-transform: uppercase;
      color: #fff;
      line-height: 40px;
+     
 }
 
 .text-bg {
