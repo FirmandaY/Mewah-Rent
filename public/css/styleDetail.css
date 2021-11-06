@@ -304,7 +304,7 @@ button {
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #fdd430;
+     color: #A0C4FF;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -402,8 +402,8 @@ button {
 
 .titleDetail{
      font-family: 'Baloo Chettan', cursive;
-     color: #000000;
-     font-size: 48px;
+     color: #003566;
+     font-size: 45px;
      font-weight: bold;
      padding: auto;
      margin-top: 20mm;
@@ -411,7 +411,7 @@ button {
      padding-left: 10mm;
      padding-right: 10mm;
      width: 120mm;
-     background-color: #FFC300 ;
+     background-color: #A0C4FF;
      border-radius: 60px;
      
 }

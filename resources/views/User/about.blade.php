@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-               <img src="images/image7.png"
+               <img src="images/image 7.png" width="100%">
             </div>
             
             

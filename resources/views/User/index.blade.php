@@ -91,7 +91,7 @@
                   <div class="row d_flex">
                      <div class="col-md-5">
                         <div class="text-bg">
-                           <h1>Get to own <br>Komputer</h1>
+                           <h2>Get to own your<br>Computer here!!</h2>
                            <strong>Peminjaman dan Persewaan Komputer</strong>
                            <span>Multimedia ? Juga ada!</span>
                            <a href="#product">Sewa Sekarang</a>
@@ -136,6 +136,10 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
                      <h2>Our Products</h2>
                      <span>Berikut adalah produk-produk multimedia yang kami sewakan</span>
                   </div>
@@ -152,7 +156,7 @@
                <div class="col-md-4">
                   <div class="best_box">
                      <h4>LED TV</h4>
-                     <figure><img src="images/image2.png" alt="#"/></figure>
+                     <figure><img src="images/image 2.png" alt="#" width="300" height="250"/></figure>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
                </div>
