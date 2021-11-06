@@ -308,7 +308,7 @@ button {
 .navigation.navbar-dark .navbar-nav .nav-link.active,
 .navigation.navbar-dark .navbar-nav .nav-link.show,
 .navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #fdd430;
+     color: #A0C4FF;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -369,7 +369,7 @@ button {
      padding-left: 125mm;
      padding-right: 30mm;
      width: 300mm;
-     background-color: #FFC300 ;
+     background-color: #A0C4FF ;
      right: 250px;
      border-radius: 0px 60px 60px 0px;
      
@@ -403,13 +403,13 @@ button {
 
 .about {
      margin-top: 90px;
-     background: #000000;
+     background: #ffffff;
      padding: 60px 0;
 }
 
 .about .titlepage h2 {
      margin-bottom: 20px;
-     color: #003566;;
+     color: #003566;
 }
 
 .about .titlepage span {
@@ -419,7 +419,7 @@ button {
 
 .aboutcomment1, .h3{
     padding: auto;
-    color: rgb(255, 255, 255);
+    color: #003566;
     text-align: center;
 }
 

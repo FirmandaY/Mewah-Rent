@@ -143,9 +143,9 @@
                </div>
             </div>
             <div class="row">
-               <div class="col-md-4" onclick="window.location='produkPC.html';">
+               <div class="col-md-4" onclick="window.location='produkPC.blade.php';">
                   <div class="best_box">
-                     <h4>Komputer (PC)</h4>
+                     <h4>Computer (PC)</h4>
                      <figure><img src="images/komputer.png" alt="#"/></figure>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
@@ -153,7 +153,7 @@
                <div class="col-md-4">
                   <div class="best_box">
                      <h4>LED TV</h4>
-                     <figure><img src="images/tv_led.png" alt="#"/></figure>
+                     <figure><img src="images/image2.png" alt="#"/></figure>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
                </div>
@@ -166,7 +166,7 @@
                </div>
                <div class="col-md-4" onclick="window.location='https://www.google.com';">
                   <div class="best_box">
-                     <h4>Proyektor</h4>
+                     <h4>Light Projector</h4>
                      <figure><img src="images/proyektor.png" alt="#"/></figure>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
@@ -228,7 +228,7 @@
                         </div>
                         <div class="col-md-5">
                            <div class="mane_img">
-                              <figure><img src="images/mane_img.jpg" alt="#"/></figure>
+                              <figure><img src="images/reqpict.png" alt="#"/></figure>
                            </div>
                         </div>
                      </div>
@@ -244,7 +244,7 @@
             <div class="row d_flex">
                <div class="col-md-6">
                   <div class="two_box_img">
-                     <figure><img src="images/leptop.jpg" alt="#"/></figure>
+                     <figure><img src="images/macbookcolor.gif" alt="#"/></figure>
                   </div>
                </div>
                <div class="col-md-6">

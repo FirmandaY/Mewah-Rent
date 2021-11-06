@@ -40,6 +40,8 @@ Route::get('/faq', 'FaqController@faq');
 
 Route::get('/produk', 'ProdukController@produk');
 
+Route::get('/produkPC', 'ProdukPCController@produkPC');
+
 Route::get('/produkDetail', 'ProdukDetailController@produkdetail');
 
 Auth::routes();

@@ -500,7 +500,7 @@ button {
 }
 
 .about .about_box figure img {
-     width: 85%;
+     width: 95%;
 
 }
 
@@ -544,7 +544,7 @@ button {
 
 .best_box {
      text-align: center;
-     background-color: #124E78;
+     background-color: #F35858;
      border-radius: 20px;
      padding: 30px 30px;
      margin-bottom: 30px;
@@ -557,7 +557,7 @@ button {
 .best_box:hover {
      -webkit-transform: scale(1.08);
      transform: scale(1.08);
-     background: #2ff1aa;
+     background: #FFD972;
      -webkit-box-shadow: 0 10px 6px -6px #777;
      -moz-box-shadow: 0 10px 6px -6px #777;
      box-shadow: 0 12px 6px -6px #777;
@@ -624,7 +624,7 @@ button {
 }
 
 .black_bg {
-     background-color: #2c363d;
+     background-color: #FFD972;
 }
 
 .request .main_form .contactus {
@@ -676,7 +676,7 @@ button {
 }
 
 #request *::placeholder {
-     color: #353535;
+     color: #F6B10E;
      opacity: 1;
 }
 
@@ -838,13 +838,13 @@ button {
 .footer {
      border-top: #000 solid 1px;
      font-family: Poppins;
-     background: #003566;
+     background: #6F69AC;
      padding-top: 50px;
 }
 
 .cont {
      text-align: left;
-     background-color: #003566;
+     background-color: #6F69AC;
      padding: 2mm;
 }
 

@@ -97,13 +97,13 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                    <div class="titlepage">
+                    <!-- <div class="titlepage">
                         <h2>About Mewah Rent</h2>
-                        <span>Find more about us!</span>
-                    </div>
+                        <span></span>
+                    </div> -->
                     <div class="row">
                         <div class="aboutimg1 col-md-6">
-                            <img src="images/laptopabout.jpg" width="600px" height="700px">
+                            <img src="images/macbookcolor.gif" width="600px" height="700px">
                         </div>
                         <div class="aboutcomment1 col-md-6">
                             <h3 class="aboutcomment1">Who are we?</h3>
@@ -124,7 +124,7 @@
                             </p>
                         </div>
                         <div class="aboutimg2 col-md-6">
-                            <img src="images/aboutus2.jfif">
+                            <img src="images/QLED.gif">
                         </div>
                     </div>
                 </div>
