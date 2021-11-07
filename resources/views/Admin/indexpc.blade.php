@@ -58,7 +58,16 @@
                                 <td>{{ $pc->deskripsi }}</td>
                                 <td>{{ $pc->harga }}</td>
                                 <td>{{ $pc->jml_unit }}</td>
-                                
+                                <td>
+                                    <form action="{{ route('adminPC.destroy', $pc->id) }}" method="post">
+                                        @csrf
+                                        <button class="del" onClick="return confirm ('Yakin mau dihapus?')"> Hapus </button>
+                                    </form>
+                                    <form action="{{ route('adminPC.edit', $pc->id) }}" method="get">
+                                        @csrf
+                                        <button class="updat" onClick="return confirm ('Yakin mau diubah?')"> Edit </button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

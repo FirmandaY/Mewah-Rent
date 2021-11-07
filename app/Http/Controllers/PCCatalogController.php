@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class BerandaController extends Controller
+use App\ProdukPC;
+class PCCatalogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,13 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $var_nama = "Mutiara Rent";
-        return view('Admin.beranda',compact('var_nama'));
+        $batas = 5;
+        $data_pc = ProdukPC::orderBy('id','desc')->paginate($batas);
+        $no = $batas * ($data_pc->currentPage()-1);
+        $jumlah_pc = ProdukPC::count();
+        $jumlah_harga = ProdukPC::sum('harga');
+
+        return view('User.KatalogPC.catalogPC', compact('data_pc','no','jumlah_pc','jumlah_harga'));
     }
 
     /**

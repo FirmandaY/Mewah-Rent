@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ProdukPC;
-class PCController extends Controller
+class ProdukPCController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -48,7 +54,7 @@ class PCController extends Controller
             'ram' => 'required|string',
             'storage' => 'required|string',
             'os' => 'required|string',
-            'deskripsi' => 'required|string',
+            'deskripsi' => 'required|string|max:100',
             'harga' => 'required|string',
             'jml_unit' => 'required|string'
         ]);
@@ -93,7 +99,8 @@ class PCController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pc = ProdukPC::find($id);
+        return view('Admin.edit', compact('pc'));
     }
 
     /**
@@ -105,7 +112,19 @@ class PCController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pc = ProdukPC::find($id);
+        $pc->gambar = $request->gambar;
+        $pc->merk = $request->merk;
+        $pc->cpu = $request->cpu;
+        $pc->gpu = $request->gpu;
+        $pc->ram = $request->ram;
+        $pc->storage = $request->storage;
+        $pc->os = $request->os;
+        $pc->deskripsi = $request->deskripsi;
+        $pc->harga = $request->harga;
+        $pc->jml_unit = $request->jml_unit;
+        $pc->update();
+        return redirect('/adminPC')->with('pesan', 'Perubahan Data PC Berhasil diSimpan');
     }
 
     /**
@@ -116,6 +135,8 @@ class PCController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pc = ProdukPC::find($id);
+        $pc->delete();
+        return redirect('/adminPC')->with('pesan', 'Data PC Berhasil di Hapus');
     }
 }
