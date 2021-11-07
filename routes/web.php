@@ -34,11 +34,15 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 
 Route::get('/homeadmin', 'HomeAdminController@index');
 
+Route::get('/', 'MewahController@index');
+
 Route::get('/about', 'AboutController@about');
 
 Route::get('/faq', 'FaqController@faq');
 
 Route::get('/produk', 'ProdukController@produk');
+
+Route::get('/tablet', 'TabletController@tablet');
 
 Route::get('/produkPC', 'ProdukPCController@produkPC');
 

@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Mutiara Rent</title>
+      <title>Mewah Rent</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -147,10 +147,10 @@
                </div>
             </div>
             <div class="row">
-               <div class="col-md-4" onclick="window.location='produkPC.blade.php';">
+               <div class="col-md-4">
                   <div class="best_box">
                      <h4>Computer (PC)</h4>
-                     <figure><img src="images/komputer.png" alt="#"/></figure>
+                     <figure><img src="images/komputer.png" alt="#"/><a href="/produk"></a></figure>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
                </div>
@@ -182,12 +182,14 @@
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
                </div>
-               <div class="col-md-4">
-                  <div class="best_box">
-                     <h4>Tablet</h4>
-                     <figure><img src="images/tablet.png" alt="#"/></figure>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                  </div>
+               <div class="col-md-4" >
+                  <a href="/tablet">
+                     <div class="best_box">
+                        <h4>Tablet</h4>
+                        <figure><img src="images/tablet.png" alt="#"/></figure>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
+                     </div>
+                  </a>
                </div>
             </div>
          </div>
