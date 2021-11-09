@@ -104,14 +104,14 @@
                         <!-- FAQ -->
 				            <ul class="faq-container">
                            <li>
-                              <label for="q1">Q: Apa itu Mutiara Rent? </label> <input name="question" id="q1" type="checkbox" value="">
+                              <label for="q1">Q: Apa itu Mewah Rent? </label> <input name="question" id="q1" type="checkbox" value="">
                               <div class="answer">
                                  <p>Maecenas justo erat, consectetur vel pellentesque quis, pharetra id tellus. Morbi ut nibh nisi. Vestibulum porta sollicitudin erat et convallis. u</p>
                               </div>
                            </li>
 
                            <li>
-                              <label for="q2">Q: Di manakah lokasi Mutiara Rent? </label> <input name="question" id="q2" type="checkbox" value="">
+                              <label for="q2">Q: Di manakah lokasi Mewah Rent? </label> <input name="question" id="q2" type="checkbox" value="">
                               <div class="answer">
                                  <p>Maecenas justo erat, consectetur vel pellentesque quis, pharetra id tellus. Morbi ut nibh nisi. Vestibulum porta sollicitudin erat et convallis. u</p>
                                  <p>Maecenas justo erat, consectetur vel pellentesque quis, pharetra id tellus. Morbi ut nibh nisi. Vestibulum porta sollicitudin erat et convallis. u</p>

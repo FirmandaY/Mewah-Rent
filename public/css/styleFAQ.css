@@ -439,7 +439,7 @@ button {
 	font-weight: 400;
 	font-size: 16px;
 	/* text-shadow: 1px 1px 1px #666; */
-	background-color: #F35858 ;
+	background-color: #FFD972 ;
      
      -webkit-transition: all 1s;
      -moz-transition: all 1s;
@@ -454,10 +454,10 @@ button {
 	border-radius: 0px 50px 50px 0px;
 }
 .faq-container li label:hover{
-     background-color: #FFD972;
+     background-color: #A0C4FF ;
      width: 550px;
 
-     color: #000000;
+     color: #ffffff;
      
 }
 
