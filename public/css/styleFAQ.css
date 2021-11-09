@@ -456,6 +456,8 @@ button {
 .faq-container li label:hover{
      background-color: #FFD972;
      width: 550px;
+
+     color: #000000;
      
 }
 
