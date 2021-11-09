@@ -429,6 +429,10 @@ button {
     text-align: center;
     padding: auto;
 }
+
+.aboutimg2, img{
+     padding-left: 60px;
+}
 /** end about section **/
 
 /** testimonial section **/
