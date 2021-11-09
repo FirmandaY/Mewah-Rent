@@ -471,7 +471,7 @@ button {
 
 .titlepage h2 {
      font-size: 50px;
-     color: #3e3e3e;
+     color: #000000;
      line-height: 50px;
      font-weight: bold;
      padding: 0;
@@ -494,11 +494,11 @@ button {
 
 .about .titlepage h2 {
      margin-bottom: 20px;
-     color: #2A0044;
+     color: #ffffff;
 }
 
 .about .titlepage span {
-     color: #2A0044;
+     color: #ffffff;
      font-size: 17px;
 }
 
