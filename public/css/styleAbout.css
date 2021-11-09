@@ -413,7 +413,7 @@ button {
 }
 
 .about .titlepage span {
-     color: #fff;
+     color: #003566;
      font-size: 17px;
 }
 
@@ -425,7 +425,7 @@ button {
 
 .aboutcomment2, h3{
     margin-top: 15mm;
-    color: rgb(255, 255, 255);
+    color: #003566;
     text-align: center;
     padding: auto;
 }

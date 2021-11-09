@@ -157,7 +157,7 @@
                <div class="col-md-4">
                   <div class="best_box">
                      <h4>LED TV</h4>
-                     <figure><img src="images/image 2.png" alt="#" width="300" height="250"/></figure>
+                     <figure><img src="images/tv_led.png" alt="#"/></figure>
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
                </div>

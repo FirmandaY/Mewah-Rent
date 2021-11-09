@@ -118,6 +118,12 @@
                <br>
                <br>
                <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
                <div class="col-md-12">
                     <div class="row">
                         <div class="aboutcomment2 col-md-6">
@@ -128,11 +134,10 @@
                             </p>
                         </div>
                         <div class="aboutimg2 col-md-6">
-                            <img src="images/QLED.gif">
+                            <img src="images/imacblue.png">
                         </div>
                     </div>
                 </div>
-               <img src="images/image 7.png" width="100%">
             </div>
             
             
