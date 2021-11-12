@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ProdukPC;
+use File;
+use Image;
+use Illuminate\Support\Str;
+
 class ProdukPCController extends Controller
 {
 
@@ -47,7 +51,7 @@ class ProdukPCController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'merk' => 'required|string|max:30',
             'cpu' => 'required|string',
             'gpu' => 'required|string',
@@ -58,15 +62,9 @@ class ProdukPCController extends Controller
             'harga' => 'required|string',
             'jml_unit' => 'required|string'
         ]);
-
-        $file = $request->file('gambar');
-        $nama_file = time()."_".$file->getClientOriginalName();
-        dd($file);
-        $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload, $nama_file);
-
+        
         $pc = new ProdukPC;
-        $pc->gambar = $request->gambar;
+        
         $pc->merk = $request->merk;
         $pc->cpu = $request->cpu;
         $pc->gpu = $request->gpu;
@@ -76,7 +74,16 @@ class ProdukPCController extends Controller
         $pc->deskripsi = $request->deskripsi;
         $pc->harga = $request->harga;
         $pc->jml_unit = $request->jml_unit;
+
+        $foto = $request->gambar;
+        $namafile = time().'.'.$foto->getClientOriginalExtension();
+
+        Image::make($foto)->resize(200,150)->save('thumb/'.$namafile);
+        $foto->move('public/images/', $namafile);
+
+        $pc->gambar = $namafile;
         $pc->save();
+
         return redirect('/adminPC')->with('pesan','Data PC Berhasil di Tambahkan');
     }
 
@@ -113,7 +120,6 @@ class ProdukPCController extends Controller
     public function update(Request $request, $id)
     {
         $pc = ProdukPC::find($id);
-        $pc->gambar = $request->gambar;
         $pc->merk = $request->merk;
         $pc->cpu = $request->cpu;
         $pc->gpu = $request->gpu;
@@ -123,6 +129,20 @@ class ProdukPCController extends Controller
         $pc->deskripsi = $request->deskripsi;
         $pc->harga = $request->harga;
         $pc->jml_unit = $request->jml_unit;
+
+        $foto = $request->gambar;
+
+        if($foto) {
+            File::delete('thumb/'.$pc->gambar); //data foto yang lama dihapus dulu
+            $namafile = $foto->getClientOriginalName();
+            $data['gambar'] = $namafile; // Update field photo
+    
+            Image::make($foto)->resize(200,150)->save('thumb/'.$namafile);
+            $foto->move('public/images/', $namafile);
+        }
+        
+        $pc->gambar = $namafile;
+
         $pc->update();
         return redirect('/adminPC')->with('pesan', 'Perubahan Data PC Berhasil diSimpan');
     }
@@ -137,6 +157,7 @@ class ProdukPCController extends Controller
     {
         $pc = ProdukPC::find($id);
         $pc->delete();
+        File::delete('thumb/'.$pc->gambar);
         return redirect('/adminPC')->with('pesan', 'Data PC Berhasil di Hapus');
     }
 }

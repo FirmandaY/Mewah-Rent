@@ -48,7 +48,7 @@
                             <tr>
                                 <td>{{ ++$no }}</td>
                                 <td>{{ $pc->id }}</td>
-                                <td><img src="{{ url('/data_file/'.$pc->gambar) }}"></td>
+                                <td><img src="{{ asset('thumb/'.$pc->gambar) }}"></td>
                                 <td>{{ $pc->merk }}</td>
                                 <td>{{ $pc->cpu }}</td>
                                 <td>{{ $pc->gpu }}</td>
@@ -61,11 +61,15 @@
                                 <td>
                                     <form action="{{ route('adminPC.destroy', $pc->id) }}" method="post">
                                         @csrf
-                                        <button class="del" onClick="return confirm ('Yakin mau dihapus?')"> Hapus </button>
+                                        <button class="btn btn-danger" onClick="return confirm ('Yakin mau dihapus?')">
+                                            <i class="fa fa-trash"></i>Hapus 
+                                        </button>
                                     </form>
                                     <form action="{{ route('adminPC.edit', $pc->id) }}" method="get">
                                         @csrf
-                                        <button class="updat" onClick="return confirm ('Yakin mau diubah?')"> Edit </button>
+                                        <button class="btn btn-info" onClick="return confirm ('Yakin mau diubah?')"> 
+                                            <i class="fa fa-pencil"></i>Edit 
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
@@ -73,7 +77,7 @@
                     </tbody>
                     <tr>
                         <td colspan="13"><p align="center">
-                            <a href="{{ route('adminPC.create') }}"> Tambah PC </a>
+                            <a class="btn btn-primary" href="{{ route('adminPC.create') }}"> Tambah PC </a>
                         </p></td>
                     </tr>
                     <tr>

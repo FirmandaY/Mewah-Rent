@@ -21,7 +21,7 @@
         @foreach($data_pc as $pc)
         <div class="col-md-4">
             <div class="card" style="margin-bottom: 50px;">
-                <img src="images/macbook.png" class="card-img-top" alt="...">
+                <img src="{{ asset('thumb/'.$pc->gambar) }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $pc->merk }}</h5>
                     <strong class="item-count">Ready : {{ $pc->jml_unit }} Unit</strong>

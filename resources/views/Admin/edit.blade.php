@@ -63,8 +63,8 @@
                             <input class="boxisi" type="text" name="jml_unit" value="{{ $pc->jml_unit }}">
                         </p>
                         <div>
-                            <button type="submit">Simpan</button>
-                            <a href="/adminPC"> Batal </a>
+                            <button class="btn btn-warning" type="submit">Simpan</button>
+                            <a class="btn btn-success" href="/adminPC"> Batal </a>
                         </div>
                     </form>
                 </legend>

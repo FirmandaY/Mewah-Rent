@@ -101,21 +101,21 @@
                                 <a href="#"><span class="fa fa-user mr-3"></span> About</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+                                    <a href="#"><span class="fa fa-briefcase mr-3"></span> Products</a>
                                 </li>
-                            <li>
-                            <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
-                            </li>
-                            <li>
-                            <a href="#"><span class="fa fa-suitcase mr-3"></span> Gallery</a>
-                            </li>
-                            <li>
-                            <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
-                            </li>
-                            <li>
-                            <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
-                            </li>
-                            </ul>
+                                <li>
+                                    <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa fa-suitcase mr-3"></span> Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+                                </li>
+                                </ul>
 
                             <div class="mb-5">
                                 <h3 class="h6 mb-3">Subscribe for newsletter</h3>
