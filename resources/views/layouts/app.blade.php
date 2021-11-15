@@ -8,22 +8,30 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{{ asset('sidebar/css/style.css') }}">
 
+        
+
+        <link rel="shortcut icon" href="{{asset('images/logomewahicon.png')}}">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Mewah Rental | Multimedia</title>
 
-        <!-- Scripts
+        <!-- Scripts (Dinonaktifkan karena untuk mencegah error pada navbar)
         <script src="{{ asset('js/app.js') }}" defer></script>-->
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+        <!-- Fonts for Homecard-->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Styles Sidebar -->
+        <link rel="stylesheet" href="{{ asset('sidebar/css/style.css') }}">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        
+        
     </head>
     <body>
         <div id="app">
@@ -67,8 +75,8 @@
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -101,7 +109,30 @@
                                 <a href="#"><span class="fa fa-user mr-3"></span> About</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa fa-briefcase mr-3"></span> Products</a>
+                                    
+                                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                        <span class="fa fa-briefcase mr-3"></span> Products
+                                    </a>
+                                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                                        <li>
+                                            <a href="{{ route('adminPC') }}">Komputer (PC)</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Monitor</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Laptop</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Tablet</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Proyektor</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Printer</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>

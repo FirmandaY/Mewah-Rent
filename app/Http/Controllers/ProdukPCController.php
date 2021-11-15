@@ -26,10 +26,11 @@ class ProdukPCController extends Controller
         $batas = 5;
         $data_pc = ProdukPC::orderBy('id','desc')->paginate($batas);
         $no = $batas * ($data_pc->currentPage()-1);
-        $jumlah_pc = ProdukPC::count();
+        $jumlah_pc = ProdukPC::sum('jml_unit');
+        $jenis_pc = ProdukPC::count();
         $jumlah_harga = ProdukPC::sum('harga');
 
-        return view('Admin.indexpc', compact('data_pc','no','jumlah_pc','jumlah_harga'));
+        return view('Admin.indexpc', compact('data_pc','no','jumlah_pc','jenis_pc','jumlah_harga'));
     }
 
     /**
@@ -51,7 +52,7 @@ class ProdukPCController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:5120',
             'merk' => 'required|string|max:30',
             'cpu' => 'required|string',
             'gpu' => 'required|string',

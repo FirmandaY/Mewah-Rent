@@ -40,7 +40,7 @@ Route::get('/produkPC', 'ProdukPCController@produkPC');
 Route::get('/produkDetail', 'ProdukDetailController@produkdetail');
 
 /* Untuk Daftar Produk Semua PC */
-Route::get('/pcCatalog', 'PCCatalogController@index');
+Route::get('/pcCatalog', 'PCCatalogController@index')->name('user.pc');
 
 
 

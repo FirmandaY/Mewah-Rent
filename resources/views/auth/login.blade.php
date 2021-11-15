@@ -89,7 +89,7 @@
     </head>
     <body>
 
-        <div class="main">
+        <div>
             <!-- Sing in  Form -->
             <section class="sign-in">
                 <div class="container">

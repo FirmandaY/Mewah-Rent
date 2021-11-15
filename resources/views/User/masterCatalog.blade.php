@@ -102,6 +102,14 @@
             </div>
          </div>
       </div>
+      <!--WA Me-->
+      <div class="wame-box">
+         <a class="wame" href="#">
+            <img class="img-wame" src="images/WhatsApp-logo.png" height="25" width="25">
+            Contact Us On WhatsApp!
+         </a>
+      </div>
+      <!--end WA Me-->
       <!--  footer -->
       <footer>
          <div id="contact" class="footer">

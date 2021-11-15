@@ -148,11 +148,13 @@
             </div>
             <div class="row">
                <div class="col-md-4">
-                  <div class="best_box">
-                     <h4>Computer (PC)</h4>
-                     <figure><img src="images/komputer.png" alt="#"/><a href="/produk"></a></figure>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                  </div>
+                  <a href="{{ route('user.pc') }}">
+                     <div class="best_box">
+                        <h4>Computer (PC)</h4>
+                        <figure><img src="images/komputer.png" alt="#"/></figure>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
+                     </div>
+                  </a>
                </div>
                <div class="col-md-4">
                   <div class="best_box">
