@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ProdukPC;
+use App\ProdukLaptop;
 use File;
 use Image;
-use Illuminate\Support\Str;
 
-class ProdukPCController extends Controller
+class ProdukLaptopController extends Controller
 {
 
     public function __construct()
@@ -24,24 +23,13 @@ class ProdukPCController extends Controller
     public function index()
     {
         $batas = 5;
-        $data_pc = ProdukPC::orderBy('id','desc')->paginate($batas);
-        $no = $batas * ($data_pc->currentPage()-1);
-        $jumlah_pc = ProdukPC::sum('jml_unit');
-        $jenis_pc = ProdukPC::count();
-        $jumlah_harga = ProdukPC::sum('harga');
+        $data_laptop = ProdukLaptop::orderBy('id','desc')->paginate($batas);
+        $no = $batas * ($data_laptop->currentPage()-1);
+        $jumlah_laptop = ProdukLaptop::sum('jml_unit');
+        $jenis_laptop = ProdukLaptop::count();
+        $jumlah_harga = ProdukLaptop::sum('harga');
 
-        return view('Admin.indexpc', compact('data_pc','no','jumlah_pc','jenis_pc','jumlah_harga'));
-    }
-
-    public function search(Request $request){
-        $batas = 5;
-        $cari = $request->kata;
-        $data_pc = ProdukPC::where('merk','like',"%".$cari."%")->orwhere('cpu', 'like', "%".$cari."%")
-        ->paginate($batas);
-        $no = $batas * ($data_pc->currentPage()-1);
-        $jumlah_pc = ProdukPC::count();
-
-        return view('Admin.search', compact('data_pc','no','jumlah_pc','cari'));
+        return view('AdminLaptop.indexLaptop', compact('data_laptop','no','jumlah_laptop','jenis_laptop','jumlah_harga'));
     }
 
     /**
@@ -51,7 +39,7 @@ class ProdukPCController extends Controller
      */
     public function create()
     {
-        return view('Admin.create');
+        return view('AdminLaptop.create');
     }
 
     /**
@@ -65,6 +53,7 @@ class ProdukPCController extends Controller
         $this->validate($request,[
             'gambar' => 'required|image|mimes:jpeg,png,jpg|max:5120',
             'merk' => 'required|string|max:30',
+            'display' => 'required|string|max:30',
             'cpu' => 'required|string',
             'gpu' => 'required|string',
             'ram' => 'required|string',
@@ -75,17 +64,18 @@ class ProdukPCController extends Controller
             'jml_unit' => 'required|string'
         ]);
         
-        $pc = new ProdukPC;
+        $laptop = new ProdukLaptop;
         
-        $pc->merk = $request->merk;
-        $pc->cpu = $request->cpu;
-        $pc->gpu = $request->gpu;
-        $pc->ram = $request->ram;
-        $pc->storage = $request->storage;
-        $pc->os = $request->os;
-        $pc->deskripsi = $request->deskripsi;
-        $pc->harga = $request->harga;
-        $pc->jml_unit = $request->jml_unit;
+        $laptop->merk = $request->merk;
+        $laptop->display = $request->display;
+        $laptop->cpu = $request->cpu;
+        $laptop->gpu = $request->gpu;
+        $laptop->ram = $request->ram;
+        $laptop->storage = $request->storage;
+        $laptop->os = $request->os;
+        $laptop->deskripsi = $request->deskripsi;
+        $laptop->harga = $request->harga;
+        $laptop->jml_unit = $request->jml_unit;
 
         $foto = $request->gambar;
         $namafile = time().'.'.$foto->getClientOriginalExtension();
@@ -93,10 +83,10 @@ class ProdukPCController extends Controller
         Image::make($foto)->resize(200,150)->save('thumb/'.$namafile);
         $foto->move('public/images/', $namafile);
 
-        $pc->gambar = $namafile;
-        $pc->save();
+        $laptop->gambar = $namafile;
+        $laptop->save();
 
-        return redirect('/adminPC')->with('pesan','Data PC Berhasil di Tambahkan');
+        return redirect('/adminLaptop')->with('pesan','Data Laptop Berhasil di Tambahkan');
     }
 
     /**
@@ -118,8 +108,8 @@ class ProdukPCController extends Controller
      */
     public function edit($id)
     {
-        $pc = ProdukPC::find($id);
-        return view('Admin.edit', compact('pc'));
+        $laptop = ProdukLaptop::find($id);
+        return view('AdminLaptop.edit', compact('laptop'));
     }
 
     /**
@@ -131,21 +121,22 @@ class ProdukPCController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pc = ProdukPC::find($id);
-        $pc->merk = $request->merk;
-        $pc->cpu = $request->cpu;
-        $pc->gpu = $request->gpu;
-        $pc->ram = $request->ram;
-        $pc->storage = $request->storage;
-        $pc->os = $request->os;
-        $pc->deskripsi = $request->deskripsi;
-        $pc->harga = $request->harga;
-        $pc->jml_unit = $request->jml_unit;
+        $laptop = ProdukLaptop::find($id);
+        $laptop->merk = $request->merk;
+        $laptop->display = $request->display;
+        $laptop->cpu = $request->cpu;
+        $laptop->gpu = $request->gpu;
+        $laptop->ram = $request->ram;
+        $laptop->storage = $request->storage;
+        $laptop->os = $request->os;
+        $laptop->deskripsi = $request->deskripsi;
+        $laptop->harga = $request->harga;
+        $laptop->jml_unit = $request->jml_unit;
 
         $foto = $request->gambar;
 
         if($foto) {
-            File::delete('thumb/'.$pc->gambar); //data foto yang lama dihapus dulu
+            File::delete('thumb/'.$laptop->gambar); //data foto yang lama dihapus dulu
             $namafile = $foto->getClientOriginalName();
             $data['gambar'] = $namafile; // Update field photo
     
@@ -153,9 +144,9 @@ class ProdukPCController extends Controller
             $foto->move('public/images/', $namafile);
         }
         
-        $pc->gambar = $namafile;
+        $laptop->gambar = $namafile;
 
-        $pc->update();
+        $laptop->update();
         return redirect('/adminPC')->with('pesan', 'Perubahan Data PC Berhasil diSimpan');
     }
 
@@ -167,9 +158,9 @@ class ProdukPCController extends Controller
      */
     public function destroy($id)
     {
-        $pc = ProdukPC::find($id);
-        $pc->delete();
-        File::delete('thumb/'.$pc->gambar);
+        $laptop = ProdukLaptop::find($id);
+        $laptop->delete();
+        File::delete('thumb/'.$laptop->gambar);
         return redirect('/adminPC')->with('pesan', 'Data PC Berhasil di Hapus');
     }
 }

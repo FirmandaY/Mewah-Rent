@@ -52,7 +52,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+/*
+Di bawah Ini Routes Buat Admin PC!
+*/
 Route::get('/adminPC', 'ProdukPCController@index')->name('adminPC');
 
 Route::get('/adminPC/create', 'ProdukPCController@create')->name('adminPC.create');
@@ -66,3 +68,20 @@ Route::get('/adminPC/edit/{id}', 'ProdukPCController@edit')->name('adminPC.edit'
 Route::post('/adminPC/{id}', 'ProdukPCController@update')->name('adminPC.update');
 
 Route::get('/adminPC/search', 'ProdukPCController@search')->name('adminPC.search');
+
+/*
+Di bawah Ini Routes Buat Admin Laptop!
+*/
+Route::get('/adminLaptop', 'ProdukLaptopController@index')->name('adminLaptop');
+
+Route::get('/adminLaptop/create', 'ProdukLaptopController@create')->name('adminLaptop.create');
+
+Route::post('/adminLaptop', 'ProdukLaptopController@store')->name('adminLaptop.store');
+
+Route::post('/adminLaptop/delete/{id}', 'ProdukLaptopController@destroy')->name('adminLaptop.destroy');
+
+Route::get('/adminLaptop/edit/{id}', 'ProdukLaptopController@edit')->name('adminLaptop.edit');
+
+Route::post('/adminLaptop/{id}', 'ProdukLaptopController@update')->name('adminLaptop.update');
+
+Route::get('/adminLaptop/search', 'ProdukLaptopController@search')->name('adminLaptop.search');

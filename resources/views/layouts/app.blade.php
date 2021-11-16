@@ -121,7 +121,7 @@
                                             <a href="#">Monitor</a>
                                         </li>
                                         <li>
-                                            <a href="#">Laptop</a>
+                                            <a href="{{ route('adminLaptop') }}">Laptop</a>
                                         </li>
                                         <li>
                                             <a href="#">Tablet</a>
