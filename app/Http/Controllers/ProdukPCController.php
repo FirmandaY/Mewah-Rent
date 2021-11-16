@@ -40,8 +40,10 @@ class ProdukPCController extends Controller
         ->paginate($batas);
         $no = $batas * ($data_pc->currentPage()-1);
         $jumlah_pc = ProdukPC::count();
+        $jenis_pc = ProdukPC::count();
+        $jumlah_harga = ProdukPC::sum('harga');
 
-        return view('Admin.search', compact('data_pc','no','jumlah_pc','cari'));
+        return view('Admin.search', compact('data_pc','no','jumlah_pc','jenis_pc','cari','jumlah_harga'));
     }
 
     /**
