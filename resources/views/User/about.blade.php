@@ -124,7 +124,7 @@
                <br>
                <br>
                <br>
-               <div class="col-md-12">
+               <!-- <div class="col-md-12">
                     <div class="row">
                         <div class="aboutcomment2 col-md-6">
                             <h3 class="aboutcomment2">Who are we?</h3>
@@ -137,7 +137,7 @@
                             <img src="images/imacblue.png">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             
             
@@ -221,9 +221,9 @@
          </div>
       </div>
       <!-- end testimonial -->
-      <!--  footer -->
+             <!--  footer -->
       <footer>
-         <div id="contact" class="footer">
+         <div class="footer">
             <div class="container">
                <div class="row">
                   <div class="col-md-6">

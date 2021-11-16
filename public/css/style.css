@@ -471,7 +471,7 @@ button {
 
 .titlepage h2 {
      font-size: 50px;
-     color: #000000;
+     color: #e6764d;
      line-height: 50px;
      font-weight: bold;
      padding: 0;
@@ -543,19 +543,19 @@ button {
 }
 
 .best .titlepage h2 {
-     color: #DD392C;
+     color: #85D1BE;
      margin-bottom: 20px;
 }
 
 .best .titlepage span {
-     color: #DD392C;
+     color: #85D1BE;
      font-size: 17px;
      line-height: 28px;
 }
 
 .best_box {
      text-align: center;
-     background-color: #F35858;
+     background-color: #BFEBE0;
      border-radius: 20px;
      padding: 30px 30px;
      margin-bottom: 30px;
@@ -568,7 +568,7 @@ button {
 .best_box:hover {
      -webkit-transform: scale(1.08);
      transform: scale(1.08);
-     background: #FFD972;
+     background: #FFE8A9;
      -webkit-box-shadow: 0 10px 6px -6px #777;
      -moz-box-shadow: 0 10px 6px -6px #777;
      box-shadow: 0 12px 6px -6px #777;
@@ -576,7 +576,7 @@ button {
 
 
 .best_box h4 {
-     color: #fff;
+     color: #003566;
      text-transform: uppercase;
      font-size: 30px;
      line-height: 40px;

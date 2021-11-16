@@ -151,7 +151,7 @@
                   <a href="{{ route('user.pc') }}">
                      <div class="best_box">
                         <h4>Computer (PC)</h4>
-                        <figure><img src="images/komputer.png" alt="#"/></figure>
+                        <figure><img src="images/image.png" alt="#"/></figure>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                      </div>
                   </a>

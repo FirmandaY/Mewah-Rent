@@ -505,7 +505,6 @@ button {
 
 /** end testimonial section **/
 
-
 /** footer **/
 
 .multi {
@@ -535,16 +534,16 @@ button {
      padding: 2mm;
 }
 
+.cont iframe{
+     padding: 2px;
+     width: 100%;
+}
+
 .cont h3 {
      color: #f8f8ff;
      font-size: 37px;
      line-height: 55px;
      font-weight: bold;
-}
-
-.cont iframe{
-     padding: 2px;
-     width: 100%;
 }
 
 .cont_call h3 {
@@ -574,7 +573,3 @@ button {
 .copyright a:hover {
      color: #2bcc91;
 }
-
-
-/** end footer **/
-
