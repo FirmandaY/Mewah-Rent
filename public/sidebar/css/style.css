@@ -26,7 +26,7 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
-  background: linear-gradient(-45deg, #00d3e2, #356bff, #ab8dff, #E73C7E, #23A6D5, #23D5Ab, #6bf1a3);
+  background: linear-gradient(-45deg, #00d3e2, #356bff, #ab8dff, #b3507e, #23A6D5, #23D5Ab, #6bf1a3);
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -8309,7 +8309,7 @@ a[data-toggle="collapse"] {
   -o-transition: all 0.3s;
   transition: all 0.3s; 
   
-  background: linear-gradient(-45deg, #00d3e2, #356bff, #ab8dff, #E73C7E, #23A6D5, #23D5Ab, #6bf1a3);
+  background: linear-gradient(-45deg, #00d3e2, #356bff, #ab8dff, #b3507e, #23A6D5, #23D5Ab, #6bf1a3);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;

@@ -20,6 +20,14 @@
                     Daftar Laptop
                 </div>
                 
+                <form action="{{ route('adminLaptop.search') }}" method="get">
+                    @csrf
+                    <button class="btn-search btn-outline-dark">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <input type="text" name="kata" class="form-searchbox" placeholder="Cari Laptop..." >
+                </form>
+                
                 <table class="table table-striped" border="2" align="center">
                     @foreach($data_laptop as $laptop)
                     <thead>
@@ -28,7 +36,7 @@
                             <th>id</th>
                             <th>Gambar</th>
                             
-                            <th colspan="7">Deskripsi</th>
+                            <th colspan="8">Deskripsi</th>
                             
                             <th>Aksi</th>
                         </tr>
@@ -39,7 +47,7 @@
                                 <td rowspan="3">{{ ++$no }}</td>
                                 <td rowspan="3">{{ $laptop->id }}</td>
                                 <td rowspan="3"><img src="{{ asset('thumb/'.$laptop->gambar) }}"></td>
-                                <td colspan="7">{{ $laptop->deskripsi }}</td>
+                                <td colspan="8">{{ $laptop->deskripsi }}</td>
                                 <td>
                                     <form action="{{ route('adminLaptop.destroy', $laptop->id) }}" method="post">
                                         @csrf
@@ -98,8 +106,8 @@
                     <tr>
                         <td rowspan="2" colspan="2">Keterangan</td>
                         <td colspan='11'> 
-                            Jumlah Jenis PC = {{ $jenis_laptop }} Jenis <br>
-                            Jumlah Total PC = {{ $jumlah_laptop }} Unit
+                            Jumlah Jenis Laptop = {{ $jenis_laptop }} Jenis <br>
+                            Jumlah Total Laptop = {{ $jumlah_laptop }} Unit
                         </td>
                         
                     </tr>

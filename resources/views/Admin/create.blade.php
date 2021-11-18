@@ -28,39 +28,39 @@
                         </p>
                         <p> 
                             <label>Merk</label> <br>
-                            <input class="boxisi" type="text" name="merk">
+                            <input class="boxisi" type="text" name="merk" placeholder="ASUS, DELL, dsb.">
                         </p>
                         <p> 
                             <label>Prosessor</label> <br>
-                            <input class="boxisi" type="text" name="cpu" >
+                            <input class="boxisi" type="text" name="cpu" placeholder="Intel, AMD, dsb.">
                         </p>
                         <p> 
                             <label>Kartu Grafis</label> <br>
-                            <input class="boxisi" type="text" name="gpu">
+                            <input class="boxisi" type="text" name="gpu" placeholder="NVIDIA, AMD, dsb.">
                         </p>
                         <p> 
                             <label>RAM</label> <br>
-                            <input class="boxisi" type="text" name="ram">
+                            <input class="boxisi" type="text" name="ram" placeholder="XXX GB">
                         </p>
                         <p> 
                             <label>Penyimpanan</label> <br>
-                            <input class="boxisi" type="text" name="storage">
+                            <input class="boxisi" type="text" name="storage" placeholder="XXX GB">
                         </p>
                         <p> 
                             <label>Sistem Operasi</label> <br>
-                            <input class="boxisi" type="text" name="os">
+                            <input class="boxisi" type="text" name="os" placeholder="Windows, Mac, Linux, dsb.">
                         </p>
                         <p> 
                             <label>Deskripsi</label> <br>
-                            <textarea class="boxisi" name="deskripsi"></textarea>
+                            <textarea class="boxisi" name="deskripsi" placeholder="Ceritakan tentang produk ini.."></textarea>
                         </p>
                         <p> 
                             <label>Harga Sewa</label> <br>
-                            <input class="boxisi" type="text" name="harga">
+                            <input class="boxisi" type="text" name="harga" placeholder="Rp.XXX">
                         </p>
                         <p> 
                             <label>Jumlah Unit</label> <br>
-                            <input class="boxisi" type="text" name="jml_unit">
+                            <input class="boxisi" type="text" name="jml_unit" placeholder= "1,2,3, dsb.">
                         </p>
                         <div>
                             <button type="submit">Simpan</button>
