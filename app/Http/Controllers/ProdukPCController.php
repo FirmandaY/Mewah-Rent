@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use App\ProdukPC;
 use File;
 use Image;
@@ -72,7 +73,7 @@ class ProdukPCController extends Controller
             'ram' => 'required|string',
             'storage' => 'required|string',
             'os' => 'required|string',
-            'deskripsi' => 'required|string|max:100',
+            'deskripsi' => 'required|string|max:250',
             'harga' => 'required|string',
             'jml_unit' => 'required|string'
         ]);
@@ -92,7 +93,7 @@ class ProdukPCController extends Controller
         $foto = $request->gambar;
         $namafile = time().'.'.$foto->getClientOriginalExtension();
 
-        Image::make($foto)->resize(200,150)->save('thumb/'.$namafile);
+        Image::make($foto)->save('thumb/'.$namafile);
         $foto->move('public/images/', $namafile);
 
         $pc->gambar = $namafile;

@@ -1,4 +1,4 @@
-@extends('User.masterCatalog')
+@extends('masterCatalog')
 
 @section('banner')
 <div class="banner_main">

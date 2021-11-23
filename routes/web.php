@@ -53,6 +53,24 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 /*
+Di bawah Ini Routes Buat Admin About!
+*/
+
+Route::get('/adminAbout', 'AdminAboutController@index')->name('adminAbout');
+
+Route::get('/adminAbout/create', 'AdminAboutController@create')->name('adminAbout.create');
+
+Route::post('/adminAbout', 'AdminAboutController@store')->name('adminAbout.store');
+
+Route::post('/adminAbout/delete/{id}', 'AdminAboutController@destroy')->name('adminAbout.destroy');
+
+Route::get('/adminAbout/edit/{id}', 'AdminAboutController@edit')->name('adminAbout.edit');
+
+Route::post('/adminAbout/{id}', 'AdminAboutController@update')->name('adminAbout.update');
+
+Route::get('/adminAbout/search', 'AdminAboutController@search')->name('adminAbout.search');
+
+/*
 Di bawah Ini Routes Buat Admin PC!
 */
 Route::get('/adminPC', 'ProdukPCController@index')->name('adminPC');

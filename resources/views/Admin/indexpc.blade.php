@@ -46,7 +46,12 @@
                             <tr>
                                 <td rowspan="3">{{ ++$no }}</td>
                                 <td rowspan="3">{{ $pc->id }}</td>
-                                <td rowspan="3"><img src="{{ asset('thumb/'.$pc->gambar) }}"></td>
+                                <td rowspan="3">
+                                    <img src="{{ asset('thumb/'.$pc->gambar) }}" style="width: 150px; height: 100px" > <br>
+                                    <a class="btn-lihat btn-success" href="{{ asset('thumb/'.$pc->gambar) }}" data-lightbox="image-1" data-title="{{ $pc->merk }}">
+                                        Lihat
+                                    </a>
+                                </td>
                                 <td colspan="7">{{ $pc->deskripsi }}</td>
                                 <td>
                                     <form action="{{ route('adminPC.destroy', $pc->id) }}" method="post">

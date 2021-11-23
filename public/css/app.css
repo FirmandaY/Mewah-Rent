@@ -61,6 +61,17 @@ body{
   float: right;
 }
 
+/* Halaman About Admin */
+.aboutimg1{
+  background-color: #1f6fb2;
+  
+}
+.img-about{
+  width: 400px; 
+  height: 250px;
+  margin: 10px 3px 10px 3px;
+}
+
 /*style untuk index produk*/
 .mr-auto{
   margin-left: 5px;
@@ -122,6 +133,28 @@ fieldset{
   border-radius: 0px 10px 0 10px;
   padding-left: 10px;
   padding-right: 10px;
+}
+.btn-lihat{
+  height: 10mm;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 0px 10px 0 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.btn-tambah{
+  height: 10mm;
+  font-size: 15px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
+  text-align: center;
+  border-radius: 0px 10px 0 10px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 /* Sidebar produk Admin */

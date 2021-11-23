@@ -30,7 +30,8 @@
         <link rel="stylesheet" href="{{ asset('sidebar/css/style.css') }}">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        
+        <!-- Styles lightbox-->
+        <link rel="stylesheet" href="{{ asset('dist/css/lightbox.min.css') }}">
         
     </head>
     <body>
@@ -184,5 +185,7 @@
         <script src="{{ asset('sidebar/js/popper.js') }}"></script>
         <script src="{{ asset('sidebar/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('sidebar/js/main.js') }}"></script>
+        <!-- Scripts lightbox -->
+        <script src="{{ asset('dist/js/lightbox-plus-jquery.js') }}"></script>
     </body>
 </html>
