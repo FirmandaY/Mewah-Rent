@@ -136,7 +136,20 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
+                                    <a href="#blogSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                        <span class="fa fa-sticky-note mr-3"></span> Blog
+                                    </a>
+                                    <ul class="collapse list-unstyled" id="blogSubmenu">
+                                        <li>
+                                            <a href="#">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('adminAbout') }}">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">FAQ</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa fa-suitcase mr-3"></span> Gallery</a>

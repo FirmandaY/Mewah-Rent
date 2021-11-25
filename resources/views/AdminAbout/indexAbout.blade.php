@@ -14,7 +14,7 @@
                <div class="row">
                   <div class="aboutimg1 col-md-6">
                         <img class="img-about" src="images/macbookcolor.gif">
-                        
+                        <br>
                         <a class="btn-lihat btn-primary" href="#"> Lihat Gambar </a>
                   </div>
                   <div class="aboutcomment1 col-md-6">
