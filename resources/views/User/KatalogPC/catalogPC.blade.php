@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-9 padding_right1">
             <!--ini adalah wadah untuk bentuk banner utama-->
-                <h1 class="titleAbout">Daftar Produk PC</h1>
+                <h1 class="titleMaster">Daftar Produk PC</h1>
             <!--<h1>Tempatnya Sewa</h1>-->
             </div>
             

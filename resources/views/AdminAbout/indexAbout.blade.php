@@ -10,25 +10,45 @@
                   <h2>About Mewah Rent</h2>
                   <span></span>
                </div> -->
-               
+               <div>
+                  <a class="btn btn-primary" href="{{ route('adminAbout.create') }}">  
+                     <i class="fa fa-plus-square-o" style="font-size:12px"></i>
+                     Tambah About
+                  </a>
+                  
+               </div>
+               <br>
+               @foreach($data_about as $about)
                <div class="row">
                   <div class="aboutimg1 col-md-6">
-                        <img class="img-about" src="images/macbookcolor.gif">
+                        <a href="{{ asset('thumb/'.$about->foto) }}" data-lightbox="image-1">
+                           <img class="img-about" src="{{ asset('thumb/'.$about->foto) }}">
+                        </a>
+                        
                         <br>
-                        <a class="btn-lihat btn-primary" href="#"> Lihat Gambar </a>
                   </div>
                   <div class="aboutcomment1 col-md-6">
-                        <h3 class="aboutcomment1">Who are we?</h3>
-                        <p>
-                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in 
-                           reprehenderit in voluptate velit. guadaluppi... benzo? guada, guada luppi? buenzo!
-                        </p>
-                        <a class="btn-tambah btn-primary" href="#"> Edit Teks </a>
-                        <a class="btn-tambah btn-primary" href="#"> Tambah About </a>
+                     <p>
+                        {!! $about->tentangkami !!}
+                     </p>
+                     
+                     <form action="{{ route('adminAbout.destroy', $about->id) }}" method="post">
+                        @csrf
+                        <a class="btn-edit btn-primary" href="{{ route('adminAbout.edit', $about->id) }}"> 
+                           Edit About 
+                           <i class="fa fa-pencil"></i>
+                        </a>
+                        <button class="btn-delete btn-danger" onClick="return confirm ('Yakin mau dihapus?')">
+                           <i class="fa fa-trash"></i>Hapus 
+                        </button>
+                     </form>
+                       
                   </div>
                   
                </div>
-                  
+               <br>
+               @endforeach
+               
             </div>
          </div>
       </div>

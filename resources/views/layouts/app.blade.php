@@ -20,6 +20,9 @@
         <!-- Scripts (Dinonaktifkan karena untuk mencegah error pada navbar)
         <script src="{{ asset('js/app.js') }}" defer></script>-->
 
+        <!--Script Untuk CKEditor4-->
+        <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -75,7 +78,7 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="dropdown-item fa fa-power-off" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
@@ -147,7 +150,7 @@
                                             <a href="{{ route('adminAbout') }}">About</a>
                                         </li>
                                         <li>
-                                            <a href="#">FAQ</a>
+                                            <a href="{{ route('adminFAQ') }}">FAQ</a>
                                         </li>
                                     </ul>
                                 </li>

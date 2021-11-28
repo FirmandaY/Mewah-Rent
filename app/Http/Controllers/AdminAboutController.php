@@ -25,7 +25,8 @@ class AdminAboutController extends Controller
     {
         $batas = 5;
         $data_about = About::orderBy('id','desc')->paginate($batas);
-        return view('AdminAbout.indexAbout', compact('data_about'));
+        $about = About::all();
+        return view('AdminAbout.indexAbout', compact('data_about', 'about'));
     }
 
     /**
@@ -35,7 +36,7 @@ class AdminAboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('AdminAbout.create');
     }
 
     /**
@@ -51,7 +52,7 @@ class AdminAboutController extends Controller
             'tentangkami' => 'required|string',
         ]);
         
-        $about = new ProdukPC;
+        $about = new About;
         $about->tentangkami = $request->tentangkami;
 
         $gambar = $request->foto;
@@ -60,7 +61,7 @@ class AdminAboutController extends Controller
         Image::make($gambar)->save('thumb/'.$namafile);
         $gambar->move('public/images/', $namafile);
 
-        $about->gambar = $namafile;
+        $about->foto = $namafile;
         $about->save();
 
         return redirect('/adminAbout')->with('pesan','Data About Berhasil di Tambahkan');
@@ -85,7 +86,8 @@ class AdminAboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $about = About::find($id);
+        return view('AdminAbout.edit', compact('about'));
     }
 
     /**
@@ -97,7 +99,23 @@ class AdminAboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $about = About::find($id);
+        $about->tentangkami = $request->tentangkami;
+        
+
+        $foto = $request->foto;
+
+        if($foto) {
+            File::delete('thumb/'.$about->foto); //data foto yang lama dihapus dulu
+            $namafile = $foto->getClientOriginalName();
+            $data['foto'] = $namafile; // Update field photo
+    
+            $proses = $foto->move('thumb/', $namafile);
+        }
+        
+        $about->foto = $namafile;
+        $about->update();
+        return redirect('/adminAbout')->with('pesan', 'Perubahan Data About Berhasil diSimpan');
     }
 
     /**
@@ -108,6 +126,8 @@ class AdminAboutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $about = About::find($id);
+        $about->delete();
+        return redirect('/adminAbout')->with('pesan', 'Data About Berhasil di Hapus');
     }
 }

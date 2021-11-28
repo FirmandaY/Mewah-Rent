@@ -25,7 +25,7 @@ Route::get('/login', function () {
 */
 
 
-Route::get('/', 'MewahController@index');
+Route::get('/', 'UserHomeController@index');
 
 Route::get('/about', 'AboutController@about');
 
@@ -69,6 +69,24 @@ Route::get('/adminAbout/edit/{id}', 'AdminAboutController@edit')->name('adminAbo
 Route::post('/adminAbout/{id}', 'AdminAboutController@update')->name('adminAbout.update');
 
 Route::get('/adminAbout/search', 'AdminAboutController@search')->name('adminAbout.search');
+
+/*
+Di bawah Ini Routes Buat Admin FAQ!
+*/
+
+Route::get('/adminFAQ', 'AdminFAQController@index')->name('adminFAQ');
+
+Route::get('/adminFAQ/create', 'AdminFAQController@create')->name('adminFAQ.create');
+
+Route::post('/adminFAQ', 'AdminFAQController@store')->name('adminFAQ.store');
+
+Route::post('/adminFAQ/delete/{id}', 'AdminFAQController@destroy')->name('adminFAQ.destroy');
+
+Route::post('/adminFAQ/edit/{id}', 'AdminFAQController@edit')->name('adminFAQ.edit');
+
+Route::post('/adminFAQ/{id}', 'AdminFAQController@update')->name('adminFAQ.update');
+
+Route::get('/adminFAQ/search', 'AdminFAQController@search')->name('adminFAQ.search');
 
 /*
 Di bawah Ini Routes Buat Admin PC!

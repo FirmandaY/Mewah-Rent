@@ -89,6 +89,7 @@ class ProdukPCController extends Controller
         $pc->deskripsi = $request->deskripsi;
         $pc->harga = $request->harga;
         $pc->jml_unit = $request->jml_unit;
+        $pc->pc_seo = Str::slug($request->merk);
 
         $foto = $request->gambar;
         $namafile = time().'.'.$foto->getClientOriginalExtension();
@@ -144,6 +145,7 @@ class ProdukPCController extends Controller
         $pc->deskripsi = $request->deskripsi;
         $pc->harga = $request->harga;
         $pc->jml_unit = $request->jml_unit;
+        $pc->pc_seo = Str::slug($request->merk);
 
         $foto = $request->gambar;
 
@@ -152,7 +154,7 @@ class ProdukPCController extends Controller
             $namafile = $foto->getClientOriginalName();
             $data['gambar'] = $namafile; // Update field photo
     
-            Image::make($foto)->resize(200,150)->save('thumb/'.$namafile);
+            Image::make($foto)->save('thumb/'.$namafile);
             $foto->move('public/images/', $namafile);
         }
         
@@ -173,6 +175,7 @@ class ProdukPCController extends Controller
         $pc = ProdukPC::find($id);
         $pc->delete();
         File::delete('thumb/'.$pc->gambar);
+        File::delete('public/images/'.$pc->gambar);
         return redirect('/adminPC')->with('pesan', 'Data PC Berhasil di Hapus');
     }
 }

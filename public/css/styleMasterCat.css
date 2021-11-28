@@ -75,6 +75,115 @@
 
 /** end Wa Me **/
 
+/** Style untuk faq section **/
+
+.faq {
+    
+     background: #ffffff;
+     padding: 60px 0;
+     padding-top: 10px;
+	overflow:visible;
+}
+
+.faq .titlepage h2 {
+     margin-bottom: 20px;
+     color: #fff;
+}
+
+.faq .titlepage span {
+     color: #fff;
+     font-size: 17px;
+}
+
+.faq-left h2{
+	font-family: 'Open Sans', sans-serif;
+	font-weight:400;
+	text-shadow:2px 2px 2px #f4f4f4;
+}
+.faq-left{
+	float:left;
+	width:550px;
+}
+
+.faq-container{
+	width:500px;
+	margin:20px auto;
+	list-style-type:none;
+     
+}
+
+     /** question section **/
+
+.faq-container li{
+	position:relative;
+	margin:5px 0;
+	
+}
+.faq-container li input{
+	display:none;
+}
+
+.faq-container li label{
+     width: 500px;
+     font-weight: bold;
+	font-family: 'Baloo Chettan', cursive;
+	font-weight: 400;
+	font-size: 16px;
+	/* text-shadow: 1px 1px 1px #666; */
+	background-color: #FFD972 ;
+     
+     -webkit-transition: all 1s;
+     -moz-transition: all 1s;
+     -ms-transition: all 1s;
+     -o-transition: all 1s;
+     transition: all 1s;
+
+	color: #ffffff;
+	display: block;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 0px 50px 50px 0px;
+}
+.faq-container li label:hover{
+     background-color: #FF7373 ;
+     width: 550px;
+
+     color: #ffffff;
+     
+}
+
+     /** answer section **/
+
+.faq-container li div{
+	overflow: hidden;
+	height:0px;
+	padding:5px 10px;
+	
+	position: relative;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+     
+	border-radius:0 0 5px 5px;
+	color:#000000;
+	font-family: 'Baloo Chettan', cursive;
+	font-size:13px;
+}
+.faq-container li div p{margin-top:10px}
+.faq-container li input:checked{
+	background:#000;
+}
+.faq-container li input:checked ~ div{
+	padding-bottom:20px;
+}
+.faq-container li input:checked ~ div.answer{
+	height:auto;
+}
+.faq-container li input:checked ~ div.big{
+	height:110px;
+}
+     
+/** end faq section **/
 
 html {
      scroll-behavior: smooth;
@@ -404,7 +513,7 @@ button {
      
 }
 
-.titleAbout{
+.titleMaster{
      font-family: 'Baloo Chettan', cursive;
      color: #003566;
      font-size: 45px;
@@ -427,7 +536,7 @@ button {
 
 .titlepage {
      text-align: center;
-     padding-bottom: 60px;
+     padding-bottom: 10px;
 }
 
 .titlepage h2 {
@@ -448,9 +557,9 @@ button {
 /** about section **/
 
 .about {
-     margin-top: 90px;
+     margin-top: 10px;
      background: #ffffff;
-     padding: 60px 0;
+     padding: 30px 0;
 }
 
 .about .titlepage h2 {
