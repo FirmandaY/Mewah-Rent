@@ -34,10 +34,16 @@ class AdminKategoriController extends Controller
 
         $kategori = Kategori::where('nama', $title)->first();
         $produks = $kategori->produklains()->orderBy('id', 'desc')->paginate($batas);
-        $jumlah_produk = ProdukLain::sum('jml_unit');
-        $jenis_produk = ProdukLain::count();
-        $jumlah_harga = ProdukLain::sum('harga');
         $no = $batas * ($produks->currentPage()-1);
+
+        $jumlah_harga = $kategori->produklains()->sum('harga');
+        $jumlah_produk = $kategori->produklains()->sum('jml_unit');
+        $jenis_produk = $kategori->produklains()->count();
+
+        $jumlah_harga_total = ProdukLain::sum('harga');
+        $jumlah_produk_total = ProdukLain::sum('jml_unit');
+        $jenis_produk_total = ProdukLain::count();
+       
 
         return view('AdminKategori.indexProdukKat', compact(
             'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
