@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ProdukLaptop;
+use App\Kategori;
 use File;
 use Image;
 
@@ -24,12 +25,13 @@ class ProdukLaptopController extends Controller
     {
         $batas = 5;
         $data_laptop = ProdukLaptop::orderBy('id','desc')->paginate($batas);
+        $data_kategori = Kategori::all();
         $no = $batas * ($data_laptop->currentPage()-1);
         $jumlah_laptop = ProdukLaptop::sum('jml_unit');
         $jenis_laptop = ProdukLaptop::count();
         $jumlah_harga = ProdukLaptop::sum('harga');
 
-        return view('AdminLaptop.indexLaptop', compact('data_laptop','no','jumlah_laptop','jenis_laptop','jumlah_harga'));
+        return view('AdminLaptop.indexLaptop', compact('data_laptop', 'data_kategori','no','jumlah_laptop','jenis_laptop','jumlah_harga'));
     }
 
     /**
@@ -39,7 +41,8 @@ class ProdukLaptopController extends Controller
      */
     public function create()
     {
-        return view('AdminLaptop.create');
+        $data_kategori = Kategori::all();
+        return view('AdminLaptop.create', compact('data_kategori'));
     }
 
     /**
@@ -109,7 +112,8 @@ class ProdukLaptopController extends Controller
     public function edit($id)
     {
         $laptop = ProdukLaptop::find($id);
-        return view('AdminLaptop.edit', compact('laptop'));
+        $data_kategori = Kategori::all();
+        return view('AdminLaptop.edit', compact('laptop', 'data_kategori'));
     }
 
     /**

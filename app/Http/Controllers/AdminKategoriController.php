@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Kategori;
+use App\ProdukLain;
+use File;
+use Image;
 
 class AdminKategoriController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,27 @@ class AdminKategoriController extends Controller
      */
     public function index()
     {
-        //
+        $data_kategori = Kategori::all();
+
+        return view('AdminKategori.indexKategori', compact('data_kategori'));
+    }
+
+    public function prodkategori($title){
+        $batas = 5;
+        $data_kategori = Kategori::all();
+        
+        
+
+        $kategori = Kategori::where('nama', $title)->first();
+        $produks = $kategori->produklains()->orderBy('id', 'desc')->paginate($batas);
+        $jumlah_produk = ProdukLain::sum('jml_unit');
+        $jenis_produk = ProdukLain::count();
+        $jumlah_harga = ProdukLain::sum('harga');
+        $no = $batas * ($produks->currentPage()-1);
+
+        return view('AdminKategori.indexProdukKat', compact(
+            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
+        );
     }
 
     /**
@@ -23,7 +51,9 @@ class AdminKategoriController extends Controller
      */
     public function create()
     {
-        //
+        $data_kategori = Kategori::all();
+        
+        return view('AdminKategori.create', compact('data_kategori'));
     }
 
     /**
@@ -34,7 +64,26 @@ class AdminKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required|string',
+            'foto' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'keterangan' => 'required|string',
+        ]);
+        
+        $kategori = new Kategori;
+        $kategori->nama = $request->nama;
+        $kategori->keterangan = $request->keterangan;
+        
+        $gambar = $request->foto;
+        $namafile = time().'.'.$gambar->getClientOriginalExtension();
+
+        Image::make($gambar)->save('thumb/'.$namafile);
+        $gambar->move('public/images/', $namafile);
+
+        $kategori->foto = $namafile;
+        $kategori->save();
+
+        return redirect('/adminKategori')->with('pesan','Data Kategori Berhasil di Tambahkan');
     }
 
     /**
@@ -56,7 +105,9 @@ class AdminKategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kategori = Kategori::find($id);
+        $data_kategori = Kategori::all();
+        return view('AdminKategori.edit', compact('kategori', 'data_kategori'));
     }
 
     /**
@@ -68,7 +119,25 @@ class AdminKategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kategori = Kategori::find($id);
+        $kategori->nama = $request->nama;
+        $kategori->keterangan = $request->keterangan;
+
+        $gambar = $request->foto;
+
+        if($gambar) {
+            File::delete('thumb/'.$kategori->gambar); //data gambar yang lama dihapus dulu
+            $namafile = $gambar->getClientOriginalName();
+            $data['foto'] = $namafile; // Update field photo
+    
+            Image::make($gambar)->save('thumb/'.$namafile);
+            $gambar->move('public/images/', $namafile);
+        }
+        
+        $kategori->foto = $namafile;
+
+        $kategori->update();
+        return redirect('/adminKategori')->with('pesan', 'Perubahan Data Kategori Berhasil diSimpan');
     }
 
     /**
@@ -79,6 +148,10 @@ class AdminKategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kategori = Kategori::find($id);
+        $kategori->delete();
+        File::delete('thumb/'.$kategori->foto);
+        File::delete('public/images/'.$kategori->foto);
+        return redirect('/adminPC')->with('pesan', 'Data Kategori Berhasil di Hapus');
     }
 }

@@ -6,11 +6,8 @@
      
     </head>
     <body>
-
-        
-
         <div class="container">
-            <h4>Tambah Produk PC</h4>
+            <h4>Tambah Pertanyaan Yang Sering Ditanyakan</h4>
             @if (count($errors)>0)
                 <ul class="alert alert-danger">
                     @foreach ($errors->all() as $error)

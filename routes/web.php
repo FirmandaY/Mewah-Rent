@@ -31,7 +31,7 @@ Route::get('/about', 'AboutController@about');
 
 Route::get('/faq', 'FaqController@faq');
 
-Route::get('/produk', 'ProdukController@produk');
+Route::post('/produk/ProdukLain/{title}', 'ProdukLainController@index')->name('user.produklain');
 
 Route::get('/tablet', 'TabletController@tablet');
 
@@ -51,6 +51,27 @@ Di bawah Ini Routes Buat Admin!
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+Di bawah Ini Routes Buat Admin Kategori!
+*/
+
+Route::get('/adminKategori', 'AdminKategoriController@index')->name('adminKategori');
+
+Route::get('/adminKategori/create', 'AdminKategoriController@create')->name('adminKategori.create');
+
+Route::post('/adminKategori', 'AdminKategoriController@store')->name('adminKategori.store');
+
+Route::post('/adminKategori/delete/{id}', 'AdminKategoriController@destroy')->name('adminKategori.destroy');
+
+Route::get('/adminKategori/edit/{id}', 'AdminKategoriController@edit')->name('adminKategori.edit');
+
+Route::post('/adminKategori/{id}', 'AdminKategoriController@update')->name('adminKategori.update');
+
+Route::get('/adminKategori/search', 'AdminKategoriController@search')->name('adminKategori.search');
+
+Route::get('/adminKategori/ProdukLain/{title}', 'AdminKategoriController@prodkategori')->name('kategori.produklain');
+
 
 /*
 Di bawah Ini Routes Buat Admin About!
@@ -121,3 +142,20 @@ Route::get('/adminLaptop/edit/{id}', 'ProdukLaptopController@edit')->name('admin
 Route::post('/adminLaptop/{id}', 'ProdukLaptopController@update')->name('adminLaptop.update');
 
 Route::get('/adminLaptop/search', 'ProdukLaptopController@search')->name('adminLaptop.search');
+
+/*
+Di bawah Ini Routes Buat Admin Produk Lain!
+*/
+Route::get('/adminProdukLain', 'AdminProdukLainController@index')->name('adminProdukLain');
+
+Route::get('/adminProdukLain/create', 'AdminProdukLainController@create')->name('adminProdukLain.create');
+
+Route::post('/adminProdukLain', 'AdminProdukLainController@store')->name('adminProdukLain.store');
+
+Route::post('/adminProdukLain/delete/{id}', 'AdminProdukLainController@destroy')->name('adminProdukLain.destroy');
+
+Route::get('/adminProdukLain/edit/{id}', 'AdminProdukLainController@edit')->name('adminProdukLain.edit');
+
+Route::post('/adminProdukLain/{id}', 'AdminProdukLainController@update')->name('adminProdukLain.update');
+
+Route::get('/adminProdukLain/search', 'AdminProdukLainController@search')->name('adminProdukLain.search');

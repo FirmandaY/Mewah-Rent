@@ -3,30 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
-use App\FAQ;
 use App\Kategori;
+use App\ProdukLain;
 use File;
 use Image;
 
-class AdminFAQController extends Controller
+class ProdukLainController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($title)
     {
         $batas = 5;
-        $data_faq = FAQ::orderBy('id','desc')->paginate($batas);
         $data_kategori = Kategori::all();
-        $faq = FAQ::all();
-        return view('AdminFAQ.indexFAQ', compact('data_faq', 'data_kategori', 'faq'));
+        
+        $kategori = Kategori::where('nama', $title)->first();
+        $produks = $kategori->produklains()->orderBy('id', 'desc')->paginate($batas);
+        $jumlah_produk = ProdukLain::sum('jml_unit');
+        $jenis_produk = ProdukLain::count();
+        $jumlah_harga = ProdukLain::sum('harga');
+        $no = $batas * ($produks->currentPage()-1);
+
+        return view('User.KatalogProdukLain.catalogPL', compact(
+            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
+        );
     }
 
     /**
@@ -36,8 +39,7 @@ class AdminFAQController extends Controller
      */
     public function create()
     {
-        $data_kategori = Kategori::all();
-        return view('AdminFAQ.create', compact('data_kategori'));
+        //
     }
 
     /**
@@ -48,17 +50,7 @@ class AdminFAQController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'pertanyaan' => 'required|string',
-            'jawaban' => 'required|string'
-        ]);
-        
-        $faq = new FAQ;
-        $faq->pertanyaan = $request->pertanyaan;
-        $faq->jawaban = $request->jawaban;
-        $faq->save();
-
-        return redirect('/adminFAQ')->with('pesan','Data FAQ Berhasil di Tambahkan');
+        //
     }
 
     /**
@@ -80,9 +72,7 @@ class AdminFAQController extends Controller
      */
     public function edit($id)
     {
-        $faq = FAQ::find($id);
-        $data_kategori = Kategori::all();
-        return view('AdminFAQ.edit', compact('faq', 'data_kategori'));
+        //
     }
 
     /**
@@ -94,12 +84,7 @@ class AdminFAQController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $faq = FAQ::find($id);
-        $faq->pertanyaan = $request->pertanyaan;
-        $faq->jawaban = $request->jawaban;
-        
-        $faq->update();
-        return redirect('/adminFAQ')->with('pesan', 'Perubahan Data FAQ Berhasil diSimpan');
+        //
     }
 
     /**
@@ -110,8 +95,6 @@ class AdminFAQController extends Controller
      */
     public function destroy($id)
     {
-        $faq = FAQ::find($id);
-        $faq->delete();
-        return redirect('/adminFAQ')->with('pesan', 'Data FAQ Berhasil di Hapus');
+        //
     }
 }

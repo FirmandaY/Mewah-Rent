@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Kategori;
+use File;
+use Image;
 
 class UserHomeController extends Controller
 {
@@ -13,8 +16,8 @@ class UserHomeController extends Controller
      */
     public function index()
     {
-        //
-        return view('User.index');
+        $data_kategori = Kategori::all();
+        return view('User.index', compact('data_kategori'));
     }
 
     /**

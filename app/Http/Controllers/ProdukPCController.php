@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\ProdukPC;
+use App\Kategori;
 use File;
 use Image;
 use Illuminate\Support\Str;
@@ -26,12 +27,13 @@ class ProdukPCController extends Controller
     {
         $batas = 5;
         $data_pc = ProdukPC::orderBy('id','desc')->paginate($batas);
+        $data_kategori = Kategori::all();
         $no = $batas * ($data_pc->currentPage()-1);
         $jumlah_pc = ProdukPC::sum('jml_unit');
         $jenis_pc = ProdukPC::count();
         $jumlah_harga = ProdukPC::sum('harga');
 
-        return view('Admin.indexpc', compact('data_pc','no','jumlah_pc','jenis_pc','jumlah_harga'));
+        return view('Admin.indexpc', compact('data_pc', 'data_kategori','no','jumlah_pc','jenis_pc','jumlah_harga'));
     }
 
     public function search(Request $request){
@@ -54,7 +56,8 @@ class ProdukPCController extends Controller
      */
     public function create()
     {
-        return view('Admin.create');
+        $data_kategori = Kategori::all();
+        return view('Admin.create', compact('data_kategori'));
     }
 
     /**
@@ -67,7 +70,7 @@ class ProdukPCController extends Controller
     {
         $this->validate($request,[
             'gambar' => 'required|image|mimes:jpeg,png,jpg|max:5120',
-            'merk' => 'required|string|max:30',
+            'merk' => 'required|string',
             'cpu' => 'required|string',
             'gpu' => 'required|string',
             'ram' => 'required|string',
@@ -123,7 +126,8 @@ class ProdukPCController extends Controller
     public function edit($id)
     {
         $pc = ProdukPC::find($id);
-        return view('Admin.edit', compact('pc'));
+        $data_kategori = Kategori::all();
+        return view('Admin.edit', compact('pc', 'data_kategori'));
     }
 
     /**

@@ -127,15 +127,11 @@
                                         <li>
                                             <a href="{{ route('adminLaptop') }}">Laptop</a>
                                         </li>
+                                        @foreach($data_kategori as $kategori)
                                         <li>
-                                            <a href="#">Tablet</a>
+                                            <a href="{{ route('kategori.produklain', $kategori->nama) }}">{{ $kategori->nama }}</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Proyektor</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Printer</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li>
@@ -145,6 +141,9 @@
                                     <ul class="collapse list-unstyled" id="blogSubmenu">
                                         <li>
                                             <a href="#">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('adminKategori') }}">Kategori</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('adminAbout') }}">About</a>

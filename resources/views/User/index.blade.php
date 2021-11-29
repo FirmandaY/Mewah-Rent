@@ -170,29 +170,17 @@
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
                </div>
-               <div class="col-md-4" onclick="window.location='https://www.google.com';">
-                  <div class="best_box">
-                     <h4>Light Projector</h4>
-                     <figure><img src="images/proyektor.png" alt="#"/></figure>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="best_box">
-                     <h4>Printer</h4>
-                     <figure><img src="images/printer.png" alt="#"/></figure>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                  </div>
-               </div>
-               <div class="col-md-4" >
-                  <a href="/tablet">
-                     <div class="best_box">
-                        <h4>Tablet</h4>
-                        <figure><img src="images/tablet.png" alt="#"/></figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                     </div>
-                  </a>
-               </div>
+               
+               @foreach($data_kategori as $kategori)
+               <form class="col-md-4" action="{{ route('user.produklain', $kategori->nama) }}" method="post">
+               @csrf
+                  <button class="best_box">
+                     <h4>{{ $kategori->nama }}</h4>
+                     <figure><img src="{{ asset('thumb/'.$kategori->foto) }}" alt="#"/></figure>
+                     <p>{!! $kategori->keterangan !!}</p>
+                  </button>
+               </form>
+               @endforeach
             </div>
          </div>
       </div>

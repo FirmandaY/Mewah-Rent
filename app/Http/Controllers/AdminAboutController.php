@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\About;
+use App\Kategori;
 use File;
 use Image;
 use Illuminate\Support\Str;
@@ -25,8 +26,9 @@ class AdminAboutController extends Controller
     {
         $batas = 5;
         $data_about = About::orderBy('id','desc')->paginate($batas);
+        $data_kategori = Kategori::all();
         $about = About::all();
-        return view('AdminAbout.indexAbout', compact('data_about', 'about'));
+        return view('AdminAbout.indexAbout', compact('data_about', 'data_kategori', 'about'));
     }
 
     /**
@@ -36,7 +38,8 @@ class AdminAboutController extends Controller
      */
     public function create()
     {
-        return view('AdminAbout.create');
+        $data_kategori = Kategori::all();
+        return view('AdminAbout.create', compact('data_kategori'));
     }
 
     /**
@@ -87,7 +90,8 @@ class AdminAboutController extends Controller
     public function edit($id)
     {
         $about = About::find($id);
-        return view('AdminAbout.edit', compact('about'));
+        $data_kategori = Kategori::all();
+        return view('AdminAbout.edit', compact('about', 'data_kategori'));
     }
 
     /**
