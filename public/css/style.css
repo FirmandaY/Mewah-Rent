@@ -34,20 +34,27 @@
   align-items : center;
   justify-content : center;
   flex-wrap : wrap;
-  padding : 30px;  
+  padding : 20px;  
 }
 
 .imageche{
      border-radius: 15px;
+     text-align: center;
+     font-size: 20px;
+}
+
+.img-che{
+     width: 250px;
+     height: 140px;
 }
 
 .containerche .cardche {
   position: relative;
-  max-width : 300px;
-  height : 215px;  
+  max-width : 400px;
+  height : 200px;  
   background-color : #fff;
   margin : 30px 10px;
-  padding : 20px 15px;
+  padding : 20px 15px ;
   
   display : flex;
   flex-direction : column;
@@ -56,13 +63,13 @@
   border-radius : 15px;
 }
 .containerche .cardche:hover {
-  height : 320px;    
+  height : 370px;    
 }
 
 
 .containerche .cardche .imageche {
   position : relative;
-  width : 260px;
+  width : 300px;
   height : 260px;
   top : -40%;
   box-shadow : 0 5px 20px rgba(0,0,0,0.2);

@@ -37,7 +37,7 @@ Route::get('/tablet', 'TabletController@tablet');
 
 Route::get('/produkPC', 'ProdukPCController@produkPC');
 
-Route::get('/produkDetail', 'ProdukDetailController@produkdetail');
+Route::get('/produk/produkDetail/{title}', 'ProdukDetailController@produkdetail')->name('user.produkdetail');
 
 /* Untuk Daftar Produk Semua PC */
 Route::get('/pcCatalog', 'PCCatalogController@index')->name('user.pc');

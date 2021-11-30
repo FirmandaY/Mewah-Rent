@@ -175,16 +175,18 @@
                   <div class = "containerche col-md-4">
                      <div class = "cardche">
                         <div class = "imageche">
-                           <figure><img src="{{ asset('thumb/'.$kategori->foto) }}" alt="#"/></figure>
+                           <figure><img class="img-che" src="{{ asset('thumb/'.$kategori->foto) }}" alt="#"/></figure>
+                           <strong>{{ $kategori->nama }}</strong>
                         </div>
+                       
                         <div class = "content">
                            <form action="{{ route('user.produklain', $kategori->nama) }}" method="post">
                            @csrf
                               <button class="btn btn-primary">
-                                 <h4>{{ $kategori->nama }}</h4>
+                                 <h4>Lihat Produk</h4>
                               </button>
                            </form>
-                           <h3>This is content</h3>
+                           <h3>{{ $kategori->nama }}</h3>
                            <p>{!! $kategori->keterangan !!}</p>
                         </div>
                      </div>    

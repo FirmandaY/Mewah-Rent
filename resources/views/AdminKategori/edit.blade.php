@@ -20,17 +20,17 @@
                     <form method="post" action="{{route('adminKategori.update',$kategori->id)}}" enctype="multipart/form-data">
                     @csrf
                         <p> 
-                            <label>Nama Kategori</label> <br>
+                            <label><strong>Nama Kategori</strong></label> <br>
                             <input class="boxisi" type="text" name="nama" value="{{ $kategori->nama }}">
                         </p>
                         <p> 
-                            <label>Foto Kategori</label> <br>
+                            <label><strong>Foto Kategori</strong></label> <br>
                             <input class="boxisi" type="file" name="foto">
                             <br>
-                            <i>Gambar disarankan landscape, 16:9, max:5MB</i>
+                            <i>*gambar disarankan landscape, 1920 x 1280, max:5MB</i>
                         </p>
                         <p> 
-                            <label>Keterangan</label> <br>
+                            <label><strong>Keterangan</strong></label> <br>
                             <textarea class="boxisi" type="textarea" name="keterangan" id="keterangan" value="">
                                 {{ $kategori->keterangan }}
                             </textarea>

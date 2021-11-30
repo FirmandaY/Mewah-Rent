@@ -73,7 +73,7 @@ class AdminKategoriController extends Controller
         $this->validate($request,[
             'nama' => 'required|string',
             'foto' => 'required|image|mimes:jpeg,png,jpg|max:5120',
-            'keterangan' => 'required|string',
+            'keterangan' => 'required|string|max:125',
         ]);
         
         $kategori = new Kategori;
@@ -125,6 +125,12 @@ class AdminKategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'nama' => 'required|string',
+            'foto' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'keterangan' => 'required|string|max:125',
+        ]);
+
         $kategori = Kategori::find($id);
         $kategori->nama = $request->nama;
         $kategori->keterangan = $request->keterangan;
