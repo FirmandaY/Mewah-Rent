@@ -170,17 +170,28 @@
                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
                   </div>
                </div>
-               
                @foreach($data_kategori as $kategori)
-               <form class="col-md-4" action="{{ route('user.produklain', $kategori->nama) }}" method="post">
-               @csrf
-                  <button class="best_box">
-                     <h4>{{ $kategori->nama }}</h4>
-                     <figure><img src="{{ asset('thumb/'.$kategori->foto) }}" alt="#"/></figure>
-                     <p>{!! $kategori->keterangan !!}</p>
-                  </button>
-               </form>
+              
+                  <div class = "containerche col-md-4">
+                     <div class = "cardche">
+                        <div class = "imageche">
+                           <figure><img src="{{ asset('thumb/'.$kategori->foto) }}" alt="#"/></figure>
+                        </div>
+                        <div class = "content">
+                           <form action="{{ route('user.produklain', $kategori->nama) }}" method="post">
+                           @csrf
+                              <button class="btn btn-primary">
+                                 <h4>{{ $kategori->nama }}</h4>
+                              </button>
+                           </form>
+                           <h3>This is content</h3>
+                           <p>{!! $kategori->keterangan !!}</p>
+                        </div>
+                     </div>    
+                  </div>
+               
                @endforeach
+              
             </div>
          </div>
       </div>

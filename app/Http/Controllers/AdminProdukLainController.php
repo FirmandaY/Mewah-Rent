@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Str;
 use App\ProdukLain;
 use App\Kategori;
+use App\GaleriPL;
 use File;
 use Image;
 
@@ -30,12 +32,27 @@ class AdminProdukLainController extends Controller
         $jenis_produk = ProdukLain::count();
         $jumlah_harga = ProdukLain::sum('harga');
 
-        
-
-
         return view('AdminProdukLain.indexProdukLain', compact(
             'data_produk', 'data_kategori','no','jumlah_produk','jenis_produk','jumlah_harga',
         ));
+    }
+
+    public function prodgaleri($title){
+        $batas = 5;
+        $data_kategori = Kategori::all();
+        
+        $produk = ProdukLain::where('merk', $title)->first();
+        $galeris = $produk->photos()->orderBy('id', 'desc')->paginate($batas);
+        $no = $batas * ($galeris->currentPage()-1);
+
+        $jumlah_gambar = $produk->photos()->count();
+
+        $jumlah_gambar_total = GaleriPL::count();
+       
+
+        return view('AdminKategori.indexProdukKat', compact(
+            'produk', 'galeri', 'jumlah_gambar', 'data_kategori', 'no')
+        );
     }
 
     public function search(Request $request){
@@ -90,6 +107,7 @@ class AdminProdukLainController extends Controller
         $produk->harga = $request->harga;
         $produk->jml_unit = $request->jml_unit;
         $produk->id_kategori = $request->id_kategori;
+        $produk->produklain_seo = Str::slug($request->merk);
 
         $foto = $request->gambar;
         $namafile = time().'.'.$foto->getClientOriginalExtension();
@@ -136,7 +154,7 @@ class AdminProdukLainController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $produk = ProdukPC::find($id);
+        $produk = ProdukLain::find($id);
         $produk->merk = $request->merk;
         $produk->display = $request->display;
         $produk->os = $request->os;
@@ -144,6 +162,7 @@ class AdminProdukLainController extends Controller
         $produk->harga = $request->harga;
         $produk->jml_unit = $request->jml_unit;
         $produk->id_kategori = $request->id_kategori;
+        $produk->produklain_seo = Str::slug($request->merk);
 
         $foto = $request->gambar;
 

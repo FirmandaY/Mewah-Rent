@@ -132,6 +132,9 @@
                                             <a href="{{ route('kategori.produklain', $kategori->nama) }}">{{ $kategori->nama }}</a>
                                         </li>
                                         @endforeach
+                                        <li>
+                                            <a href="{{ route('adminGaleriPL') }}">Galeri Produk</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>

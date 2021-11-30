@@ -23,24 +23,26 @@
                     <form method="post" action="{{route('adminProdukLain.update',$produk->id)}}" enctype="multipart/form-data">
                     @csrf
                         <p> 
-                            <label>Gambar</label> <br>
+                            <label><strong>Gambar</strong></label> <br>
                             <input class="boxisi" type="file" name="gambar" value="{{ url('/data_file/'.$produk->gambar) }}">
+                            <br>
+                            <i>*gambar maksimal 5MB | dimensi 1920 x 1080</i>
                         </p>
                         <p> 
-                            <label>Merk</label> <br>
+                            <label><strong>Merk</strong></label> <br>
                             <input class="boxisi" type="text" name="merk" value="{{ $produk->merk }}">
                         </p>
                         <p> 
-                            <label>Display</label> <br>
-                            <input class="boxisi" type="text" name="cpu" value="{{ $produk->display }}">
+                            <label><strong>Display</strong></label> <br>
+                            <input class="boxisi" type="text" name="display" value="{{ $produk->display }}">
                         </p>
                         <p> 
-                            <label>Sistem Operasi</label> <br>
+                            <label><strong>Sistem Operasi</strong></label> <br>
                             <input class="boxisi" type="text" name="os" value="{{ $produk->os }}">
                         </p>
                         <div class="form-group"> 
-                            <label for="id_kategori">Tipe Produk</label> <br>
-                            <select name="id_kategori" class="form-control">
+                            <label for="id_kategori"><strong>Tipe Produk</strong></label> <br>
+                            <select name="id_kategori" class="boxisi">
                                 <option value="" selected>Pilih Produk</option>
                                 @foreach($data_kategori as $kategori)
                                     <option value="{{$kategori->id}}">{{ $kategori->nama }}</option>
@@ -48,11 +50,22 @@
                             </select>
                         </div>
                         <p> 
-                            <label>Harga Sewa</label> <br>
+                            <label>Deskripsi Produk</label> <br>
+                            <textarea class="boxisi" type="textarea" name="deskripsi" id="deskripsi" value="">
+                                {{ $produk->deskripsi }}
+                            </textarea>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor 4
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'deskripsi' );
+                            </script>
+                        </p>
+                        <p> 
+                            <label><strong>Harga Sewa</strong></label> <br>
                             <input class="boxisi" type="text" name="harga" value="{{ $produk->harga }}">
                         </p>
                         <p> 
-                            <label>Jumlah Unit</label> <br>
+                            <label><strong>Jumlah Unit</strong></label> <br>
                             <input class="boxisi" type="text" name="jml_unit" value="{{ $produk->jml_unit }}">
                         </p>
                         <div>

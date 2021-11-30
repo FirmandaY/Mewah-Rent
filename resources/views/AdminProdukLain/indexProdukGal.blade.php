@@ -16,7 +16,7 @@
             <div class="content">
 
                 <div class="title m-b-md">
-                    Daftar {{ $kategori->nama }}
+                    Daftar {{ $produk->merk }}
                 </div>
 
                 <form action="{{ route('adminProdukLain.search') }}" method="get">
@@ -24,11 +24,11 @@
                     <button class="btn-search btn-outline-dark">
                         <i class="fa fa-search"></i>
                     </button>
-                    <input type="text" name="kata" class="form-searchbox" placeholder="Cari {{ $kategori->nama }}" >
+                    <input type="text" name="kata" class="form-searchbox" placeholder="Cari {{ $produk->merk }}" >
                 </form>
 
                 <table class="table table-striped" border="2" align="center">
-                    @foreach($produks as $data)
+                    @foreach($galeris as $data)
                     <thead>
                         <tr>
                             <th>No</th>
@@ -46,12 +46,12 @@
                                 <td rowspan="3">{{ ++$no }}</td>
                                 <td rowspan="3">{{ $data->id }}</td>
                                 <td rowspan="3">
-                                    <img src="{{ asset('thumb/'.$data->gambar) }}" style="width: 150px; height: 100px" > <br>
-                                    <a class="btn-lihat btn-success" href="{{ asset('thumb/'.$data->gambar) }}" data-lightbox="image-1" data-title="{{ $data->merk }}">
+                                    <img src="{{ asset('thumb/'.$data->foto) }}" style="width: 150px; height: 100px" > <br>
+                                    <a class="btn-lihat btn-success" href="{{ asset('thumb/'.$data->foto) }}" data-lightbox="image-1" data-title="{{ $data->merk }}">
                                         Lihat
                                     </a>
                                 </td>
-                                <td colspan="7">{!! $data->deskripsi !!}</td>
+                                <td colspan="7">{!! $data->keterangan !!}</td>
                                 <td>
                                     <form action="{{ route('adminProdukLain.destroy', $data->id) }}" method="post">
                                         @csrf

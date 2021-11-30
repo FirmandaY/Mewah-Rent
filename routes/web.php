@@ -159,3 +159,22 @@ Route::get('/adminProdukLain/edit/{id}', 'AdminProdukLainController@edit')->name
 Route::post('/adminProdukLain/{id}', 'AdminProdukLainController@update')->name('adminProdukLain.update');
 
 Route::get('/adminProdukLain/search', 'AdminProdukLainController@search')->name('adminProdukLain.search');
+
+Route::get('/adminProdukLain/GaleriPL/{title}', 'AdminProdukLainController@prodgaleri')->name('galeri.produklain');
+
+/*
+Di bawah Ini Routes Buat Admin Galeri Produk Lain!
+*/
+Route::get('/adminGaleriPL', 'AdminGaleriPLController@index')->name('adminGaleriPL');
+
+Route::get('/adminGaleriPL/create', 'AdminGaleriPLController@create')->name('adminGaleriPL.create');
+
+Route::post('/adminGaleriPL', 'AdminGaleriPLController@store')->name('adminGaleriPL.store');
+
+Route::post('/adminGaleriPL/delete/{id}', 'AdminGaleriPLController@destroy')->name('adminGaleriPL.destroy');
+
+Route::get('/adminGaleriPL/edit/{id}', 'AdminGaleriPLController@edit')->name('adminGaleriPL.edit');
+
+Route::post('/adminGaleriPL/{id}', 'AdminGaleriPLController@update')->name('adminGaleriPL.update');
+
+Route::get('/adminGaleriPL/search', 'AdminGaleriPLController@search')->name('adminGaleriPL.search');
