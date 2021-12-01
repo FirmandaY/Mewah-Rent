@@ -65,7 +65,7 @@
                                             <i class="fa fa-pencil"></i>Edit 
                                         </button>
                                     </form>
-                                    <form action="{{ route('adminProdukLain.edit', $data->id) }}" method="get">
+                                    <form action="{{ route('galeri.produklain', $data->merk) }}" method="get">
                                         @csrf
                                         <button class="btn btn-info" onClick="return confirm ('Yakin mau diubah?')"> 
                                             <i class="fa fa-pencil"></i>Galeri

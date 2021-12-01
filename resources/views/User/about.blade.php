@@ -10,7 +10,7 @@
          <div class="row">
             <div class="col-md-9 padding_right1">
                <!--ini adalah wadah untuk bentuk banner utama-->
-               <h1 class="titleAbout">About Us</h1>
+               <h1 class="titleMaster">About Us</h1>
                <!--<h1>Tempatnya Sewa</h1>-->
             </div>
          </div>

@@ -132,9 +132,6 @@
                                             <a href="{{ route('kategori.produklain', $kategori->nama) }}">{{ $kategori->nama }}</a>
                                         </li>
                                         @endforeach
-                                        <li>
-                                            <a href="{{ route('adminGaleriPL') }}">Galeri Produk</a>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -157,7 +154,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa fa-suitcase mr-3"></span> Gallery</a>
+                                    <a href="{{ route('adminGaleriPL') }}"><span class="fa fa-suitcase mr-3"></span> Gallery</a>
                                 </li>
                                 <li>
                                     <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>

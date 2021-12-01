@@ -50,8 +50,8 @@ class AdminProdukLainController extends Controller
         $jumlah_gambar_total = GaleriPL::count();
        
 
-        return view('AdminKategori.indexProdukKat', compact(
-            'produk', 'galeri', 'jumlah_gambar', 'data_kategori', 'no')
+        return view('AdminProdukLain.indexProdukGal', compact(
+            'produk', 'galeris', 'jumlah_gambar', 'data_kategori', 'no')
         );
     }
 

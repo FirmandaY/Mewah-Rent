@@ -16,7 +16,7 @@
             <div class="content">
 
                 <div class="title m-b-md">
-                    Daftar {{ $produk->merk }}
+                    Galeri {{ $produk->merk }}
                 </div>
 
                 <form action="{{ route('adminProdukLain.search') }}" method="get">
@@ -35,8 +35,8 @@
                             <th>id</th>
                             <th>Gambar</th>
                             
+                            <th colspan="7">Judul Gambar</th>
                             <th colspan="7">Deskripsi</th>
-                            
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -51,49 +51,23 @@
                                         Lihat
                                     </a>
                                 </td>
+                                <td colspan="7">{{ $data->nama_galeri }}</td>
                                 <td colspan="7">{!! $data->keterangan !!}</td>
                                 <td>
-                                    <form action="{{ route('adminProdukLain.destroy', $data->id) }}" method="post">
+                                    <form action="{{ route('adminGaleriPL.destroy', $data->id) }}" method="post">
                                         @csrf
                                         <button class="btn btn-danger" onClick="return confirm ('Yakin mau dihapus?')">
                                             <i class="fa fa-trash"></i>Hapus 
                                         </button>
                                     </form>
-                                    <form action="{{ route('adminProdukLain.edit', $data->id) }}" method="get">
+                                    <form action="{{ route('adminGaleriPL.edit', $data->id) }}" method="get">
                                         @csrf
                                         <button class="btn btn-info" onClick="return confirm ('Yakin mau diubah?')"> 
                                             <i class="fa fa-pencil"></i>Edit 
                                         </button>
                                     </form>
-                                    <form action="{{ route('adminProdukLain.edit', $data->id) }}" method="get">
-                                        @csrf
-                                        <button class="btn btn-info" onClick="return confirm ('Yakin mau diubah?')"> 
-                                            <i class="fa fa-pencil"></i>Galeri
-                                        </button>
-                                    </form>
                                 </td>
 
-                            
-                                
-                                    <tr>
-                                        <th>Merk</th>
-                                        <th>Kategori Produk</th>
-                                        <th>Display</th>
-                                        <th>Sistem Operasi</th>
-                                        <th>Harga Sewa</th>
-                                        <th>Jumlah Unit</th>
-                                    </tr>
-                                
-                                    <tr>
-                                
-                                        <td>{{ $data->merk }}</td>
-                                        <td>{{ $data->kategoris->nama }}</td>
-                                        <td>{{ $data->display }}</td>
-                                        <td>{{ $data->os }}</td>
-                                    
-                                        <td>{{ $data->harga }}</td>
-                                        <td>{{ $data->jml_unit }}</td>
-                                    </tr>
                                     <tr ><td colspan="11"></td></tr>
                             </tr>
                         
@@ -104,23 +78,13 @@
 
                     <tr>
                         <td colspan="13"><p align="center">
-                            <a class="btn btn-primary" href="{{ route('adminProdukLain.create') }}"> Tambah Produk </a>
+                            <a class="btn btn-primary" href="{{ route('adminGaleriPL.create') }}"> Tambah Produk </a>
                         </p></td>
                     </tr>
-                    <tr>
-                        <td rowspan="2" colspan="2">Keterangan</td>
-                        <td colspan='11'> 
-                            Jumlah Jenis Produk = {{ $jenis_produk }} Jenis <br>
-                            Jumlah Total Produk = {{ $jumlah_produk }} Unit
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td colspan='11'> Total Harga = {{ "Rp".number_format($jumlah_harga, 2, ',', '.') }} </td>
-                    </tr>
+                    
                 </table>
                 
-                <div>{{$produks->links()}}</div>
+                <div>{{$galeris->links()}}</div>
                 
                 <br> <br>
 

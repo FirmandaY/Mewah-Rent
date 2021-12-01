@@ -12,19 +12,21 @@ use Image;
 class ProdukDetailController extends Controller
 {
     //
-    public function produkdetail(){
+    public function produkdetail($title){
         $batas = 5;
         $data_kategori = Kategori::all();
+        $data_produk = ProdukLain::orderBy('id', 'desc');
         
-        $kategori = Kategori::where('nama', $title)->first();
-        $produks = $kategori->produklains()->orderBy('id', 'desc')->paginate($batas);
-        $jumlah_produk = ProdukLain::sum('jml_unit');
-        $jenis_produk = ProdukLain::count();
-        $jumlah_harga = ProdukLain::sum('harga');
-        $no = $batas * ($produks->currentPage()-1);
+        $produk = ProdukLain::where('produklain_seo', $title)->first();
+        $galeris = $produk->photos()->orderBy('id', 'desc')->paginate($batas);
+        
 
-        return view('User.KatalogProdukLain.catalogPL', compact(
-            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
+        $jumlah_produk = ProdukLain::sum('jml_unit');
+        
+        $no = $batas * ($galeris->currentPage()-1);
+
+        return view('User.KatalogDetail.produkDetail', compact(
+            'galeris' ,'produk', 'jumlah_produk', 'data_produk', 'data_kategori', 'no')
         );
     }
 }

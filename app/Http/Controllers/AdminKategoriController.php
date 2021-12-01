@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use App\Kategori;
 use App\ProdukLain;
 use File;
@@ -29,7 +30,7 @@ class AdminKategoriController extends Controller
     public function prodkategori($title){
         $batas = 5;
         $data_kategori = Kategori::all();
-        
+        $produklain = ProdukLain::all();
         
 
         $kategori = Kategori::where('nama', $title)->first();
@@ -46,7 +47,7 @@ class AdminKategoriController extends Controller
        
 
         return view('AdminKategori.indexProdukKat', compact(
-            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
+            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no', 'produklain')
         );
     }
 

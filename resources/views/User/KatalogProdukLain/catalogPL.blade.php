@@ -26,7 +26,7 @@
                     <h5 class="card-title">{{ $data->merk }}</h5>
                     <strong class="item-count">Ready : {{ $data->jml_unit }} Unit</strong>
                     <br>
-                    <a href="#" class="btn btn-primary">Lihat Detail</a>
+                    <a href="{{ route('user.produkdetail', $data->produklain_seo)}}" class="btn btn-primary">Lihat Detail</a>
                 </div>
             </div>
         </div>
