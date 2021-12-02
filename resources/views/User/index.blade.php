@@ -215,22 +215,23 @@
                   <div class="black_bg">
                      <div class="row">
                         <div class="col-md-7 ">
-                           <form class="main_form">
+                           <form class="main_form" method="post" action="{{route('adminPesan.store')}}">
+                           @csrf
                               <div class="row">
                                  <div class="col-md-12 ">
-                                    <input class="contactus" placeholder="Nama" type="text" name="Nmae">
+                                    <input class="contactus" placeholder="Nama" type="text" name="nama">
                                  </div>
                                  <div class="col-md-12">
-                                    <input class="contactus" placeholder="Nomor Telepon" type="text" name=" Phone number">
+                                    <input class="contactus" placeholder="Nomor Telepon" type="text" name="no_telpon">
                                  </div>
                                  <div class="col-md-12">
-                                    <input class="contactus" placeholder="Email" type="text" name="Email">
+                                    <input class="contactus" placeholder="Email" type="text" name="email">
                                  </div>
                                  <div class="col-md-12">
-                                    <textarea class="textarea" placeholder="Pesan" type="text" name="Message "> Message </textarea>
+                                    <textarea class="textarea" placeholder="Pesan" type="text" name="pesan_user"> Message </textarea>
                                  </div>
                                  <div class="col-sm-12">
-                                    <button class="send_btn">Send</button>
+                                    <button type="submit" class="send_btn">Send</button>
                                  </div>
                               </div>
                            </form>
@@ -248,23 +249,25 @@
       </div>
       <!-- end request -->
       <!-- two_box section -->
+      @foreach($data_promo as $promo)
       <div  class="two_box">
          <div class="container-fluid">
             <div class="row d_flex">
                <div class="col-md-6">
                   <div class="two_box_img">
-                     <figure><img src="images/macbookcolor.gif" alt="#"/></figure>
+                     <figure><img src="{{ asset('thumb/'.$promo->gambar_promo) }}" alt="#"/></figure>
                   </div>
                </div>
                <div class="col-md-6">
                   <div class="two_box_img">
-                     <h2><span class="offer">15% </span>0ffer everyday</h2>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                     <h2><span class="offer">{{ $promo->judul_promo }} </span></h2>
+                     <p>{!! $promo->deskripsi_promo !!}</p>
                   </div>
                </div>
             </div>
          </div>
       </div>
+      @endforeach
       <!-- end two_box section -->
       <!-- testimonial -->
       <div class="testimonial">
@@ -281,8 +284,9 @@
                   <div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
                      <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        @foreach($data_testimoni as $testimoni)
+                           <li data-target="#myCarousel" data-slide-to="{{ $testimoni->id }}"></li>
+                        @endforeach
                      </ol>
                      <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -291,42 +295,38 @@
                                  <div class="row">
                                     <div  class="col-md-12">
                                        <div class="test_box">
-                                          <h3>Michl ro</h3>
-                                          <p><i class="padd_rightt0"><img src="images/te1.png" alt="#"/></i>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some <i class="padd_leftt0"><img src="images/te2.png" alt="#"/></i> <br>form, by injected humour, or randomised words which don't look even slightly believable</p>
+                                          <h3>Mewah Rent</h3>
+                                          <p>
+                                             <i class="padd_rightt0"><img src="{{ asset('images/te1.png') }}" alt="#"/></i>
+                                                Baca Testimoni Para Peminjam 
+                                             <i class="padd_leftt0"><img src="{{ asset('images/te2.png') }}" alt="#"/></i> 
+                                          </p>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
+                        @foreach($data_testimoni as $testimoni)
                         <div class="carousel-item">
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
                                     <div  class="col-md-12">
                                        <div class="test_box">
-                                          <h3>Michl ro</h3>
-                                          <p><i class="padd_rightt0"><img src="images/te1.png" alt="#"/></i>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some <i class="padd_leftt0"><img src="images/te2.png" alt="#"/></i> <br>form, by injected humour, or randomised words which don't look even slightly believable</p>
+                                          
+                                          <h3>{{ $testimoni->sumber }}</h3>
+                                          <p>
+                                             {!! $testimoni->testimoni !!} 
+                                          </p>
+                                          
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption">
-                                 <div class="row">
-                                    <div  class="col-md-12">
-                                       <div class="test_box">
-                                          <h3>Michl ro</h3>
-                                          <p><i class="padd_rightt0"><img src="images/te1.png" alt="#"/></i>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some <i class="padd_leftt0"><img src="images/te2.png" alt="#"/></i> <br>form, by injected humour, or randomised words which don't look even slightly believable</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+                        @endforeach
                      </div>
                      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>

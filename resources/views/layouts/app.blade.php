@@ -151,6 +151,12 @@
                                         <li>
                                             <a href="{{ route('adminFAQ') }}">FAQ</a>
                                         </li>
+                                        <li>
+                                            <a href="{{ route('adminPromo') }}">Promo</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('adminTestimoni') }}">Testimoni</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -160,7 +166,7 @@
                                     <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+                                    <a href="{{ route('adminPesan') }}"><span class="fa fa-paper-plane mr-3"></span>Pesan</a>
                                 </li>
                                 </ul>
 

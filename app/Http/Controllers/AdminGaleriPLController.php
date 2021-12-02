@@ -112,6 +112,13 @@ class AdminGaleriPLController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'foto' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'nama_galeri' => 'required|string',
+            'keterangan' => 'required|string',
+            'id_produk' => 'required',
+        ]);
+
         $galeripl = GaleriPL::find($id);
         $galeripl->nama_galeri = $request->nama_galeri;
         $galeripl->keterangan = $request->keterangan;
@@ -148,7 +155,7 @@ class AdminGaleriPLController extends Controller
         $galeripl = GaleriPL::find($id);
         $galeripl->delete();
         File::delete('thumb/'.$galeripl->foto);
-        File::delete('public/images/'.$galeripl->gfoto);
+        File::delete('public/images/'.$galeripl->foto);
         return redirect('/adminGaleriPL')->with('pesan', 'Data Produk Berhasil di Hapus');
     }
 }

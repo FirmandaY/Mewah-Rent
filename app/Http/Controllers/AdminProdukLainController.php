@@ -95,7 +95,8 @@ class AdminProdukLainController extends Controller
             'os' => 'required|string',
             'deskripsi' => 'required|string|max:250',
             'harga' => 'required|string',
-            'jml_unit' => 'required|string'
+            'jml_unit' => 'required|string',
+            'id_kategori' => 'required',
         ]);
         
         $produk = new ProdukLain;
@@ -154,6 +155,17 @@ class AdminProdukLainController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'merk' => 'required|string',
+            'display' => 'required|string',
+            'os' => 'required|string',
+            'deskripsi' => 'required|string|max:250',
+            'harga' => 'required|string',
+            'jml_unit' => 'required|string',
+            'id_kategori' => 'required',
+        ]);
+
         $produk = ProdukLain::find($id);
         $produk->merk = $request->merk;
         $produk->display = $request->display;

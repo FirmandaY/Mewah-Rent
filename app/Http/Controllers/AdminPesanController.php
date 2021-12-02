@@ -4,33 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use App\Pesan;
 use App\Kategori;
-use App\ProdukLain;
 use File;
 use Image;
 
-class ProdukLainController extends Controller
+class AdminPesanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($title)
+    public function index()
     {
         $batas = 5;
+        $data_pesan = Pesan::orderBy('id','desc')->paginate($batas);
         $data_kategori = Kategori::all();
-        
-        $kategori = Kategori::where('nama', $title)->first();
-        $produks = $kategori->produklains()->orderBy('id', 'desc')->paginate($batas);
-        $jumlah_produk = ProdukLain::sum('jml_unit');
-        $jenis_produk = ProdukLain::count();
-        $jumlah_harga = ProdukLain::sum('harga');
-        $no = $batas * ($produks->currentPage()-1);
-
-        return view('User.KatalogProdukLain.catalogPL', compact(
-            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
-        );
+        $jml_pesan = Pesan::count('pesan_user');
+        $no = $batas * ($data_pesan->currentPage()-1);
+        return view('AdminPesan.indexPesan', compact('data_pesan', 'data_kategori','jml_pesan' , 'no'));
     }
 
     /**
@@ -96,6 +93,8 @@ class ProdukLainController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pesan = Pesan::find($id);
+        $pesan->delete();
+        return redirect('/adminPesan')->with('pesan', 'Pesan Berhasil di Hapus');
     }
 }

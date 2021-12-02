@@ -27,17 +27,17 @@ Route::get('/login', function () {
 
 Route::get('/', 'UserHomeController@index');
 
-Route::get('/about', 'AboutController@about');
+Route::get('/about', 'UserHomeController@about');
 
-Route::get('/faq', 'FaqController@faq');
+Route::get('/faq', 'UserHomeController@faq');
 
-Route::post('/produk/ProdukLain/{title}', 'ProdukLainController@index')->name('user.produklain');
+Route::post('/produk/ProdukLain/{title}', 'UserHomeController@produklain')->name('user.produklain');
 
 Route::get('/tablet', 'TabletController@tablet');
 
 Route::get('/produkPC', 'ProdukPCController@produkPC');
 
-Route::get('/produk/produkDetail/{title}', 'ProdukDetailController@produkdetail')->name('user.produkdetail');
+Route::get('/produk/produkDetail/{title}', 'UserHomeController@produkdetail')->name('user.produkdetail');
 
 /* Untuk Daftar Produk Semua PC */
 Route::get('/pcCatalog', 'PCCatalogController@index')->name('user.pc');
@@ -178,3 +178,42 @@ Route::get('/adminGaleriPL/edit/{id}', 'AdminGaleriPLController@edit')->name('ad
 Route::post('/adminGaleriPL/{id}', 'AdminGaleriPLController@update')->name('adminGaleriPL.update');
 
 Route::get('/adminGaleriPL/search', 'AdminGaleriPLController@search')->name('adminGaleriPL.search');
+
+/*
+Di bawah Ini Routes Buat Pesan Kritik/Saran!
+*/
+Route::get('/adminPesan', 'AdminPesanController@index')->name('adminPesan');
+
+Route::post('/adminPesan', 'PesanController@store')->name('adminPesan.store');
+
+Route::post('/adminPesan/delete/{id}', 'AdminPesanController@destroy')->name('adminPesan.destroy');
+
+/*
+Di bawah Ini Routes Buat Admin Promo!
+*/
+Route::get('/adminPromo', 'AdminPromoController@index')->name('adminPromo');
+
+Route::get('/adminPromo/create', 'AdminPromoController@create')->name('adminPromo.create');
+
+Route::post('/adminPromo', 'AdminPromoController@store')->name('adminPromo.store');
+
+Route::post('/adminPromo/delete/{id}', 'AdminPromoController@destroy')->name('adminPromo.destroy');
+
+Route::get('/adminPromo/edit/{id}', 'AdminPromoController@edit')->name('adminPromo.edit');
+
+Route::post('/adminPromo/{id}', 'AdminPromoController@update')->name('adminPromo.update');
+
+/*
+Di bawah Ini Routes Buat Admin Testimonial!
+*/
+Route::get('/adminTestimoni', 'AdminTestimoniController@index')->name('adminTestimoni');
+
+Route::get('/adminTestimoni/create', 'AdminTestimoniController@create')->name('adminTestimoni.create');
+
+Route::post('/adminTestimoni', 'AdminTestimoniController@store')->name('adminTestimoni.store');
+
+Route::post('/adminTestimoni/delete/{id}', 'AdminTestimoniController@destroy')->name('adminTestimoni.destroy');
+
+Route::get('/adminTestimoni/edit/{id}', 'AdminTestimoniController@edit')->name('adminTestimoni.edit');
+
+Route::post('/adminTestimoni/{id}', 'AdminTestimoniController@update')->name('adminTestimoni.update');

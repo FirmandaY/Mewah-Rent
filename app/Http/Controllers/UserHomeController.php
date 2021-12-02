@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use App\Kategori;
+use App\About;
+use App\ProdukLain;
+use App\Testimonial;
+use App\GaleriPL;
+use App\FAQ;
+use App\Promo;
 use File;
 use Image;
 
@@ -17,72 +24,56 @@ class UserHomeController extends Controller
     public function index()
     {
         $data_kategori = Kategori::all();
-        return view('User.index', compact('data_kategori'));
+        $data_testimoni = Testimonial::all();
+        $data_promo = Promo::all();
+        return view('User.index', compact('data_kategori', 'data_testimoni', 'data_promo'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function produklain($title)
     {
-        //
+        $batas = 9;
+        $data_kategori = Kategori::all();
+        
+        $kategori = Kategori::where('nama', $title)->first();
+        $produks = $kategori->produklains()->orderBy('id', 'desc')->paginate($batas);
+        $jumlah_produk = ProdukLain::sum('jml_unit');
+        $jenis_produk = ProdukLain::count();
+        $jumlah_harga = ProdukLain::sum('harga');
+        $no = $batas * ($produks->currentPage()-1);
+
+        return view('User.KatalogProdukLain.catalogPL', compact(
+            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
+        );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function produkdetail($title){
+        $batas = 5;
+        $data_kategori = Kategori::all();
+        $data_produk = ProdukLain::orderBy('id', 'desc');
+        
+        $produk = ProdukLain::where('produklain_seo', $title)->first();
+        $galeris = $produk->photos()->orderBy('id', 'desc')->paginate($batas);
+        
+
+        $jumlah_produk = ProdukLain::sum('jml_unit');
+        
+        $no = $batas * ($galeris->currentPage()-1);
+
+        return view('User.KatalogDetail.produkDetail', compact(
+            'galeris' ,'produk', 'jumlah_produk', 'data_produk', 'data_kategori', 'no')
+        );
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function about(){
+        $batas = 5;
+        $data_about = About::orderBy('id','desc')->paginate($batas);
+        $data_kategori = Kategori::all();
+        return view('User.about', compact('data_about', 'data_kategori'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function faq(){
+        $batas = 8;
+        $data_faq = FAQ::orderBy('id','desc')->paginate($batas);
+        return view('User.faq',compact('data_faq'));
     }
 }

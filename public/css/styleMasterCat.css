@@ -185,6 +185,18 @@
      
 /** end faq section **/
 
+/** Detail produk **/
+
+.description{
+     font-size: 15px;
+     text-align: left;
+     color: #000;
+}
+
+.tabledetail{
+     border: 2px;
+}
+
 html {
      scroll-behavior: smooth;
 }

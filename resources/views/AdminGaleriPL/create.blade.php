@@ -29,7 +29,7 @@
                         </p>
                         <p> 
                             <label>Judul Foto</label> <br>
-                            <input class="boxisi" type="text" name="nama_galeri" placeholder="ASUS, DELL, dsb.">
+                            <input class="boxisi" type="text" name="nama_galeri" placeholder="Contoh Produk dsb.">
                         </p>
                         <div class="form-group"> 
                             <label for="id_produk">Merk Produk</label> <br>

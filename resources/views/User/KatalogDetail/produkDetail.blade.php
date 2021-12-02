@@ -44,7 +44,7 @@
                            <div class="carousel-inner">
                               
                               <div class="carousel-item active">
-                                 <img class="d-block w-100" src="{{  asset('images/logomewah.png') }}" alt="First slide">
+                                 <img class="d-block w-100" src="{{  asset('images/logomewahfixdetail.png') }}" alt="First slide">
                               </div>
                               @foreach($galeris as $data)
                               <div class="carousel-item">
@@ -64,25 +64,36 @@
                         </div>
                      </div>
 
-                     <div class="aboutcomment1 col-md-6">
-                        <p align="left">
-                           Merk Produk: {{ $produk->merk }}
-                        </p>
-                        <p>
-                           Display: {{ $produk->display }}
-                        </p>
-                        <p>
-                           Sistem Operasi: {{ $produk->os }}
-                        </p>
-                        <p>
-                           Harga Sewa: {{ $produk->harga }}
-                        </p>
-                        <p>
-                           Jumlah Unit: {{ $produk->jml_unit }}
-                        </p>
-                        <p>
-                           {!! $produk->deskripsi !!}
-                        </p>
+                     <div class="description col-md-6">
+                        <table class="table table-striped" border="2" >
+                           <tr>
+                              <th>Merk Produk</th>
+                              <td>{{ $produk->merk }}</td>
+                           </tr>
+                           <tr>
+                              <th>Display</th>
+                              <td>{{ $produk->display }}</td>
+                           </tr>
+                           <tr>
+                              <th>Sistem Operasi</th>
+                              <td>{{ $produk->os }}</td>
+                           </tr>
+                           <tr>
+                              <th>Harga Sewa</th>
+                              <td>{{ $produk->harga }}</td>
+                           </tr>
+                           <tr>
+                              <th>Jumlah Unit</th>
+                              <td>{{ $produk->jml_unit }}</td>
+                           </tr>
+                           <tr>
+                              <th>Keterangan</th>
+                              <td>{!! $produk->deskripsi !!}</td>
+                           </tr>
+
+                           
+                        </table>
+                        
                      </div>
                   </div>
                   <br><br>
