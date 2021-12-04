@@ -22,8 +22,8 @@ class CreateProduklainTable extends Migration
             $table->string('os');
             $table->string('display');
             $table->text('deskripsi');
-            $table->string('harga');
-            $table->string('jml_unit');
+            $table->integer('harga');
+            $table->integer('jml_unit');
             $table->timestamps();
         });
     }

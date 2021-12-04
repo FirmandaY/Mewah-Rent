@@ -23,48 +23,52 @@
 </div>
 -->
 
-
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-xl-4">
-            <div class="card bg-c-blue order-card">
-                <div class="card-block">
-                    <h6 class="m-b-20">Orders Received</h6>
-                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
-                    <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
-                </div>
+        <div class="back-dash col-md-12">
+            <div class="title-dash m-b-md">
+                <img src="{{  asset('images/logomewahfix.png') }}" width="200px" height="150px"><br>
+                <p>Selamat Datang di Ruang Admin!</p>
+                
             </div>
-        </div>
-        
-        <div class="col-md-4 col-xl-4">
-            <div class="card bg-c-green order-card">
-                <div class="card-block">
-                    <h6 class="m-b-20">Orders Received</h6>
-                    <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>
-                    <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
-                </div>
+            <hr color="white">
+            <div class="m-b-md">
+                
             </div>
-        </div>
-        
-        <div class="col-md-4 col-xl-4">
-            <div class="card bg-c-yellow order-card">
-                <div class="card-block">
-                    <h6 class="m-b-20">Orders Received</h6>
-                    <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
-                    <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+            
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            
+                            <div class="row">
+                                @foreach($data_kategori as $kategori)
+                                <div class="col-md-6">
+                                    <div class="cardh bg-c-blue order-card">
+                                        <div class="card-block">
+                                            <h6 class="title-bar"><strong>{{ $kategori->nama }}</strong></h6>
+                                            <hr class="line-bar" color="white">
+                                            <h5>Jumlah Total Unit<i class="fa fa-cart-plus f-left"></i><span> : {{ $kategori->produklains->sum('jml_unit') }}</span></h5>
+                                            <p class="m-b-0">Jumlah Tipe (Merk)<span class="f-right">{{ $kategori->produklains->count('merk') }}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-4">
+                            daamn
+                        </diV>
+                    </div>
                 </div>
-            </div>
+            </section>
+            
+            
         </div>
-        
-        <div class="col-md-4 col-xl-4">
-            <div class="card bg-c-pink order-card">
-                <div class="card-block">
-                    <h6 class="m-b-20">Orders Received</h6>
-                    <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
-                    <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
-                </div>
-            </div>
-        </div>
-	</div>
-</div>
+    </div>
+         
+         
+   </div>
+
 @endsection

@@ -21,14 +21,14 @@
                      @foreach($data_kategori as $kategori)
                      <div class="col-md-4">
                            <div class="card" style="margin-bottom: 50px;">
-                              <img src="{{ asset('thumb/'.$kategori->foto) }}" class="card-img-top" alt="...">
+                              <img src="{{ asset('thumb/'.$kategori->foto) }}" class="card-img-top" width="200px" height="185px" alt="...">
                               <div class="card-body">
                                  <h5 class="card-title">{{ $kategori->nama }}</h5>
                                  <strong class="item-count">{!! $kategori->keterangan !!}</strong>
                                  
                                  <form action="{{ route('adminKategori.destroy', $kategori->id) }}" method="post">
                                     @csrf
-                                    <a class="btn-edit btn-primary" href="{{ route('adminKategori.edit', $kategori->id) }}"
+                                    <a class="btn-edit btn-warning" href="{{ route('adminKategori.edit', $kategori->id) }}"
                                        style="padding-right:8px; padding-left:8px;"
                                     > 
                                        Edit

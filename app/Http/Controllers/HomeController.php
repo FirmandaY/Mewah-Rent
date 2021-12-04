@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use App\Kategori;
+use App\ProdukLain;
+use File;
+use Image;
+
 
 class HomeController extends Controller
 {
@@ -24,7 +29,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $batas = 5;
         $data_kategori = Kategori::all();
-        return view('home', compact('data_kategori'));
+        $produklain = ProdukLain::all();
+
+        $jumlah_harga = ProdukLain::sum('harga');
+        $jumlah_produk = ProdukLain::sum('jml_unit');
+        $jenis_produk = ProdukLain::count();
+       
+
+        return view('home', compact(
+            'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'produklain')
+        );
     }
 }

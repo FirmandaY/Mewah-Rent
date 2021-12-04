@@ -33,7 +33,7 @@
                            
                            <form action="{{ route('adminFAQ.destroy', $faq->id) }}" method="post">
                               @csrf
-                              <a class="btn-edit btn-primary" href="{{ route('adminFAQ.edit', $faq->id) }}"> 
+                              <a class="btn-edit btn-warning" href="{{ route('adminFAQ.edit', $faq->id) }}"> 
                                  Edit FAQ 
                                  <i class="fa fa-pencil"></i>
                               </a>

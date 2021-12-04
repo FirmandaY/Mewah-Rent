@@ -147,29 +147,6 @@
                </div>
             </div>
             <div class="row">
-               <div class="col-md-4">
-                  <a href="{{ route('user.pc') }}">
-                     <div class="best_box">
-                        <h4>Computer (PC)</h4>
-                        <figure><img src="images/image.png" alt="#"/></figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                     </div>
-                  </a>
-               </div>
-               <div class="col-md-4">
-                  <div class="best_box">
-                     <h4>LED TV</h4>
-                     <figure><img src="images/tv_led.png" alt="#"/></figure>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="best_box">
-                     <h4>Laptop</h4>
-                     <figure><img src="images/laptop.png" alt="#"/></figure>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit</p>
-                  </div>
-               </div>
                @foreach($data_kategori as $kategori)
               
                   <div class = "containerche col-md-4">
@@ -204,9 +181,9 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Kritik dan Saran</h2>
-                     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>
-                     incididunt ut labore et dolore magna</span>
+                     <h2>Kotak Saran</h2>
+                     <span>Isikan Pesan Masukan Anda Pada Formulir Berikut <br>
+                     Masukan Anda Akan Membantu Meningkatkan Pelayanan Kami Menjadi Lebih Baik Lagi</span>
                   </div>
                </div>
             </div>

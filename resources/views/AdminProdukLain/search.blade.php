@@ -46,7 +46,8 @@
                                     </form>
                                     <form action="{{ route('adminProdukLain.edit', $data->id) }}" method="get">
                                         @csrf
-                                        <button class="btn btn-info" onClick="return confirm ('Yakin mau diubah?')"> 
+                                        <button class="btn btn-warning" onClick="return confirm ('Yakin mau diubah?')"
+                                        style="padding-right: 20px; padding-left: 20px; margin-top:5px;"> 
                                             <i class="fa fa-pencil"></i>Edit 
                                         </button>
                                     </form>
@@ -85,12 +86,8 @@
                         </td>
                         
                     </tr>
-                    <tr>
-                        <td colspan='11'> Total Harga = {{ "Rp".number_format($jumlah_harga, 2, ',', '.') }} </td>
-                    </tr>
             </table> 
             <div>{{$data_produk->links()}}</div>
-            <div><strong>Jumlah PC: {{ $jumlah_produk }}</strong></div>
             <br> <br>
 
             @else

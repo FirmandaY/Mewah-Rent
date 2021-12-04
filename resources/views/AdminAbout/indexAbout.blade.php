@@ -34,7 +34,7 @@
                      
                      <form action="{{ route('adminAbout.destroy', $about->id) }}" method="post">
                         @csrf
-                        <a class="btn-edit btn-primary" href="{{ route('adminAbout.edit', $about->id) }}"> 
+                        <a class="btn-edit btn-warning" href="{{ route('adminAbout.edit', $about->id) }}"> 
                            Edit About 
                            <i class="fa fa-pencil"></i>
                         </a>

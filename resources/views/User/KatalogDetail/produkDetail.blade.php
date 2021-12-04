@@ -80,7 +80,7 @@
                            </tr>
                            <tr>
                               <th>Harga Sewa</th>
-                              <td>{{ $produk->harga }}</td>
+                              <td>{{ "Rp".number_format($produk->harga, 2, ',', '.') }}</td>
                            </tr>
                            <tr>
                               <th>Jumlah Unit</th>

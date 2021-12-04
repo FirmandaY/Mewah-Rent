@@ -61,14 +61,15 @@
                                     </form>
                                     <form action="{{ route('adminProdukLain.edit', $data->id) }}" method="get">
                                         @csrf
-                                        <button class="btn btn-info" onClick="return confirm ('Yakin mau diubah?')"> 
+                                        <button class="btn btn-warning" onClick="return confirm ('Yakin mau diubah?')" 
+                                        style="padding-right: 20px; padding-left: 20px; margin-top:5px;"> 
                                             <i class="fa fa-pencil"></i>Edit 
                                         </button>
                                     </form>
                                     <form action="{{ route('galeri.produklain', $data->merk) }}" method="get">
                                         @csrf
-                                        <button class="btn btn-info"> 
-                                            <i class="fa fa-pencil"></i>Galeri
+                                        <button class="btn btn-info"  style="margin-top:5px;"> 
+                                            <i class="fa fa-picture-o"></i>Galeri
                                         </button>
                                     </form>
                                 </td>
@@ -91,7 +92,7 @@
                                         <td>{{ $data->display }}</td>
                                         <td>{{ $data->os }}</td>
                                     
-                                        <td>{{ $data->harga }}</td>
+                                        <td>{{ "Rp".number_format($data->harga, 2, ',', '.') }}</td>
                                         <td>{{ $data->jml_unit }}</td>
                                     </tr>
                                     <tr ><td colspan="11"></td></tr>
