@@ -347,6 +347,26 @@ height:110px;
   
 /** end faq section **/
 
+/** edit formulir section **/
+
+.preview-box{
+  width: 300px;
+  min-height: 100px;
+  border: 2px solid #000;
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #000;
+}
+
+.preview-img{
+  display: none;
+  width: 100%;
+}
+
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;

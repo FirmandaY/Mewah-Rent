@@ -21,7 +21,7 @@
         @foreach($produks as $data)
         <div class="col-md-4">
             <div class="card" style="margin-bottom: 50px;">
-                <img src="{{ asset('thumb/'.$data->gambar) }}" class="card-img-top" alt="...">
+                <img src="{{ asset('thumb/'.$data->gambar) }}" class="card-img-top" alt="..." width="200px" height="175px">
                 <div class="card-body">
                     <h5 class="card-title">{{ $data->merk }}</h5>
                     <strong class="item-count">Ready : {{ $data->jml_unit }} Unit</strong>

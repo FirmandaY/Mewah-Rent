@@ -94,7 +94,7 @@
          </div>
       </header>
       <!-- end banner -->
-      <!-- about -->
+      <!-- konten -->
       <div id="about" class="about">
          <div class="container">
             <div class="row">
