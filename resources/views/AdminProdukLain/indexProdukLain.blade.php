@@ -61,7 +61,7 @@
                                     </form>
                                     <form action="{{ route('adminProdukLain.edit', $produk->id) }}" method="get">
                                         @csrf
-                                        <button class="btn btn-info" onClick="return confirm ('Yakin mau diubah?')"
+                                        <button class="btn btn-warning" onClick="return confirm ('Yakin mau diubah?')"
                                         style="padding-right:20px; padding-left:20px; margin-top:5px;"> 
                                             <i class="fa fa-pencil"></i>Edit 
                                         </button>

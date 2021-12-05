@@ -24,9 +24,13 @@
                     @csrf
                         <p> 
                             <label><strong>Gambar</strong></label> <br>
-                            <input class="boxisi" type="file" name="gambar" value="{{ url('/data_file/'.$produk->gambar) }}">
+                            <input id="inpFile" class="boxisi" type="file" name="gambar" value="{{ url('/data_file/'.$produk->gambar) }}">
                             <br>
                             <i>*gambar maksimal 5MB | dimensi 1920 x 1080</i>
+                            <div class="preview-box" id="imagePreview">
+                                <img src="" class="preview-img" alt="Image Preview">
+                                <span class="preview-text">Image Preview</span>
+                            </div>
                         </p>
                         <p> 
                             <label><strong>Merk</strong></label> <br>

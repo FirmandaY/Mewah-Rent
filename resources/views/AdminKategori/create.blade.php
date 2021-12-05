@@ -25,9 +25,13 @@
                         </p>
                         <p> 
                             <label><strong>Foto Kategori</strong></label> <br>
-                            <input class="boxisi" type="file" name="foto">
+                            <input id="inpFile" class="boxisi" type="file" name="foto">
                             <br>
-                            <i>Gambar disarankan landscape, 1920 x 1280, max:5MB</i>
+                            <i>*gambar disarankan landscape, 1920 x 1280, max:5MB</i>
+                            <div class="preview-box" id="imagePreview">
+                                <img src="" class="preview-img" alt="Image Preview">
+                                <span class="preview-text">Image Preview</span>
+                            </div>
                         </p>
                         <p> 
                             <label><strong>Keterangan</strong></label> <br>

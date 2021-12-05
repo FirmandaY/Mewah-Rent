@@ -53,10 +53,9 @@
                         <!-- Left Side Of Navbar -->
                         @if(Auth::check())
                             <ul class="navbar-nav mr-auto">
-                                <li><a class="linkin" href="/home">Home Admin</a></li>
-                                <li><a class="linkin" href="#">About</a></li>
-                                <li><a class="linkin" href="#">FAQ</a></li>
-                                <li><a class="linkin" href="#">Produk</a></li>
+                                <li><a class="linkin" href="{{ route('landingPage') }}">Home</a></li>
+                                <li><a class="linkin" href="{{ route('aboutUser') }}">About</a></li>
+                                <li><a class="linkin" href="{{ route('faqUser') }}">FAQ</a></li>
                             </ul>
                         @endif
                         <!-- Right Side Of Navbar -->
@@ -104,17 +103,16 @@
                             </button>
                         </div>
                         <div class="p-4">
-                            <h1><a href="index.html" class="logo">Mewah-Rent <span>Rental Agency</span></a></h1>
+                            <h1><a href="{{ route('home') }}" class="logo">
+                                Mewah-Rent <span>Rental Agency</span></a>
+                            </h1>
                             <ul class="list-unstyled components mb-5">
                                 <li class="active">
-                                    <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="fa fa-user mr-3"></span> About</a>
+                                    <a href="/home"><span class="fa fa-home mr-3"></span>Dashboard</a>
                                 </li>
                                 <li>
                                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                                        <span class="fa fa-briefcase mr-3"></span> Products
+                                        <span class="fa fa-briefcase mr-3"></span> Produk
                                     </a>
                                     <ul class="collapse list-unstyled" id="homeSubmenu">
                                         @foreach($data_kategori as $kategori)
@@ -153,15 +151,15 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('adminGaleriPL') }}"><span class="fa fa-suitcase mr-3"></span> Gallery</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+                                    <a href="{{ route('adminGaleriPL') }}"><span class="fa fa-suitcase mr-3"></span> Galeri</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('adminPesan') }}"><span class="fa fa-paper-plane mr-3"></span>Pesan</a>
                                 </li>
-                                </ul>
+                                <li>
+                                    <a href="{{ route('adminPesan') }}"><span class="fa fa-question-circle-o mr-3"></span>Bantuan</a>
+                                </li>
+                            </ul>
 
                             <div class="footer">
                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -187,6 +185,33 @@
             
             
         </div>
+
+        <script>
+            const inpFile = document.getElementById("inpFile");
+            const previewContainer = document.getElementById("imagePreview");
+            const previewImage = previewContainer.querySelector(".preview-img");
+            const previewDefaultText = previewContainer.querySelector(".preview-text");
+
+            inpFile.addEventListener("change", function(){
+                const file = this.files[0];
+
+                if(file){
+                    const reader = new FileReader();
+                    previewDefaultText.style.display = "none";
+                    previewImage.style.display = "block"
+
+                    reader.addEventListener("load", function(){
+                        previewImage.setAttribute("src", this.result);
+                    });
+                    reader.readAsDataURL(file);
+                }else{
+                    previewDefaultText.style.display = null;
+                    previewImage.style.display = null;
+                    previewImage.setAttribute("src", "")
+
+                }
+            });
+        </script>
 
         <script src="{{ asset('sidebar/js/jquery.min.js') }}"></script>
         <script src="{{ asset('sidebar/js/popper.js') }}"></script>

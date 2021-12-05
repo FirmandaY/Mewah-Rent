@@ -24,9 +24,13 @@
                     @csrf
                         <p> 
                             <label><strong>Gambar</strong></label> <br>
-                            <input class="boxisi" type="file" name="gambar_promo" value="{{ asset('thumb/'.$promo->gambar_promo) }}">
+                            <input id="inpFile" class="boxisi" type="file" name="gambar_promo" value="{{ asset('thumb/'.$promo->gambar_promo) }}">
                             <br>
                             <i>*gambar maksimal 5MB | dimensi 1920 x 1280</i>
+                            <div class="preview-box" id="imagePreview">
+                                <img src="" class="preview-img" alt="Image Preview">
+                                <span class="preview-text">Image Preview</span>
+                            </div>
                         </p>
                         <p> 
                             <label><strong>Judul Gambar</strong></label> <br>

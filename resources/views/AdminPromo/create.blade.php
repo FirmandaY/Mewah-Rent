@@ -24,8 +24,12 @@
                     @csrf
                         <p> 
                             <label>Gambar</label> <br>
-                            <input class="boxisi" type="file" name="gambar_promo">
+                            <input id="inpFile" class="boxisi" type="file" name="gambar_promo">
                             <i>*gambar maksimal 5MB | dimensi 1920 x 1280</i>
+                            <div class="preview-box" id="imagePreview">
+                                <img src="" class="preview-img" alt="Image Preview">
+                                <span class="preview-text">Image Preview</span>
+                            </div>
                         </p>
                         <p> 
                             <label>Judul Promo</label> <br>

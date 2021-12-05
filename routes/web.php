@@ -25,17 +25,13 @@ Route::get('/login', function () {
 */
 
 
-Route::get('/', 'UserHomeController@index');
+Route::get('/', 'UserHomeController@index')->name('landingPage');
 
-Route::get('/about', 'UserHomeController@about');
+Route::get('/about', 'UserHomeController@about')->name('aboutUser');
 
-Route::get('/faq', 'UserHomeController@faq');
+Route::get('/faq', 'UserHomeController@faq')->name('faqUser');
 
 Route::post('/produk/ProdukLain/{title}', 'UserHomeController@produklain')->name('user.produklain');
-
-Route::get('/tablet', 'TabletController@tablet');
-
-Route::get('/produkPC', 'ProdukPCController@produkPC');
 
 Route::get('/produk/produkDetail/{title}', 'UserHomeController@produkdetail')->name('user.produkdetail');
 

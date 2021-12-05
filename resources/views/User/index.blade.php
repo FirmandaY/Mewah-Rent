@@ -10,6 +10,7 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>Mewah Rent</title>
+      <link rel="shortcut icon" href="{{asset('images/logomewahicon.png')}}">
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -20,7 +21,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="{{ asset('images/fevicon.png') }}" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.min.css')}}">
       <!-- Tweaks for older IEs-->
@@ -49,7 +50,7 @@
                         <div class="full">
                            <div class="center-desk">
                               <div class="logo">
-                                 <a href="/"><img src="images/logomewahfix.png" alt="#" /></a>
+                                 <a href="/"><img src="{{ asset('images/logomewahfix.png') }}" alt="#" /></a>
                               </div>
                            </div>
                         </div>
@@ -92,7 +93,7 @@
                   <div class="row d_flex">
                      <div class="col-md-4">
                         <div class="text-bg">
-                           <h3>Get to own your<br>Computer here!!</h3>
+                           <h3>Selamat Datang<br>di Rental Mewah</h3>
                            <strong>Peminjaman dan Persewaan Komputer</strong>
                            <span>Multimedia ? Juga ada!</span>
                            <a href="#product">Sewa Sekarang</a>
@@ -100,7 +101,7 @@
                      </div>
                      <div class="col-md-8">
                         <div class="text-img"> <!--ini adalah wadah untuk bentuk banner utama-->
-                           <figure><img src="images/homepic1.png" alt="#"/></figure>
+                           <figure><img src="{{ asset('images/homepic1.png') }}" alt="#"/></figure>
                         </div>
                      </div>
                   </div>
@@ -123,7 +124,7 @@
             <div class="row">
                <div class="col-md-8 offset-md-2 ">
                   <div class="about_box ">
-                     <figure><img src="images/HomeAbout.png" width="500" height="350" alt="#"/></figure>
+                     <figure><img src="{{ asset('images/HomeAbout.png') }}" width="500" height="350" alt="#"/></figure>
                      <a class="read_more" href="/about">Read more</a>
                   </div>
                </div>
@@ -215,7 +216,7 @@
                         </div>
                         <div class="col-md-5">
                            <div class="mane_img">
-                              <figure><img src="images/reqpict.png" alt="#"/></figure>
+                              <figure><img src="{{ asset('images/reqpict.png') }}" alt="#"/></figure>
                            </div>
                         </div>
                      </div>
@@ -333,14 +334,14 @@
                   <div class="col-md-6">
                      <div class="cont_call">
                         <h3><strong class="multi">Contact Us On</strong></h3><br>
-                        <h5><strong class="contact"><img src="images/pin.png" height="30" width="30">
+                        <h5><strong class="contact"><img src="{{ asset('images/pin.png') }}" height="30" width="30">
                            Jl. Lembarawa, Sawah, Krasak, Kec. Brebes, Kabupaten Brebes, Jawa Tengah 52219
                         </h5>
-                        <h5><strong class="contact"><img src="images/telephone.png" height="30" width="30">
+                        <h5><strong class="contact"><img src="{{ asset('images/telephone.png') }}" height="30" width="30">
                            0823-2288-1233
                            </strong>
                         </h5>
-                        <h5><strong class="contact"><img src="images/email.png" height="30" width="30">
+                        <h5><strong class="contact"><img src="{{ asset('images/email.png') }}" height="30" width="30">
                            mewahrent@gmail.com
                            </strong>
                         </h5>
