@@ -10,7 +10,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Mewah Rent - About </title>
+      <title>Mewah Rent | Details </title>
+      <link rel="shortcut icon" href="{{asset('images/logomewahicon.png')}}">
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -21,7 +22,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="{{ asset('images/fevicon.png') }}" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
       <!-- Tweaks for older IEs-->
@@ -37,7 +38,7 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+         <div class="loader"><img src="{{ asset('images/loading.gif') }}" alt="#" /></div>
       </div>
       <!-- end loader -->
       <!-- header -->
@@ -118,14 +119,14 @@
                   <div class="col-md-6">
                      <div class="cont_call">
                         <h3><strong class="multi">Contact Us On</strong></h3><br>
-                        <h5><strong class="contact"><img src="images/pin.png" height="30" width="30">
+                        <h5><strong class="contact"><img src="{{ asset('images/pin.png') }}" height="30" width="30">
                            Jl. Lembarawa, Sawah, Krasak, Kec. Brebes, Kabupaten Brebes, Jawa Tengah 52219
                         </h5>
-                        <h5><strong class="contact"><img src="images/telephone.png" height="30" width="30">
+                        <h5><strong class="contact"><img src="{{ asset('images/telephone.png') }}" height="30" width="30">
                            0823-2288-1233
                            </strong>
                         </h5>
-                        <h5><strong class="contact"><img src="images/email.png" height="30" width="30">
+                        <h5><strong class="contact"><img src="{{ asset('images/email.png') }}" height="30" width="30">
                            mewahrent@gmail.com
                            </strong>
                         </h5>

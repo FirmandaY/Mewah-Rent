@@ -10,7 +10,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Mewah Rent - About </title>
+      <title>Mewah Rent | Produk </title>
+      <link rel="shortcut icon" href="{{asset('images/logomewahicon.png')}}">
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -21,9 +22,9 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="{{ asset('images/fevicon.png') }}" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}"> 
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -104,7 +105,7 @@
       </div>
       <!--WA Me-->
       <div class="wame-box">
-         <a class="wame" href="#">
+         <a class="wame" href="https://wa.me/6282322881233">
             <img class="img-wame" src="{{ asset('images/WhatsApp-logo.png') }}" height="25" width="25">
             Contact Us On WhatsApp!
          </a>

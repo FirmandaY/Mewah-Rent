@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Carbon\Carbon;
 use App\Kategori;
 use App\ProdukLain;
 use App\Pesan;
@@ -30,6 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $current_time = Carbon::now()->toDateTimeString();
         $batas = 5;
         $data_kategori = Kategori::all();
         $produklain = ProdukLain::all();

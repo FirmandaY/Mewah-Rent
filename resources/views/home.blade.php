@@ -58,9 +58,12 @@
                                     <div class="cardh bg-c-blue order-card">
                                         <div class="card-block">
                                             <h6 class="title-bar"><strong>{{ $kategori->nama }}</strong></h6>
+                                            <img src="{{ asset('thumb/'.$kategori->foto) }}" class="card-img-top" width="200px" height="185px" alt="...">
                                             <hr class="line-bar" color="white">
                                             <h5>Jumlah Total Unit<i class="fa fa-cart-plus f-left"></i><span> : {{ $kategori->produklains->sum('jml_unit') }}</span></h5>
                                             <p class="m-b-0">Jumlah Tipe (Merk)<span class="f-right">{{ $kategori->produklains->count('merk') }}</span></p>
+
+                                            <a class="btn btn-success" href="{{ route('kategori.produklain', $kategori->nama) }}">Lihat {{ $kategori->nama }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -70,13 +73,15 @@
                         </div>
                         <div class="box-pesan col-md-4">
                             <div class="pesan-dash" >
-                                <h6 class="title-bar" >Pesan Customer</h6>
+                                <h6 class="title-bar" >Pesan Customer <br> Hari Ini</h6>
+                                <i class="fa fa-commenting-o" style="font-size:36px; "></i>
                             </div>
                             @foreach($data_pesan as $pesan)
+                            
                             <div class="isi-pesan-dash">
-                                <p><strong><i>{{ $pesan->created_at }}</strong></i></p>
-                                <i class="fa fa-envelope-o"> </i>
-                                <p><strong>{{ $pesan->nama }}</strong> Mengatakan: </p>
+                            <i class="envelope-symbol fa fa-envelope-o"> </i>
+                                <p><h5>{{ $pesan->nama }}</h5><i>{{ $pesan->created_at->diffForHumans() }}</i></p>
+                                
                                 <p class="pesan-inti" > <i> "{{ $pesan->pesan_user }}" </i></p>
                             </div>
                             @endforeach

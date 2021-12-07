@@ -31,7 +31,10 @@
                                 <td>{{ $pesan->no_telpon }}</td>
                                 <td>{{ $pesan->email }}</td>
                                 <td>{{ $pesan->pesan_user }}</td>
-                                <td>{{ $pesan->created_at->format('d-m-Y') }}</td>
+                                <td>
+                                    {{ $pesan->created_at->format('l, d-m-Y') }} <br>
+                                    {{ $pesan->created_at->diffForHumans() }}
+                                </td>
                                 <td>
                                     <form action="{{ route('adminPesan.destroy', $pesan->id) }}" method="post">
                                         @csrf
