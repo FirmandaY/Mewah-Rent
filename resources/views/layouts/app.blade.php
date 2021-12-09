@@ -108,7 +108,7 @@
                             </h1>
                             <ul class="list-unstyled components mb-5">
                                 <li class="active">
-                                    <a href="/home"><span class="fa fa-home mr-3"></span>Dashboard</a>
+                                    <a href="{{ route('home') }}"><span class="fa fa-home mr-3"></span>Dashboard</a>
                                 </li>
                                 <li>
                                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">

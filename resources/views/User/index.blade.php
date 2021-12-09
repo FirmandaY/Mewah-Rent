@@ -159,7 +159,7 @@
                        
                         <div class = "content">
                            <form action="{{ route('user.produklain', $kategori->nama) }}" method="post">
-                           @csrf
+                           {{ csrf_field() }}
                               <button class="btn btn-primary">
                                  <h4>Lihat Produk</h4>
                               </button>
