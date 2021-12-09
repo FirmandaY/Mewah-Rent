@@ -1,1 +1,1 @@
-<?php header('Location: public/');
+<?php header('Location: resources/views/user/index.blade.php');
