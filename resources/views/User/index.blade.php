@@ -159,7 +159,7 @@
                        
                         <div class = "content">
                            <form action="{{ route('user.produklain', $kategori->nama) }}" method="post">
-                           {{ csrf_field }}
+                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
                               <button class="btn btn-primary">
                                  <h4>Lihat Produk</h4>
                               </button>
