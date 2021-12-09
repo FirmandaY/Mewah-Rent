@@ -58,7 +58,7 @@
                         </p>
                         <div>
                             <button class="btn btn-warning" type="submit">Simpan</button>
-                            <a class="btn btn-success" href="/adminGaleriPL"> Batal </a>
+                            <a class="btn btn-success" href="{{ route('adminGaleriPL') }}"> Batal </a>
                         </div>
                     </form>
                 </legend>

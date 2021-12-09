@@ -158,11 +158,12 @@
                         </div>
                        
                         <div class = "content">
-                           <a href="{{ route('user.produklain', $kategori->nama) }}" class="btn btn-primary">
-                              
+                           <form action="{{ route('user.produklain', $kategori->nama) }}" method="post">
+                              @csrf
+                              <button class="btn btn-primary">
                                  <h4>Lihat Produk</h4>
-                              
-                           </a>
+                              </button>
+                           </form>
                            <h3>{{ $kategori->nama }}</h3>
                            <p>{!! $kategori->keterangan !!}</p>
                         </div>

@@ -49,7 +49,7 @@
                         </p>
                         <div>
                             <button class="btn btn-warning" type="submit">Simpan</button>
-                            <a class="btn btn-success" href="/adminPromo"> Batal </a>
+                            <a class="btn btn-success" href="{{ route('adminPromo') }}"> Batal </a>
                         </div>
                     </form>
                 </legend>

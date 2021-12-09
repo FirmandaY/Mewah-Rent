@@ -37,7 +37,7 @@
                         
                         <div>
                             <button type="submit">Simpan</button>
-                            <a href="/adminTestimoni"> Batal </a>
+                            <a href="{{ route('adminTestimoni') }}"> Batal </a>
                         </div>
                     </form>
                 </legend>
