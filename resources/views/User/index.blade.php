@@ -158,12 +158,9 @@
                         </div>
                        
                         <div class = "content">
-                           <form action="{{ route('user.produklain', $kategori->nama) }}" method="post">
-                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                              <button class="btn btn-primary">
-                                 <h4>Lihat Produk</h4>
-                              </button>
-                           </form>
+                           <a href="{{ route('user.produklain', $kategori->nama) }}" class="btn btn-primary">
+                              <h4>Lihat Produk</h4>
+                           </a>
                            <h3>{{ $kategori->nama }}</h3>
                            <p>{!! $kategori->keterangan !!}</p>
                         </div>
