@@ -75,7 +75,7 @@
                                     <a class="nav-link" href="#contact">Contact</a>
                                  </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="/faq">FAQ</a>
+                                    <a class="nav-link" href="{{ route('faqUser') }}">FAQ</a>
                                  </li>
                               </ul>
                               <!--<div class="sign_btn"><a href="#contact">Contact Us</a></div>-->
@@ -125,7 +125,7 @@
                <div class="col-md-8 offset-md-2 ">
                   <div class="about_box ">
                      <figure><img src="{{ asset('images/HomeAbout.png') }}" width="500" height="350" alt="#"/></figure>
-                     <a class="read_more" href="/about">Read more</a>
+                     <a class="read_more" href="{{ route('aboutUser') }}">Read more</a>
                   </div>
                </div>
             </div>
@@ -159,7 +159,7 @@
                        
                         <div class = "content">
                            <form action="{{ route('user.produklain', $kategori->nama) }}" method="post">
-                           {{ csrf_field() }}
+                           {{ csrf_field }}
                               <button class="btn btn-primary">
                                  <h4>Lihat Produk</h4>
                               </button>
