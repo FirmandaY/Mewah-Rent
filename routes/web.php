@@ -31,7 +31,7 @@ Route::get('/about', 'UserHomeController@about')->name('aboutUser');
 
 Route::get('/faq', 'UserHomeController@faq')->name('faqUser');
 
-Route::get('/produk/ProdukLain/{title}', 'UserHomeController@produklain')->name('user.produklain');
+Route::post('/produk/ProdukLain/{title}', 'UserHomeController@produklain')->name('user.produklain');
 
 Route::get('/produk/produkDetail/{title}', 'UserHomeController@produkdetail')->name('user.produkdetail');
 
