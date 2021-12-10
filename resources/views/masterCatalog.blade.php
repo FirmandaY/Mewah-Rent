@@ -57,7 +57,7 @@
                                     <a class="nav-link" href="/"> <b> Home </b> </a>
                                  </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="/about"> <b> About Us </b></a>
+                                    <a class="nav-link" href="{{ route('aboutUser') }}"> <b> About Us </b></a>
                                  </li>
                                  <li class="nav-item">
                                     <a class="nav-link" href="/"> <b> Product </b></a>
@@ -66,7 +66,7 @@
                                     <a class="nav-link" href="/"> <b> Contact </b></a>
                                  </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="/faq"> <b> FAQ </b></a>
+                                    <a class="nav-link" href="{{ route('faqUser') }}"> <b> FAQ </b></a>
                                  </li>
                               </ul>
                               <!--<div class="sign_btn"><a href="#contact">Contact Us</a></div>-->
