@@ -46,10 +46,10 @@
                         </div>
                         <p> 
                             <label>Display</label> <br>
-                            <input class="boxisi" type="text" name="display" placeholder="Intel, AMD, dsb.">
+                            <input class="boxisi" type="text" name="display" placeholder="9inch, 11inch, dsb.">
                         </p>
                             <label>Sistem Operasi</label> <br>
-                            <input class="boxisi" type="text" name="os" placeholder="Windows, Mac, Linux, dsb.">
+                            <input class="boxisi" type="text" name="os" placeholder="Windows, Android, CMOS, dsb.">
                         </p>
                         <p> 
                             <label>Deskripsi Produk</label> <br>
@@ -64,7 +64,7 @@
                         </p>
                         <p> 
                             <label>Harga Sewa</label> <br>
-                            <input class="boxisi" type="text" name="harga" placeholder="Rp.XXX">
+                            <input class="boxisi" type="text" name="harga" placeholder="Tuliskan nominal saja contoh: 150000">
                         </p>
                         <p> 
                             <label>Jumlah Unit</label> <br>
