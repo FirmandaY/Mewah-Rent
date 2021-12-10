@@ -82,10 +82,10 @@
         <title>LiBooks | Login Form</title>
 
         <!-- Font Icon -->
-        <link rel="stylesheet" href="templog/fonts/material-icon/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="{{ asset('templog/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
 
         <!-- Main css -->
-        <link rel="stylesheet" href="templog/css/style.css">
+        <link rel="stylesheet" href="{{ asset('templog/css/style.css') }}">
     </head>
     <body>
 
@@ -157,14 +157,6 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="social-login">
-                                <span class="social-label">Check us in :</span>
-                                <ul class="socials">
-                                    <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,8 +165,8 @@
         </div>
 
         <!-- JS -->
-        <script src="templog/vendor/jquery/jquery.min.js"></script>
-        <script src="templog/js/main.js"></script>
+        <script src="{{ asset('templog/vendor/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('templog/js/main.js') }}"></script>
     </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
 

@@ -79,7 +79,7 @@
 
                     <tr>
                         <td colspan="13"><p align="center">
-                            <a class="btn btn-primary" href="{{ route('adminGaleriPL.create') }}"> Tambah Produk </a>
+                            <a class="btn btn-primary" href="{{ route('adminGaleriPL.create') }}"> Tambah Gambar </a>
                         </p></td>
                     </tr>
                     

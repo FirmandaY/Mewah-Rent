@@ -43,6 +43,7 @@ Di bawah Ini Routes Buat Home Dashboard Admin!
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/helpPage', 'HomeController@helpPage')->name('helpPage');
 
 /*
 Di bawah Ini Routes Buat Admin Kategori!

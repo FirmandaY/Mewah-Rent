@@ -131,9 +131,6 @@
                                     </a>
                                     <ul class="collapse list-unstyled" id="blogSubmenu">
                                         <li>
-                                            <a href="#">Home</a>
-                                        </li>
-                                        <li>
                                             <a href="{{ route('adminKategori') }}">Kategori</a>
                                         </li>
                                         <li>
@@ -157,7 +154,7 @@
                                     <a href="{{ route('adminPesan') }}"><span class="fa fa-paper-plane mr-3"></span>Pesan</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('adminPesan') }}"><span class="fa fa-question-circle-o mr-3"></span>Bantuan</a>
+                                    <a href="{{ route('helpPage') }}"><span class="fa fa-question-circle-o mr-3"></span>Bantuan</a>
                                 </li>
                             </ul>
 

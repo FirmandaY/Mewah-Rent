@@ -46,8 +46,8 @@
                         </p>
                         
                         <div>
-                            <button type="submit">Simpan</button>
-                            <a href="{{ route('adminKategori') }}"> Batal </a>
+                            <button class="btn btn-success" type="submit">Simpan</button>
+                            <a class="btn btn-warning" href="{{ route('adminKategori') }}"> Batal </a>
                         </div>
                     </form>
                 </legend>

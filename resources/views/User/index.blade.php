@@ -77,6 +77,11 @@
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{ route('faqUser') }}">FAQ</a>
                                  </li>
+                                 @if(Auth::check())
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="{{ route('home') }}">Admin</a>
+                                    </li>
+                                 @endif
                               </ul>
                               <!--<div class="sign_btn"><a href="#contact">Contact Us</a></div>-->
                            </div>

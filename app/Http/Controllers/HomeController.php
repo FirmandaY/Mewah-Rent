@@ -46,4 +46,9 @@ class HomeController extends Controller
             'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'produklain', 'data_pesan')
         );
     }
+
+    public function helpPage(){
+        $data_kategori = Kategori::all();
+        return view('Admin.help', compact('data_kategori'));
+    }
 }
