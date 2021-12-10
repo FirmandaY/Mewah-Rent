@@ -62,9 +62,16 @@
                            </button>
                            <div class="collapse navbar-collapse" id="navbarsExample04">
                               <ul class="navbar-nav mr-auto">
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="/"> Home  </a>
-                                 </li>
+                                 
+                                 @if(Auth::check())
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="{{ route('home') }}">Admin</a>
+                                    </li>
+                                 @else
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="/"> Home  </a>
+                                    </li>
+                                 @endif
                                  <li class="nav-item">
                                     <a class="nav-link" href="#about">About Us</a>
                                  </li>

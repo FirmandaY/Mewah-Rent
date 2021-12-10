@@ -5,10 +5,10 @@
 <div class="container">
     <div class="row">
         
-        <div class="back-dash col-md-12">
+        <div class="back-help col-md-12">
             <div class="title-dash m-b-md">
                 <img src="{{  asset('images/logomewahfix.png') }}" width="200px" height="150px"><br>
-                <p>Ruang Bantuan</p>
+                <p>Ruang Bantuan Teknis Admin</p>
             </div>
             
             <hr color="white">
@@ -46,7 +46,7 @@
                     1. Setelah berhasil menambah produk, kita tarik menu (<i class="fa fa-bars"></i>) biru pada samping kiri lagi,<br>
                     2. Kali ini kita menuju menu <strong>Produk</strong>, klik untuk masuk <br>
                     3. Kemudian pilih tombol <button class="btn btn-info"> Galeri </button> <br>
-                    4. Nah kita akan disajikan tabel kosong, untuk menambahkan foto baru klik <button class="btn btn-primary">Tamba Gambar</button><br>
+                    4. Nah kita akan disajikan tabel kosong, untuk menambahkan foto baru klik <button class="btn btn-primary">Tambah Gambar</button><br>
                     5. Kemudain isikan formulir tentang gambarnya. Isi juga <strong>Merk Produk</strong> sesuai produknya. <br>
                     6. Setelah selesai tekan tombol <button class="btn btn-warning">Simpan</button>. <br>
                     7. Jadii deeh! Gambar berhasil ditambahkan. Setelah simpan berhasil biasanya anda akan diantar ke daftar umum semua galeri. Untuk melihat
@@ -56,10 +56,10 @@
                 <h4> Editing Data </h4>
                 <p>
                     Untuk pengeditan data baik galeri, produk, maupun kategori perlu diperhatikan baik-baik langkah nya ya.<br>
-                    1. Klik tombol <button class="btn btn-warning">Edit<button> pada produk/galeri/kategori yang ingin anda ubah <br>
-                    2. Kemudian anda akan diantar menuju halaman formulir kembali.
-                    3. Perlu diperhatikan <strong>Gambar<stong> dan <strong>Merk/Tipe Produk</strong> harus diisi kembali, sebelum di simpan.
-                        Hal ini penting diperhatikan, karena jika belum terisi maka proses edit data tidak bisa tersimpan.
+                    1. Klik tombol <button class="btn btn-warning">Edit</button> pada produk/galeri/kategori yang ingin anda ubah <br>
+                    2. Kemudian anda akan diantar menuju halaman formulir kembali.<br>
+                    3. Perlu diperhatikan <strong>Gambar</strong> dan <strong>Merk/Tipe Produk</strong> harus diisi kembali, sebelum di simpan.
+                        Hal ini penting diperhatikan, karena jika belum terisi maka proses edit data tidak bisa tersimpan.<br>
                     4. Jika semua sudah terisi dengan sesuai, anda bisa klik tombol <button class="btn btn-warning">Simpan</button> <br>
                 </p>
 
