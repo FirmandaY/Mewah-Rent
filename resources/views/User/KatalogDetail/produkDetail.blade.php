@@ -8,9 +8,9 @@
    <div class="banner_main">
       <div class="container">
          <div class="row">
-            <div class="col-md-9 padding_right1">
+            <div class="titleMaster col-md-12 padding_right1">
                <!--ini adalah wadah untuk bentuk banner utama-->
-               <h1 class="titleMaster">{{ $produk->merk }}</h1>
+               <h1 class="title-content">{{ $produk->merk }}</h1>
                <!--<h1>Tempatnya Sewa</h1>-->
             </div>
          </div>

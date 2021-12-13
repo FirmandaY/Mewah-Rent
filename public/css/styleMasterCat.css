@@ -79,7 +79,7 @@
 
 .faq {
     
-     background: #ffffff;
+     background: #e7f7ff;
      padding: 60px 0;
      padding-top: 10px;
 	overflow:visible;
@@ -527,20 +527,23 @@ button {
 }
 
 .titleMaster{
-     font-family: 'Baloo Chettan', cursive;
-     color: #003566;
-     font-size: 45px;
-     font-weight: bold;
-     padding: auto;
      margin-top: 20mm;
      margin-left: 0;
-     padding-left: 125mm;
+     padding-left: 100mm;
      padding-right: 30mm;
-     width: 300mm;
+     width: 70%;
      background-color: #A0C4FF ;
      right: 250px;
      border-radius: 0px 60px 60px 0px;
      
+}
+
+.title-content{
+     font-family: 'Baloo Chettan', cursive;
+     color: #003566;
+     font-size: 40px;
+     font-weight: bold;
+
 }
 
 .padding_right1 {
