@@ -105,7 +105,7 @@
       </div>
       <!--WA Me-->
       <div class="wame-box">
-         <a class="wame" href="https://wa.me/6282322881233">
+         <a class="wame" href="https://wa.me/6289651881332">
             <img class="img-wame" src="{{ asset('images/WhatsApp-logo.png') }}" height="25" width="25">
             Contact Us On WhatsApp!
          </a>
