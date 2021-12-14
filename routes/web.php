@@ -40,7 +40,10 @@ Route::get('/produk/produkDetail/{title}', 'UserHomeController@produkdetail')->n
 Di bawah Ini Routes Buat Home Dashboard Admin!
 */
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/helpPage', 'HomeController@helpPage')->name('helpPage');

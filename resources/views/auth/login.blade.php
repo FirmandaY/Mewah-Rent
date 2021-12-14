@@ -142,20 +142,22 @@
                                 </div>
 
 
-
+                               
                                 <div class="form-group form-button">
                                     <div class="col-md-8 offset-md-4">
                                         <div class="form-group form-button">
                                             <input type="submit" name="signin" id="signin" class="form-submit" value="Log-in"/>
                                         </div>
-
+                                         <!--
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                         @endif
+                                        -->
                                     </div>
                                 </div>
+                                
                             </form>
                         </div>
                     </div>
