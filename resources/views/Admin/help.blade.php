@@ -29,19 +29,32 @@
 
                         <h4> Penambahan Produk Baru </h4>
                         <p>
+                            Cara 1 : Apabila Kategori Produk Belum Ada <br><br>
                             Untuk menambahkan produk baru, anda perlu untuk menambahkan Kategori terlebih dahulu, caranyaa: <br>
-                            1. Tarik menu (<i class="fa fa-bars"></i>) biru pada samping kiri <br>
+                            1. Tarik menu (<i class="fa fa-bars"></i>) biru pada samping kiri halaman<br>
                             2. Pilih menu <strong>Blog</strong> <br>
                             3. Pilih menu <strong>Kategori</strong> <br>
-                            4. Kemudian isi formulirnya sesuai kategori produk yang ingin ditambahkan.
-                            5. Klik tombol <button class="btn btn-warning" >Simpan</button>
+                            4. Kemudian isi formulirnya sesuai kategori produk yang ingin ditambahkan.<br>
+                            5. Klik tombol <button class="btn btn-warning" >Simpan</button> <br>
                             6. Setelah kategori dibuat, kita tarik menu (<i class="fa fa-bars"></i>) biru pada samping kiri lagi,<br>
                             7. Kali ini kita menuju menu <strong>Produk</strong>, klik untuk masuk <br>
                             8. Nah kita akan disajikan tabel kosong, untuk menambahkan produk baru klik <button class="btn btn-primary">Tambah Produk</button><br>
-                            9. Kemudain isikan formulir tentang produknya, untuk lebih mendeskripsikan secara detail, anda dapat menuliskannya di form deskripsi. <br>
+                            9. Kemudain isikan formulir tentang produknya, untuk lebih mendeskripsikan secara detail, anda dapat menuliskannya di form deskripsi.
+                                Untuk pengisian harga produk hanya tuliskan saja nominalnya. Semisal Rp.350.000, tuliskan saja 350000. <br>
                             10. Setelah selesai tekan tombol <button class="btn btn-warning">Simpan</button>. <br>
                             11. Jadii deeh! Produk berhasil ditambahkan. Setelah simpan berhasil biasanya anda akan diantar ke daftar umum semua produk. Untuk melihat
-                                secara spesifiknya bisa menuju menu produknya lagi.<br>
+                                secara spesifiknya bisa menuju menu produknya lagi.<br> <br> <br>
+
+                            Cara 2 : Apabila Kategori Produk Sudah Ada <br><br>
+                            Untuk menambahkan prduk baru yang telah tersedia kategorinya: <br>
+                            1. Tarik menu (<i class="fa fa-bars"></i>) biru pada samping kiri halaman<br>
+                            2. Langsung pilih menu <strong>Produk</strong> dan pilih kategori yang ada. <br>
+                            3. Nah kita akan disajikan tabel produk, untuk menambahkan produk baru klik <button class="btn btn-primary">Tambah Produk</button><br>
+                            4. Kemudain isikan formulir tentang produknya, untuk lebih mendeskripsikan secara detail, anda dapat menuliskannya di form deskripsi. <br>
+                            5. Setelah selesai tekan tombol <button class="btn btn-warning">Simpan</button>. <br>
+                            6. Jadii deeh! Produk baru berhasil ditambahkan. Setelah simpan berhasil biasanya anda akan diantar ke daftar umum semua produk. Untuk melihat
+                                secara spesifiknya bisa menuju menu produknya lagi, melalui (<i class="fa fa-bars"></i>) lagi.<br> <br> <br>
+
                         </p>
 
                         <h4> Penambahan Galeri Produk Baru </h4>
@@ -58,20 +71,21 @@
 
                         <h4> Editing Data </h4>
                         <p>
-                            Untuk pengeditan data baik galeri, produk, maupun kategori perlu diperhatikan baik-baik langkah nya ya.<br>
+                            Untuk pengeditan data baik galeri, produk, maupun kategori perlu <strong>diperhatikan baik-baik</strong> langkah nya ya.<br>
                             1. Klik tombol <button class="btn btn-warning">Edit</button> pada produk/galeri/kategori yang ingin anda ubah <br>
-                            2. Kemudian anda akan diantar menuju halaman formulir kembali.<br>
+                            2. Kemudian anda akan diantar menuju halaman formulir untuk edit data.<br>
                             3. Perlu diperhatikan <strong>Gambar</strong> dan <strong>Merk/Tipe Produk</strong> harus diisi kembali, sebelum di simpan.
                                 Hal ini penting diperhatikan, karena jika belum terisi maka proses edit data tidak bisa tersimpan.<br>
                             4. Jika semua sudah terisi dengan sesuai, anda bisa klik tombol <button class="btn btn-warning">Simpan</button> <br>
+                            5. Data anda sudah berhasil terupdate!
                         </p>
 
                         <h4> Deleting Data </h4>
                         <p>
                             Delete data pada halaman admin ini cukup mudah, karena hanya tinggal memencet tombol <button class="btn btn-danger">Delete</button>,
                             saja. <br>
-                            Namun hati-hati, data yang akan anda hapus akan hilang selamanya dari Sistem Mewah Rent. Maka pastikan data yang akan anda hapus
-                            merupakan data yang benar.<br>
+                            Namun dimohon untuk hati-hati, karena data yang akan anda hapus akan <strong>Hilang Selamanya</strong> dari Sistem Mewah Rent. Maka pastikan
+                             data yang akan anda hapus merupakan data yang benar.<br>
                         </p>
                     </div>
                 </div>

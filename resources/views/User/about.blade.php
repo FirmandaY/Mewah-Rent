@@ -33,7 +33,7 @@
                      <div class="row">
                         
                            <div class="aboutimg1 col-md-6">
-                              <img src="{{ asset('thumb/'.$about->foto) }}" width="600px" height="700px">
+                              <img src="{{ asset('thumb/'.$about->foto) }}" width="800px" height="350px">
                            </div>
                            <div class="aboutcomment1 col-md-6">
                               

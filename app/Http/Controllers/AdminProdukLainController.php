@@ -93,9 +93,9 @@ class AdminProdukLainController extends Controller
             'merk' => 'required|string',
             'display' => 'required|string',
             'os' => 'required|string',
-            'deskripsi' => 'required|string|max:250',
-            'harga' => 'required|string',
-            'jml_unit' => 'required|string',
+            'deskripsi' => 'required|string|max:2500',
+            'harga' => 'required|integer',
+            'jml_unit' => 'required|integer',
             'id_kategori' => 'required',
         ]);
         
@@ -160,9 +160,9 @@ class AdminProdukLainController extends Controller
             'merk' => 'required|string',
             'display' => 'required|string',
             'os' => 'required|string',
-            'deskripsi' => 'required|string|max:250',
-            'harga' => 'required|string',
-            'jml_unit' => 'required|string',
+            'deskripsi' => 'required|string|max:2500',
+            'harga' => 'required|integer',
+            'jml_unit' => 'required|integer',
             'id_kategori' => 'required',
         ]);
 
