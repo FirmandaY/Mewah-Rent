@@ -128,7 +128,7 @@ class AdminKategoriController extends Controller
     {
         $this->validate($request,[
             'nama' => 'required|string',
-            'foto' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'foto' => 'image|mimes:jpeg,png,jpg|max:5120',
             'keterangan' => 'required|string|max:150',
         ]);
 
@@ -145,12 +145,21 @@ class AdminKategoriController extends Controller
     
             Image::make($gambar)->save('thumb/'.$namafile);
             $gambar->move('public/images/', $namafile);
+
+            $kategori->foto = $namafile;
+
+            $kategori->update();
+            return redirect('/adminKategori')->with('pesan', 'Perubahan Data Kategori Berhasil diSimpan');
+
+        }else{
+            $kategori->update([
+                'nama' => $request->nama,
+                'keterangan' => $request->keterangan
+            ]);
+            return redirect('/adminKategori')->with('pesan', 'Perubahan Data Kategori Berhasil diSimpan');
         }
         
-        $kategori->foto = $namafile;
-
-        $kategori->update();
-        return redirect('/adminKategori')->with('pesan', 'Perubahan Data Kategori Berhasil diSimpan');
+       
     }
 
     /**

@@ -94,8 +94,8 @@ class AdminProdukLainController extends Controller
             'display' => 'required|string',
             'os' => 'required|string',
             'deskripsi' => 'required|string|max:2500',
-            'harga' => 'required|integer',
-            'jml_unit' => 'required|integer',
+            //'harga' => 'integer',
+            'jml_unit' => 'integer',
             'id_kategori' => 'required',
         ]);
         
@@ -156,13 +156,13 @@ class AdminProdukLainController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'gambar' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'gambar' => 'image|mimes:jpeg,png,jpg|max:5120',
             'merk' => 'required|string',
             'display' => 'required|string',
             'os' => 'required|string',
             'deskripsi' => 'required|string|max:2500',
-            'harga' => 'required|integer',
-            'jml_unit' => 'required|integer',
+            //'harga' => 'integer',
+            'jml_unit' => 'integer',
             'id_kategori' => 'required',
         ]);
 
@@ -178,21 +178,37 @@ class AdminProdukLainController extends Controller
 
         $foto = $request->gambar;
 
-        if($foto) {
+        if($foto) { //jika variabel foto memiliki inputan gambar
             File::delete('thumb/'.$produk->gambar); //data foto yang lama dihapus dulu
             $namafile = $foto->getClientOriginalName();
             $data['gambar'] = $namafile; // Update field photo
     
             Image::make($foto)->save('thumb/'.$namafile);
             $foto->move('public/images/', $namafile);
+
+            $produk->gambar = $namafile;
+
+            $produk->update();
+            return redirect('/adminProdukLain')->with(
+                'pesan', 'Perubahan Data Produk Berhasil diSimpan! Silahkan Cek Perubahan Produk Anda.'
+            );
+        }else{ //jika tidak ada inputan, maka data gambar tidak akan diupdate
+            
+            $produk->update([
+                'merk' => $request->merk,
+                'display' => $request->display,
+                'os' => $request->os,
+                'deskripsi' => $request->deskripsi,
+                'harga' => $request->harga,
+                'jml_unit' => $request->jml_unit,
+                'id_kategori' => $request->id_kategori,
+                'produklain_seo' => Str::slug($request->merk)
+            ]);
+            return redirect('/adminProdukLain')->with(
+                'pesan', 'Perubahan Data Produk Berhasil diSimpan! Silahkan Cek Perubahan Produk Anda.'
+            );
         }
         
-        $produk->gambar = $namafile;
-
-        $produk->update();
-        return redirect('/adminProdukLain')->with(
-            'pesan', 'Perubahan Data Produk Berhasil diSimpan! Silahkan Cek Perubahan Produk Anda.'
-        );
     }
 
     /**

@@ -33,29 +33,46 @@
 
 .card-info{
   position: absolute;
+  max-width: 720px;
+
   padding: 36px 32px;
   margin-right: 30px;
   margin-top: 30px;
   left: 46%;
   z-index: 1;
   
-  clip-path: circle(5% at 95% 11%);
+  clip-path: circle(3% at 95% 12%);
   transition: all ease-in-out .3s;
-  background-color:#a1f9ff7c;
+  background-color:#e9feff9c;
 }
+/**
 .card__infoicon{
   position:absolute;
   top:10px;
   right:28px;
+  z-index: 2;
   
   font-size:16px;
   color:#000;
-  transition:ease-out .3s;
+  transition: ease-out 0.3s;
+  
+}
+**/
+.card_infoicon{
+  position:absolute;
+  
+  color: #000;
+  z-index: 1;
+  font-size: 16px;
+  transition: ease-out 0.3s;
+  top:10px;
+  right:27px;
+  
 }
 .card__title{
   margin:0;
   
-  font-size: 3em;
+  font-size: 28px;
   line-height:1.8;
 }
 .card__description{
@@ -5497,6 +5514,7 @@ input[type=button].btn-block {
   color: #fff;
 }
 
+/**/
 .card {
   position: relative;
   display: flex;

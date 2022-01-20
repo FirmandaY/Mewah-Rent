@@ -105,7 +105,7 @@ class AdminPromoController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'gambar_promo' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'gambar_promo' => 'image|mimes:jpeg,png,jpg|max:5120',
             'judul_promo' => 'required|string',
             'deskripsi_promo' => 'required|string',
         ]);
@@ -123,14 +123,25 @@ class AdminPromoController extends Controller
     
             Image::make($foto)->save('thumb/'.$namafile);
             $foto->move('public/images/', $namafile);
+
+            $promo->gambar_promo = $namafile;
+
+            $promo->update();
+            return redirect('/adminPromo')->with(
+                'pesan', 'Perubahan Promo Berhasil diSimpan!'
+            );
+
+        }else{
+            $promo->update([
+                'judul_promo' => $request->judul_promo,
+                'deskripsi_promo' => $request->deskripsi_promo
+            ]);
+            return redirect('/adminPromo')->with(
+                'pesan', 'Perubahan Promo Berhasil diSimpan!'
+            );
         }
         
-        $promo->gambar_promo = $namafile;
-
-        $promo->update();
-        return redirect('/adminPromo')->with(
-            'pesan', 'Perubahan Promo Berhasil diSimpan!'
-        );
+        
     }
 
     /**

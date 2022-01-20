@@ -115,11 +115,19 @@ class AdminAboutController extends Controller
             $data['foto'] = $namafile; // Update field photo
     
             $proses = $foto->move('thumb/', $namafile);
+
+            $about->foto = $namafile;
+            $about->update();
+            return redirect('/adminAbout')->with('pesan', 'Perubahan Data About Berhasil diSimpan');
+
+        }else{
+            $about->update([
+                'tentangkami' => $request->tentangkami
+            ]);
+            return redirect('/adminAbout')->with('pesan', 'Perubahan Data About Berhasil diSimpan');
         }
         
-        $about->foto = $namafile;
-        $about->update();
-        return redirect('/adminAbout')->with('pesan', 'Perubahan Data About Berhasil diSimpan');
+        
     }
 
     /**

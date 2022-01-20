@@ -113,7 +113,7 @@ class AdminGaleriPLController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'foto' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'foto' => 'image|mimes:jpeg,png,jpg|max:5120',
             'nama_galeri' => 'required|string',
             'keterangan' => 'required|string',
             'id_produk' => 'required',
@@ -134,14 +134,26 @@ class AdminGaleriPLController extends Controller
     
             Image::make($gambar)->save('thumb/'.$namafile);
             $gambar->move('public/images/', $namafile);
+
+            $galeripl->foto = $namafile;
+
+            $galeripl->update();
+            return redirect('/adminGaleriPL')->with(
+                'pesan', 'Perubahan Data Produk Berhasil diSimpan! Silahkan Cek Perubahan Produk Anda.'
+            );
+        }else{
+            $galeripl->update([
+                'nama_galeri' => $request->nama_galeri,
+                'keterangan' => $request->keterangan,
+                'id_produk' => $request->id_produk,
+                'galeri_seo' => Str::slug($request->nama_galeri)
+            ]);
+            return redirect('/adminGaleriPL')->with(
+                'pesan', 'Perubahan Data Produk Berhasil diSimpan! Silahkan Cek Perubahan Produk Anda.'
+            );
         }
         
-        $galeripl->foto = $namafile;
-
-        $galeripl->update();
-        return redirect('/adminGaleriPL')->with(
-            'pesan', 'Perubahan Data Produk Berhasil diSimpan! Silahkan Cek Perubahan Produk Anda.'
-        );
+        
     }
 
     /**

@@ -25,17 +25,17 @@
 
 <div class="container">
     <div class="row">
-        
         <div class="back-dash col-md-12">
             <div class="card-info" tabindex="0">
-                <span class="card__infoicon">
+                <span class="card_infoicon">
                     <i class="fa fa-info "></i>
                 </span>
                 <h1 class="card__title">Ruang Admin</h1>
                 <p class="card__description">
-                    Anda dapat mengubah isi konten website dari fitur yang ada di sini. Tarik ikon (<i class="fa fa-bars"></i>) 
+                    Anda dapat mengubah isi konten website Mewah Rental dengan fitur yang ada di sini. Klik ikon (<i class="fa fa-bars"></i>) 
                     pada kiri layar untuk melihat fitur selengkapnya.
                 </p>
+                
             </div>
             <div class="title-dash m-b-md">
                 <img src="{{  asset('images/logomewahfix.png') }}" width="200px" height="150px"><br>

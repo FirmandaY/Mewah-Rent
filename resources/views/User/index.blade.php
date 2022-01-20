@@ -106,7 +106,7 @@
                      <div class="col-md-4">
                         <div class="text-bg">
                            <h3>Selamat Datang<br>di Rental Mewah</h3>
-                           <strong>Peminjaman dan Persewaan Komputer</strong>
+                           <strong>Persewaan Komputer dan Laptop</strong>
                            <span>Multimedia ? Juga ada!</span>
                            <a href="#product">Sewa Sekarang</a>
                         </div>
