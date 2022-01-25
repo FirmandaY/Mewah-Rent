@@ -180,3 +180,22 @@ Route::post('/adminTestimoni/delete/{id}', 'AdminTestimoniController@destroy')->
 Route::get('/adminTestimoni/edit/{id}', 'AdminTestimoniController@edit')->name('adminTestimoni.edit');
 
 Route::post('/adminTestimoni/{id}', 'AdminTestimoniController@update')->name('adminTestimoni.update');
+
+/*
+Di bawah Ini Routes Buat Admin Footer!
+*/
+Route::get('/adminFooter', 'AdminFooterController@index')->name('adminFooter');
+
+
+    //Admin Untuk Lokasi dan Map!
+
+Route::get('/adminLokasi/create', 'AdminFooterController@createLokasi')->name('adminLokasi.create');
+
+Route::post('/adminLokasi', 'AdminFooterController@storeLokasi')->name('adminLokasi.store');
+
+Route::post('/adminLokasi/delete/{id}', 'AdminFooterController@destroyLokasi')->name('adminLokasi.destroy');
+
+Route::get('/adminLokasi/edit/{id}', 'AdminFooterController@editLokasi')->name('adminLokasi.edit');
+
+Route::post('/adminLokasi/{id}', 'AdminFooterController@updateLokasi')->name('adminLokasi.update');
+

@@ -145,6 +145,9 @@
                                         <li>
                                             <a href="{{ route('adminTestimoni') }}">Testimoni</a>
                                         </li>
+                                        <li>
+                                            <a href="{{ route('adminFooter') }}">Footer</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>

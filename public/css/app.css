@@ -252,8 +252,23 @@ fieldset{
   width: 70%;
   background-color: #c3e1fc;
 }
+
+.form-container{
+  width: 75%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  background-color: #c3e1fc;
+  border-radius: 20px;
+}
 .boxisi{
   width: 100mm;
+}
+.boxisi-footer{
+  width: 75%;
+  height: 25mm;
 }
 .inedit{
   margin-left: 5px;

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFooterTable extends Migration
+class CreateLokasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateFooterTable extends Migration
      */
     public function up()
     {
-        Schema::create('footer', function (Blueprint $table) {
+        Schema::create('lokasi', function (Blueprint $table) {
             $table->id();
-            $table->string('alamat');
+            $table->text('alamat')->nullable();
             $table->text('map')->nullable();
-            $table->string('no_telp');
-            $table->string('email')->nullable();
-            $table->string('sosmed')->nullable();
+            
             $table->timestamps();
         });
     }
