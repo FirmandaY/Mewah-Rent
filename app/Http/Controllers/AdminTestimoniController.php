@@ -118,6 +118,6 @@ class AdminTestimoniController extends Controller
     {
         $testimoni = Testimonial::find($id);
         $testimoni->delete();
-        return redirect('/adminTestimoni')->with('pesan', 'Data Testimoni Berhasil di Hapus');
+        return redirect('/adminTestimoni')->with('pesanHapus', 'Data Testimoni Berhasil di Hapus');
     }
 }

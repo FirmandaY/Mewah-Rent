@@ -223,6 +223,6 @@ class AdminProdukLainController extends Controller
         $produk->delete();
         File::delete('thumb/'.$produk->gambar);
         File::delete('public/images/'.$produk->gambar);
-        return redirect('/adminProdukLain')->with('pesan', 'Data Produk Berhasil di Hapus');
+        return redirect('/adminProdukLain')->with('pesanHapus', 'Data Produk Berhasil di Hapus');
     }
 }

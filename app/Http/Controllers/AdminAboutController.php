@@ -140,6 +140,6 @@ class AdminAboutController extends Controller
     {
         $about = About::find($id);
         $about->delete();
-        return redirect('/adminAbout')->with('pesan', 'Data About Berhasil di Hapus');
+        return redirect('/adminAbout')->with('pesanHapus', 'Data About Berhasil di Hapus');
     }
 }

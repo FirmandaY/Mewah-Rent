@@ -168,6 +168,6 @@ class AdminGaleriPLController extends Controller
         $galeripl->delete();
         File::delete('thumb/'.$galeripl->foto);
         File::delete('public/images/'.$galeripl->foto);
-        return redirect('/adminGaleriPL')->with('pesan', 'Data Produk Berhasil di Hapus');
+        return redirect('/adminGaleriPL')->with('pesanHapus', 'Data Produk Berhasil di Hapus');
     }
 }

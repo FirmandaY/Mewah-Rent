@@ -15,43 +15,42 @@
                     @endforeach
                 </ul>
             @endif
-            <fieldset>
-                <legend>Silahkan Lengkapi Data Kategori Berikut :</legend>
-                    <form method="post" action="{{route('adminKategori.store')}}" enctype="multipart/form-data">
-                    @csrf
-                        <p> 
-                            <label><strong>Nama Kategori</strong></label> <br>
-                            <input class="boxisi" type="text" name="nama" placeholder="Nama produk">
-                        </p>
-                        <p> 
-                            <label><strong>Foto Kategori</strong></label> <br>
-                            <input id="inpFile" class="boxisi" type="file" name="foto">
-                            <br>
-                            <i>*gambar disarankan landscape, 1920 x 1280, max:5MB</i>
-                            <div class="preview-box" id="imagePreview">
-                                <img src="" class="preview-img" alt="Image Preview">
-                                <span class="preview-text">Image Preview</span>
-                            </div>
-                        </p>
-                        <p> 
-                            <label><strong>Keterangan</strong></label> <br>
-                            <textarea class="boxisi" type="textarea" name="keterangan" id="keterangan" value="">
-                                Keterangan Kategori...
-                            </textarea>
-                            <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor 4
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'keterangan' );
-                            </script>
-                        </p>
-                        
-                        <div>
-                            <button class="btn btn-success" type="submit">Simpan</button>
-                            <a class="btn btn-warning" href="{{ route('adminKategori') }}"> Batal </a>
+            <div class="form-container">
+                <h4>Silahkan Lengkapi Data Kategori Berikut :</h4>
+                <form method="post" action="{{route('adminKategori.store')}}" enctype="multipart/form-data">
+                @csrf
+                    <p> 
+                        <label><strong>Nama Kategori</strong></label> <br>
+                        <input class="boxisi" type="text" name="nama" placeholder="Nama produk" value="{{ old('nama') }}">
+                    </p>
+                    <p> 
+                        <label><strong>Foto Kategori</strong></label> <br>
+                        <input id="inpFile" class="boxisi" type="file" name="foto">
+                        <br>
+                        <i>*gambar disarankan landscape, 1920 x 1280, max:5MB</i>
+                        <div class="preview-box" id="imagePreview">
+                            <img src="" class="preview-img" alt="Image Preview">
+                            <span class="preview-text">Image Preview</span>
                         </div>
-                    </form>
-                </legend>
-            </fieldset>
+                    </p>
+                    <p> 
+                        <label><strong>Keterangan</strong></label> <br>
+                        <textarea class="boxisi" type="textarea" name="keterangan" id="keterangan" value="">
+                            Keterangan Kategori... {{ old('keterangan') }}
+                        </textarea>
+                        <script>
+                            // Replace the <textarea id="editor1"> with a CKEditor 4
+                            // instance, using default configuration.
+                            CKEDITOR.replace( 'keterangan' );
+                        </script>
+                    </p>
+                    
+                    <div>
+                        <button class="btn btn-success" type="submit">Simpan</button>
+                        <a class="btn btn-warning" href="{{ route('adminKategori') }}"> Batal </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>

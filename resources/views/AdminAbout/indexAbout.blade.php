@@ -2,6 +2,11 @@
 
 @section('content')
    <!-- about -->
+   @if(Session::has('pesan'))
+      <div class="alert alert-success">{{ Session::get('pesan') }}</div>
+   @elseif(Session::has('pesanHapus'))
+      <div class="alert alert-danger">{{ Session::get('pesanHapus') }}</div>
+   @endif
    <div id="about" class="about">
       <div class="container">
          <div class="row">

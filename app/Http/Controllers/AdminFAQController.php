@@ -112,6 +112,6 @@ class AdminFAQController extends Controller
     {
         $faq = FAQ::find($id);
         $faq->delete();
-        return redirect('/adminFAQ')->with('pesan', 'Data FAQ Berhasil di Hapus');
+        return redirect('/adminFAQ')->with('pesanHapus', 'Data FAQ Berhasil di Hapus');
     }
 }

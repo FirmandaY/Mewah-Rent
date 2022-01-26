@@ -6,9 +6,7 @@
      
     </head>
     <body>
-        @if(Session::has('pesan'))
-            <div class="alert alert-success">{{ Session::get('pesan') }}</div>
-        @endif
+       
         <div class="container">
             <h4>Tentukan Lokasi Mewah-Rent</h4>
             @if (count($errors)>0)
@@ -24,11 +22,11 @@
                 @csrf
                     <p> 
                         <label><strong>Alamat</strong></label> <br>
-                        <textarea class="boxisi-footer" type="textarea" name="alamat" placeholder="Jalan Kentang km.9... etc." value="{{old('alamat')}}"></textarea>
+                        <textarea class="boxisi-footer" type="textarea" name="alamat" placeholder="Jalan Kentang km.9... etc." value="">{{old('alamat')}}</textarea>
                     </p>
                     <p> 
                         <label><strong>Link Embed Map</strong></label> <br>
-                        <textarea class="boxisi-footer" type="textarea" name="map" placeholder="<iframe https://googlemaps...>" value="{{old('map')}}"></textarea>
+                        <textarea class="boxisi-footer" type="textarea" name="map" placeholder="<iframe https://googlemaps...>" value="">{{old('map')}}</textarea>
                     </p>
                     <div>
                         <button class="btn btn-warning" type="submit">Simpan</button>

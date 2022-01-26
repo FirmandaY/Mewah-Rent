@@ -18,32 +18,31 @@
                     @endforeach
                 </ul>
             @endif
-            <fieldset>
+            <div class="form-container">
                 <legend>Silahkan Lengkapi Data Testimoni Berikut :</legend>
-                    <form method="post" action="{{route('adminTestimoni.update',$testimoni->id)}}" enctype="multipart/form-data">
-                    @csrf
-                        <p> 
-                            <label>Narasumber</label> <br>
-                            <input class="boxisi" type="text" name="sumber" value="{{ $testimoni->sumber }}">
-                        </p>
-                        <p> 
-                            <label>Testimoni Mereka</label> <br>
-                            <textarea class="boxisi" type="textarea" name="testimoni" id="testimoni" value="{{ $testimoni->testimoni }}">
-                                {{ $testimoni->testimoni }}
-                            </textarea>
-                            <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor 4
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'testimoni' );
-                            </script>
-                        </p>
-                        <div>
-                            <button class="btn btn-warning" type="submit">Simpan</button>
-                            <a class="btn btn-success" href="{{ route('adminTestimoni') }}"> Batal </a>
-                        </div>
-                    </form>
-                </legend>
-            </fieldset>
+                <form method="post" action="{{route('adminTestimoni.update',$testimoni->id)}}" enctype="multipart/form-data">
+                @csrf
+                    <p> 
+                        <label><strong>Narasumber</strong></label> <br>
+                        <input class="boxisi" type="text" name="sumber" value="{{ $testimoni->sumber }}">
+                    </p>
+                    <p> 
+                        <label><strong>Testimoni Mereka</strong></label> <br>
+                        <textarea class="boxisi" type="textarea" name="testimoni" id="testimoni" value="{{ $testimoni->testimoni }}">
+                            {{ $testimoni->testimoni }}
+                        </textarea>
+                        <script>
+                            // Replace the <textarea id="editor1"> with a CKEditor 4
+                            // instance, using default configuration.
+                            CKEDITOR.replace( 'testimoni' );
+                        </script>
+                    </p>
+                    <div>
+                        <button class="btn btn-warning" type="submit">Simpan</button>
+                        <a class="btn btn-success" href="{{ route('adminTestimoni') }}"> Batal </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>

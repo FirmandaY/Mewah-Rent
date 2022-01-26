@@ -41,7 +41,7 @@ Di bawah Ini Routes Buat Home Dashboard Admin!
 */
 
 Auth::routes([
-    'register' => false,
+    /*'register' => false,*/
     'reset' => false,
 ]);
 
@@ -99,7 +99,7 @@ Route::post('/adminFAQ', 'AdminFAQController@store')->name('adminFAQ.store');
 
 Route::post('/adminFAQ/delete/{id}', 'AdminFAQController@destroy')->name('adminFAQ.destroy');
 
-Route::post('/adminFAQ/edit/{id}', 'AdminFAQController@edit')->name('adminFAQ.edit');
+Route::get('/adminFAQ/edit/{id}', 'AdminFAQController@edit')->name('adminFAQ.edit');
 
 Route::post('/adminFAQ/{id}', 'AdminFAQController@update')->name('adminFAQ.update');
 

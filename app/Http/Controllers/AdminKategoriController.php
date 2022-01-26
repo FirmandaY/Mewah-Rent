@@ -174,6 +174,6 @@ class AdminKategoriController extends Controller
         $kategori->delete();
         File::delete('thumb/'.$kategori->foto);
         File::delete('public/images/'.$kategori->foto);
-        return redirect('/adminPC')->with('pesan', 'Data Kategori Berhasil di Hapus');
+        return redirect('/adminKategori')->with('pesanHapus', 'Data Kategori Berhasil di Hapus');
     }
 }

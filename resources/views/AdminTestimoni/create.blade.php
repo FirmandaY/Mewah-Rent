@@ -15,33 +15,32 @@
                     @endforeach
                 </ul>
             @endif
-            <fieldset>
+            <div class="form-container">
                 <legend>Silahkan Lengkapi Data Testimoni Berikut :</legend>
-                    <form method="post" action="{{route('adminTestimoni.store')}}" enctype="multipart/form-data">
-                    @csrf
-                        <p> 
-                            <label>Narasumber</label> <br>
-                            <input class="boxisi" type="text" name="sumber">
-                        </p>
-                        <p> 
-                            <label>Testimoni Mereka</label> <br>
-                            <textarea class="boxisi" type="textarea" name="testimoni" id="testimoni" value="">
-                                Kualitas barangnya bagus! Dan harga terjangkau!
-                            </textarea>
-                            <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor 4
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'testimoni' );
-                            </script>
-                        </p>
-                        
-                        <div>
-                            <button type="submit">Simpan</button>
-                            <a href="{{ route('adminTestimoni') }}"> Batal </a>
-                        </div>
-                    </form>
-                </legend>
-            </fieldset>
+                <form method="post" action="{{route('adminTestimoni.store')}}" enctype="multipart/form-data">
+                @csrf
+                    <p> 
+                        <label><strong>Narasumber</strong></label> <br>
+                        <input class="boxisi" type="text" name="sumber" value="{{ old('sumber') }}">
+                    </p>
+                    <p> 
+                        <label><strong>Testimoni Mereka</strong></label> <br>
+                        <textarea class="boxisi" type="textarea" name="testimoni" id="testimoni" value="">
+                            Kualitas barangnya bagus! Dan harga terjangkau! {{ old('testimoni') }}
+                        </textarea>
+                        <script>
+                            // Replace the <textarea id="editor1"> with a CKEditor 4
+                            // instance, using default configuration.
+                            CKEDITOR.replace( 'testimoni' );
+                        </script>
+                    </p>
+                    
+                    <div>
+                        <button class="btn btn-warning" type="submit">Simpan</button>
+                        <a class="btn btn-success" href="{{ route('adminTestimoni') }}"> Batal </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>

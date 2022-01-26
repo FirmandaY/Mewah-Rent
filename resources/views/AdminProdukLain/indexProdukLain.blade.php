@@ -9,6 +9,8 @@
          
         @if(Session::has('pesan'))
             <div class="alert alert-success">{{ Session::get('pesan') }}</div>
+        @elseif(Session::has('pesanHapus'))
+            <div class="alert alert-danger">{{ Session::get('pesanHapus') }}</div>
         @endif
 
         <div class="flex-center position-ref">

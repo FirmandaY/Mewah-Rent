@@ -15,33 +15,32 @@
                     @endforeach
                 </ul>
             @endif
-            <fieldset>
-                <legend>Silahkan Lengkapi Data FAQ Berikut :</legend>
-                    <form method="post" action="{{route('adminFAQ.store')}}" enctype="multipart/form-data">
-                    @csrf
-                        <p> 
-                            <label>Pertanyaan</label> <br>
-                            <input class="boxisi" type="text" name="pertanyaan">
-                        </p>
-                        <p> 
-                            <label>Jawaban</label> <br>
-                            <textarea class="boxisi" type="textarea" name="jawaban" id="faq" value="">
-                                Ceritakan tentang Mewah...
-                            </textarea>
-                            <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor 4
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'faq' );
-                            </script>
-                        </p>
-                        
-                        <div>
-                            <button type="submit">Simpan</button>
-                            <a href="{{ route('adminFAQ') }}"> Batal </a>
-                        </div>
-                    </form>
-                </legend>
-            </fieldset>
+            <div class="form-container">
+                <h4>Silahkan Lengkapi Data FAQ Berikut :</h4>
+                <form method="post" action="{{route('adminFAQ.store')}}" enctype="multipart/form-data">
+                @csrf
+                    <p> 
+                        <label>Pertanyaan</label> <br>
+                        <input class="boxisi" type="text" name="pertanyaan" value="{{ old('pertanyaan') }}">
+                    </p>
+                    <p> 
+                        <label>Jawaban</label> <br>
+                        <textarea class="boxisi" type="textarea" name="jawaban" id="faq" value="">
+                            Ceritakan tentang Mewah... {{ old('jawaban') }}
+                        </textarea>
+                        <script>
+                            // Replace the <textarea id="editor1"> with a CKEditor 4
+                            // instance, using default configuration.
+                            CKEDITOR.replace( 'faq' );
+                        </script>
+                    </p>
+                    
+                    <div>
+                        <button class="btn btn-warning" type="submit">Simpan</button>
+                        <a class="btn btn-success" href="{{ route('adminFAQ') }}"> Batal </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>

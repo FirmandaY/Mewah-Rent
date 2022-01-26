@@ -156,6 +156,6 @@ class AdminPromoController extends Controller
         $promo->delete();
         File::delete('thumb/'.$promo->gambar_promo);
         File::delete('public/images/'.$promo->gambar_promo);
-        return redirect('/adminPromo')->with('pesan', 'Promo Berhasil di Hapus');
+        return redirect('/adminPromo')->with('pesanHapus', 'Promo Berhasil di Hapus');
     }
 }
