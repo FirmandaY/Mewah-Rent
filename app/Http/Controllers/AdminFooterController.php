@@ -8,6 +8,7 @@ use Illuminate\Pagination\Paginator;
 use App\Kategori;
 use App\Lokasi;
 
+
 class AdminFooterController extends Controller
 {
     public function __construct()
