@@ -19,7 +19,7 @@
                 </ul>
             @endif
             <div class="form-container">
-                <h4>Silahkan Lengkapi Data Produk Berikut :</h4>
+                <h5>Silahkan Lengkapi Data Produk Berikut :</h5>
                 <form method="post" action="{{route('adminProdukLain.store')}}" enctype="multipart/form-data">
                 @csrf
                     <p> 
@@ -71,8 +71,8 @@
                         <input class="boxisi" type="text" name="jml_unit" placeholder= "1,2,3, dsb." value="{{ old('jml_unit') }}">
                     </p>
                     <div>
-                        <button class="btn btn-warning" type="submit">Simpan</button>
-                        <a class="btn btn-success" href="{{ route('adminProdukLain') }}"> Batal </a>
+                        <button class="btn btn-primary" type="submit">Simpan</button>
+                        <a class="btn btn-danger" href="{{ route('adminProdukLain') }}"> Batal </a>
                     </div>
                 </form>
             </div>
