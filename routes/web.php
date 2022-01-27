@@ -41,7 +41,7 @@ Di bawah Ini Routes Buat Home Dashboard Admin!
 */
 
 Auth::routes([
-    /*'register' => false,*/
+    'register' => false,
     'reset' => false,
 ]);
 

@@ -103,6 +103,11 @@
   
 }
 
+/*Footer Map Style*/
+#map{
+     height: 300px;
+     width: 100%;
+}
 
 * {
      box-sizing: border-box !important;
