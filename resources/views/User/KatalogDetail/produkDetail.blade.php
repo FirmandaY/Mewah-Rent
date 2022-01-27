@@ -78,10 +78,14 @@
                               <th>Sistem Operasi</th>
                               <td>{{ $produk->os }}</td>
                            </tr>
-                           <tr>
-                              <th>Harga Sewa</th>
-                              <td>{{ "Rp".number_format($produk->harga, 2, ',', '.') }}</td>
-                           </tr>
+                           <!--Jika harga kosong tidak akan ditampilkan pada halaman detail-->
+                           @if(!empty($produk->harga))
+                              <tr>
+                                 <th>Harga Sewa</th>
+                                 <td>{{ "Rp".number_format($produk->harga, 2, ',', '.') }}</td>
+                              </tr>
+                           @endif
+
                            <tr>
                               <th>Jumlah Unit</th>
                               <td>{{ $produk->jml_unit }}</td>

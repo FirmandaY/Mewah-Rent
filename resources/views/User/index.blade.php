@@ -84,11 +84,6 @@
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{ route('faqUser') }}">FAQ</a>
                                  </li>
-                                 @if(Auth::check())
-                                    <li class="nav-item">
-                                       <a class="nav-link" href="{{ route('home') }}">Admin</a>
-                                    </li>
-                                 @endif
                               </ul>
                               <!--<div class="sign_btn"><a href="#contact">Contact Us</a></div>-->
                            </div>
@@ -337,12 +332,38 @@
          <div class="footer">
             <div class="container">
                <div class="row">
+
+
+
                   <div class="col-md-6">
                      <div class="cont">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.0456666951964!2d109.0605317902281!3d-6.90269982515536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zNsKwNTQnMTIuMCJTIDEwOcKwMDMnMzkuOCJF!5e0!3m2!1sen!2sid!4v1633410512215!5m2!1sen!2sid" 
                         width="525" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                      </div>
+
+                     <div id="map"></div>
+                     <script>
+                        function initMap(){
+                           var options = {
+                              zoom:8,
+                              center:{lat:42.3601,lng:-71.0589}
+                           }
+
+                           var map = new 
+                           google.maps.Map(document.getElementById('map'), options);
+
+                        }
+                     </script>
+                     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                     <script
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXJ9Iv2tI8TRuDf_7b5jzRePaDaXG6CsE&callback=initMap&libraries=&v=weekly"
+                        async
+                     ></script>
+
                   </div>
+
+
+
                   <div class="col-md-6">
                      <div class="cont_call">
                         <h3><strong class="multi">Contact Us On</strong></h3><br>

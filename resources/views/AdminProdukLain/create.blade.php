@@ -64,7 +64,7 @@
                     </p>
                     <p> 
                         <label><strong>Harga Sewa</strong></label> <br>
-                        <input class="boxisi" type="text" name="harga" placeholder="Tuliskan nominal saja contoh: 150000" value="{{ old('harga') }}">
+                        <input class="boxisi" type="text" name="harga" placeholder="Jika ingin diisi, tuliskan nominal saja contoh: 150000" value="{{ old('harga') }}">
                     </p>
                     <p> 
                         <label><strong>Jumlah Unit</strong></label> <br>
