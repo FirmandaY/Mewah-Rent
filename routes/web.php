@@ -187,7 +187,7 @@ Di bawah Ini Routes Buat Admin Footer!
 Route::get('/adminFooter', 'AdminFooterController@index')->name('adminFooter');
 
 
-    //Admin Untuk Lokasi dan Map!
+    //Admin Footer Untuk Lokasi dan Map!
 
 Route::get('/adminLokasi/create', 'AdminFooterController@createLokasi')->name('adminLokasi.create');
 
@@ -198,4 +198,28 @@ Route::post('/adminLokasi/delete/{id}', 'AdminFooterController@destroyLokasi')->
 Route::get('/adminLokasi/edit/{id}', 'AdminFooterController@editLokasi')->name('adminLokasi.edit');
 
 Route::post('/adminLokasi/{id}', 'AdminFooterController@updateLokasi')->name('adminLokasi.update');
+
+    //Admin Footer Untuk Kontak dan Email!
+
+Route::get('/adminKontak/create', 'AdminFooterController@createKontak')->name('adminKontak.create');
+
+Route::post('/adminKontak', 'AdminFooterController@storeKontak')->name('adminKontak.store');
+
+Route::post('/adminKontak/delete/{id}', 'AdminFooterController@destroyKontak')->name('adminKontak.destroy');
+
+Route::get('/adminKontak/edit/{id}', 'AdminFooterController@editKontak')->name('adminKontak.edit');
+
+Route::post('/adminKontak/{id}', 'AdminFooterController@updateKontak')->name('adminKontak.update');
+
+    //Admin Footer Untuk Sosial Media!
+
+Route::get('/adminSosial/create', 'AdminFooterController@createSosial')->name('adminSosial.create');
+
+Route::post('/adminSosial', 'AdminFooterController@storeSosial')->name('adminSosial.store');
+
+Route::post('/adminSosial/delete/{id}', 'AdminFooterController@destroySosial')->name('adminSosial.destroy');
+
+Route::get('/adminSosial/edit/{id}', 'AdminFooterController@editSosial')->name('adminSosial.edit');
+
+Route::post('/adminSosial/{id}', 'AdminFooterController@updateSosial')->name('adminSosial.update');
 

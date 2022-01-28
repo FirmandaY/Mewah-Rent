@@ -23,7 +23,7 @@
                 <form method="post" action="{{route('adminAbout.update',$about->id)}}" enctype="multipart/form-data">
                 @csrf
                     <p> 
-                        <label>Gambar</label> <br>
+                        <strong><label>Gambar</label></strong> <br>
                         <input id="inpFile" class="boxisi" type="file" name="foto" value="{{ url('/data_file/'.$about->foto) }}"><br>
                         <i>*gambar disarankan landscape, 1920 x 1280, max:5MB</i>
                         <div class="container">

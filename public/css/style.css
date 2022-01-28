@@ -917,18 +917,42 @@ button {
 
 
 /** footer **/
+.btn-wa{
+     padding: 5px;
+     margin-top: 10px;
+     margin-bottom: 15px;
+     color: #000;
+     background-color: #ffffff79;
+     border-radius: 10px;
+     border: #ffffff solid 2px;
+}
+.btn-wa:hover{
+     background-color: #00aa17;
+     color: rgb(255, 255, 255);
+}
+.text-link{
+     font-size: 12px;
+}
+
+.link-social{
+     color: #fff;
+}
+.link-social:hover{
+     color: #41c365;
+}
 
 .multi {
      color: #f2fffa;
      font-weight: bold;
-     font-size: 40px;
+     font-size: 18px;
      font-family: Poppins;
 }
 
 .contact {
      color: #f2fffa;
      font-weight: normal;
-     font-size: 20px;
+     text-align: left;
+     font-size: 14px;
      font-family: Poppins;
 }
 
@@ -972,7 +996,7 @@ button {
 
 .copyright p {
      color: #fff;
-     font-size: 18px;
+     font-size: 12px;
      line-height: 22px;
      text-align: center;
 }

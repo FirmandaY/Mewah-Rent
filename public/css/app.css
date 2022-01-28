@@ -539,6 +539,17 @@ height:110px;
   margin: 0;
   margin-bottom: 30px;
 }
+/** Footer Page Admin **/
+.con-footer{
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  background-color: rgba(0, 94, 100, 0.308);
+  border-radius: 30px;
+}
 
 :root {
   --blue: #3490dc;
