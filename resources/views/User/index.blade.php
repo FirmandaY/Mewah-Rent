@@ -379,7 +379,9 @@
                               {{ $kontak->no_telp }}
                               </strong>
                            </h5>
-                           <a class="btn-wa text-link" href="https://wa.me/{{ $kontak->no_telp }}">WhatssApp Now!</a> <br> <br>
+                           @if($kontak->tipe == 'ya')
+                              <a class="btn-wa text-link" href="https://wa.me/{{ $kontak->no_telp }}">WhatssApp Now!</a> <br> <br>
+                           @endif
                         @endif
                         @endforeach
 
@@ -407,10 +409,26 @@
                   
                </div>
                <hr color="white">
+
                <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-1">
                      <h3><strong class="multi" align="center">Our Partners</strong></h3> <!--Data Kontak dari database-->
                   </div>
+
+                  <div class="col-md-11">
+                  @foreach($data_partner as $partner)
+                  @if($partner->display == '1:1')
+                     <a href="{{ $partner->link }}">
+                        <img class="partner-pic" src="{{ asset('thumb/'.$partner->foto) }}" style="width: 30px; height: 30px"> <!--Data Kontak dari database-->
+                     </a>
+                  @else
+                     <a href="{{ $partner->link }}">
+                        <img class="partner-pic" src="{{ asset('thumb/'.$partner->foto) }}" style="width: 85px; height: 30px"> <!--Data Kontak dari database-->
+                     </a>
+                  @endif
+                  @endforeach
+                  </div>
+
                </div>
             </div>
             <div class="copyright">

@@ -17,6 +17,7 @@ class CreatePartnerTable extends Migration
             $table->id();
             $table->string('instansi');
             $table->string('foto');
+            $table->string('display');
             $table->text('link')->nullable();
             $table->timestamps();
         });

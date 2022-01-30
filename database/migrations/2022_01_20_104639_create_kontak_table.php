@@ -17,6 +17,7 @@ class CreateKontakTable extends Migration
             $table->id();
             $table->string('no_telp')->nullable();
             $table->string('email')->nullable();
+            $table->string('tipe')->nullable();
             
             $table->timestamps();
         });

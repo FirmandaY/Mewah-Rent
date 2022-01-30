@@ -14,6 +14,7 @@ use App\Promo;
 use App\Lokasi;
 use App\Kontak;
 use App\Sosial;
+use App\Partner;
 use File;
 use Image;
 
@@ -32,7 +33,10 @@ class UserHomeController extends Controller
         $data_lokasi = Lokasi::all();
         $data_kontak = Kontak::all();
         $data_sosial = Sosial::all();
-        return view('User.index', compact('data_kategori', 'data_testimoni', 'data_promo', 'data_lokasi', 'data_kontak', 'data_sosial'));
+        $data_partner = Partner::all();
+        return view('User.index', compact(
+            'data_kategori', 'data_testimoni', 'data_promo', 'data_lokasi', 'data_kontak', 'data_sosial', 'data_partner',
+        ));
     }
 
     public function produklain($title)
@@ -47,8 +51,15 @@ class UserHomeController extends Controller
         $jumlah_harga = ProdukLain::sum('harga');
         $no = $batas * ($produks->currentPage()-1);
 
+        $data_lokasi = Lokasi::all();
+        $data_kontak = Kontak::all();
+        $data_sosial = Sosial::all();
+        $data_partner = Partner::all();
+
         return view('User.KatalogProdukLain.catalogPL', compact(
-            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no')
+            'kategori', 'produks', 'jumlah_produk', 'jenis_produk', 'jumlah_harga', 'data_kategori', 'no', 
+            'data_lokasi', 'data_kontak', 'data_sosial', 'data_partner',
+            )
         );
     }
 
@@ -65,8 +76,15 @@ class UserHomeController extends Controller
         
         $no = $batas * ($galeris->currentPage()-1);
 
+        $data_lokasi = Lokasi::all();
+        $data_kontak = Kontak::all();
+        $data_sosial = Sosial::all();
+        $data_partner = Partner::all();
+
         return view('User.KatalogDetail.produkDetail', compact(
-            'galeris' ,'produk', 'jumlah_produk', 'data_produk', 'data_kategori', 'no')
+            'galeris' ,'produk', 'jumlah_produk', 'data_produk', 'data_kategori', 'no', 
+            'data_lokasi', 'data_kontak', 'data_sosial', 'data_partner',
+            )
         );
     }
 
@@ -74,12 +92,24 @@ class UserHomeController extends Controller
         $batas = 5;
         $data_about = About::orderBy('id','desc')->paginate($batas);
         $data_kategori = Kategori::all();
-        return view('User.about', compact('data_about', 'data_kategori'));
+
+        $data_lokasi = Lokasi::all();
+        $data_kontak = Kontak::all();
+        $data_sosial = Sosial::all();
+        $data_partner = Partner::all();
+        return view('User.about', compact('data_about', 'data_kategori',
+         'data_lokasi', 'data_kontak', 'data_sosial', 'data_partner',
+        ));
     }
 
     public function faq(){
         $batas = 8;
         $data_faq = FAQ::orderBy('id','desc')->paginate($batas);
-        return view('User.faq',compact('data_faq'));
+
+        $data_lokasi = Lokasi::all();
+        $data_kontak = Kontak::all();
+        $data_sosial = Sosial::all();
+        $data_partner = Partner::all();
+        return view('User.faq',compact('data_faq', 'data_lokasi', 'data_kontak', 'data_sosial', 'data_partner',));
     }
 }

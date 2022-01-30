@@ -79,7 +79,7 @@
 
 .faq {
     
-     background: #e7f7ff;
+     background: #d1f0ff;
      padding: 60px 0;
      padding-top: 10px;
 	overflow:visible;
@@ -203,7 +203,7 @@ html {
 
 body {
      color: #666666;
-     background-color: #e7f7ff;
+     background-color: #d1f0ff;
      font-size: 14px;
      font-family: 'Poppins', sans-serif;
      line-height: 1.80857;
@@ -584,17 +584,17 @@ button {
 }
 
 .about .titlepage span {
-     color: #fff;
+     color: rgb(0, 0, 0);
      font-size: 17px;
 }
 
-.aboutcomment1, .h3{
+.aboutcomment1 .h3{
     padding: auto;
     color: #003566;
     text-align: center;
 }
 
-.aboutcomment2, h3{
+.aboutcomment2 h3{
     margin-top: 15mm;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -675,17 +675,47 @@ button {
 
 /** footer **/
 
+.btn-wa{
+     padding: 5px;
+     margin-top: 10px;
+     margin-bottom: 15px;
+     color: #000;
+     background-color: #ffffff79;
+     border-radius: 10px;
+     border: #ffffff solid 2px;
+}
+.btn-wa:hover{
+     background-color: #00aa17;
+     color: rgb(255, 255, 255);
+}
+.text-link{
+     font-size: 12px;
+}
+
+.link-social{
+     color: #fff;
+}
+.link-social:hover{
+     color: #41c365;
+}
+.partner-pic{
+     margin-left: 15px;
+     margin-top: 15px;
+     width: 100%;
+     height: 50px;
+}
 .multi {
      color: #f2fffa;
      font-weight: bold;
-     font-size: 40px;
+     font-size: 18px;
      font-family: Poppins;
 }
 
 .contact {
      color: #f2fffa;
      font-weight: normal;
-     font-size: 20px;
+     text-align: left;
+     font-size: 14px;
      font-family: Poppins;
 }
 
@@ -702,22 +732,22 @@ button {
      padding: 2mm;
 }
 
-.cont h3 {
-     color: #f8f8ff;
-     font-size: 37px;
-     line-height: 55px;
-     font-weight: bold;
-}
-
 .cont iframe{
      padding: 2px;
      width: 100%;
 }
 
+.cont h3 {
+     color: #f8f8ff;
+     font-size: 25px;
+     line-height: 30px;
+     font-weight: bold;
+}
+
 .cont_call h3 {
      color: #d8d8d8;
-     font-size: 25px;
-     line-height: 60px;
+     font-size: 18px;
+     line-height: 25px;
      font-weight: bold;
 }
 
@@ -729,7 +759,7 @@ button {
 
 .copyright p {
      color: #fff;
-     font-size: 18px;
+     font-size: 12px;
      line-height: 22px;
      text-align: center;
 }

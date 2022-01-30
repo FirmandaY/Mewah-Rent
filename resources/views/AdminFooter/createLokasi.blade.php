@@ -25,7 +25,10 @@
                         <textarea class="boxisi-footer" type="textarea" name="alamat" placeholder="Jalan Kentang km.9... etc." value="">{{old('alamat')}}</textarea>
                     </p>
                     <p> 
-                        <label><strong>Link Embed Map</strong></label> <br>
+                        <label><strong>Link Embed Map</strong></label>
+                        <a href="{{ route('helpPage') }}"> 
+                            <span class="fa fa-question-circle-o mr-3"></span>
+                        </a> <br>
                         <textarea class="boxisi-footer" type="textarea" name="map" placeholder="<iframe https://googlemaps...>" value="">{{old('map')}}</textarea>
                     </p>
                     <div>

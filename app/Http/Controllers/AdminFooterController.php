@@ -9,6 +9,9 @@ use App\Kategori;
 use App\Lokasi;
 use App\Kontak;
 use App\Sosial;
+use App\Partner;
+use File;
+use Image;
 
 class AdminFooterController extends Controller
 {
@@ -28,12 +31,16 @@ class AdminFooterController extends Controller
         $data_lokasi = Lokasi::orderBy('id','desc')->paginate($batasMap);
         $data_kontak = Kontak::orderBy('id', 'desc')->paginate($batas);
         $data_sosial = Sosial::orderBy('id', 'desc')->paginate($batas);
+        $data_partner = Partner::orderBy('id', 'desc')->paginate($batas);
         $data_kategori = Kategori::all();
-        $no = $batas * ($data_lokasi->currentPage()-1);
-        $no2 = $batas * ($data_lokasi->currentPage()-1);
+        $no = $batas * ($data_kontak->currentPage()-1);
+        $no2 = $batas * ($data_sosial->currentPage()-1);
+        $no3 = $batas * ($data_partner->currentPage()-1);
         
 
-        return view('AdminFooter.indexFooter', compact('data_lokasi','data_kontak', 'data_sosial', 'data_kategori', 'no', 'no2'));
+        return view('AdminFooter.indexFooter', compact(
+            'data_lokasi','data_kontak', 'data_sosial', 'data_kategori', 'data_partner', 'no', 'no2', 'no3',
+        ));
     }
 
     /**
@@ -59,6 +66,12 @@ class AdminFooterController extends Controller
         return view('AdminFooter.createSosial', compact('data_kategori'));
     }
 
+    public function createPartner()
+    {
+        $data_kategori = Kategori::all();
+        return view('AdminFooter.createPartner', compact('data_kategori'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -68,7 +81,7 @@ class AdminFooterController extends Controller
     public function storeLokasi(Request $request)
     {
         $this->validate($request,[
-            'map' => 'required|string',
+            'map' => 'nullable|string',
             'alamat' => 'required|string',
         ]);
 
@@ -85,11 +98,13 @@ class AdminFooterController extends Controller
         $this->validate($request,[
             'no_telp' => 'nullable|string',
             'email' => 'nullable|string',
+            'tipe' => 'nullable|string',
         ]);
 
         $kontak = new Kontak;
         $kontak->no_telp = $request->no_telp;
         $kontak->email = $request->email;
+        $kontak->tipe = $request->tipe;
         $kontak->save();
 
         return redirect('/adminFooter')->with('pesan', 'Data Kontak berhasil di buat!');
@@ -110,6 +125,32 @@ class AdminFooterController extends Controller
         $sosial->save();
 
         return redirect('/adminFooter')->with('pesan', 'Data Sosial Media berhasil di buat!');
+    }
+
+    public function storePartner(Request $request)
+    {
+        $this->validate($request,[
+            'foto' => 'required|image|mimes:jpeg,png,jpg|max:5120',
+            'instansi' => 'required|string',
+            'display' => 'required|string',
+            'link' => 'required|string',
+        ]);
+        
+        $partner = new Partner;
+        $partner->instansi = $request->instansi;
+        $partner->display = $request->display;
+        $partner->link = $request->link;
+
+        $foto = $request->foto;
+        $namafile = time().'.'.$foto->getClientOriginalExtension();
+
+        Image::make($foto)->save('thumb/'.$namafile);
+        $foto->move('public/images/', $namafile);
+
+        $partner->foto = $namafile;
+        $partner->save();
+
+        return redirect('/adminFooter')->with('pesan','Data Partner Berhasil di Tambahkan!');
     }
 
     /**
@@ -150,6 +191,12 @@ class AdminFooterController extends Controller
         return view('AdminFooter.editSosial', compact('data_kategori', 'sosial'));
     }
 
+    public function editPartner($id)
+    {
+        $data_kategori = Kategori::all();
+        $partner = Partner::find($id);
+        return view('AdminFooter.editPartner', compact('data_kategori', 'partner'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -161,7 +208,7 @@ class AdminFooterController extends Controller
     public function updateLokasi(Request $request, $id)
     {
         $this->validate($request,[
-            'map' => 'required|string',
+            'map' => 'nullable|string',
             'alamat' => 'required|string',
         ]);
 
@@ -178,11 +225,13 @@ class AdminFooterController extends Controller
         $this->validate($request,[
             'no_telp' => 'nullable|string|max:350',
             'email' => 'nullable|string',
+            'tipe' => 'nullable|string',
         ]);
 
         $kontak = Kontak::find($id);
         $kontak->no_telp = $request->no_telp;
         $kontak->email = $request->email;
+        $kontak->tipe = $request->tipe;
         $kontak->update();
 
         return redirect('/adminFooter')->with('pesan', 'Perubahan Data Kontak berhasil di simpan!');
@@ -203,6 +252,50 @@ class AdminFooterController extends Controller
         $sosial->update();
 
         return redirect('/adminFooter')->with('pesan', 'Perubahan Data Sosial Media berhasil di simpan!');
+    }
+
+    public function updatePartner(Request $request, $id)
+    {
+        $this->validate($request,[
+            'foto' => 'image|mimes:jpeg,png,jpg|max:5120',
+            'instansi' => 'required|string',
+            'display' => 'required|string',
+            'link' => 'required|string',
+        ]);
+        
+        $partner = Partner::find($id);
+        $partner->instansi = $request->instansi;
+        $partner->display = $request->display;
+        $partner->link = $request->link;
+
+        $foto = $request->foto;
+
+        if($foto){
+            File::delete('thumb/'.$partner->foto); //data foto yang lama dihapus dulu
+            $namafile = $foto->getClientOriginalName();
+            $data['foto'] = $namafile; // Update field photo
+    
+            Image::make($foto)->save('thumb/'.$namafile);
+            $foto->move('public/images/', $namafile);
+
+            $partner->foto = $namafile;
+
+            $partner->update();
+            return redirect('/adminFooter')->with(
+                'pesan', 'Perubahan Data Partner Berhasil diSimpan!'
+            );
+
+        }else{
+            $partner->update([
+                'instansi' => $request->instansi,
+                'link' => $request->link
+            ]);
+            return redirect('/adminFooter')->with(
+                'pesan', 'Perubahan Data Partner Berhasil diSimpan!'
+            );
+        }
+
+        
     }
 
     /**
@@ -230,5 +323,12 @@ class AdminFooterController extends Controller
         $sosial = Sosial::find($id);
         $sosial->delete();
         return redirect('/adminFooter')->with('pesanHapus', 'Data Sosial Berhasil di Hapus');
+    }
+
+    public function destroyPartner($id)
+    {
+        $partner = Partner::find($id);
+        $partner->delete();
+        return redirect('/adminFooter')->with('pesanHapus', 'Data Partner Berhasil di Hapus');
     }
 }

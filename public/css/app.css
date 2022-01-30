@@ -539,6 +539,11 @@ height:110px;
   margin: 0;
   margin-bottom: 30px;
 }
+.help-img{
+  width: 60%;
+  border: solid 2px #000;
+  margin-left: 15px;
+}
 /** Footer Page Admin **/
 .con-footer{
   margin-bottom: 30px;

@@ -22,7 +22,10 @@
                 @csrf
                     <p> 
                         <label><strong>Nomor Telepon</strong></label> <br>
-                        <textarea class="boxisi-footer" type="textarea" name="no_telp" placeholder="08xxxxxxxxx" value="">{{old('no_telp')}}</textarea>
+                        <textarea class="boxisi-footer" type="textarea" name="no_telp" placeholder="Awali dengan 62! contoh: 628xxxxxxxxx" value="">{{old('no_telp')}}</textarea>
+                        <br>
+                        <label><input type="radio" name="tipe" value="ya" checked><strong>Sambung WhatsApp</strong></label> <br>
+                        <label><input type="radio" name="tipe" value="tidak"><strong>Tanpa WhatsApp</strong></label>
                     </p>
                     <p> 
                         <label><strong>Alamat Email</strong></label> <br>

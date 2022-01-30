@@ -223,3 +223,14 @@ Route::get('/adminSosial/edit/{id}', 'AdminFooterController@editSosial')->name('
 
 Route::post('/adminSosial/{id}', 'AdminFooterController@updateSosial')->name('adminSosial.update');
 
+    //Admin Footer Untuk Instansi Partner!
+
+Route::get('/adminPartner/create', 'AdminFooterController@createPartner')->name('adminPartner.create');
+
+Route::post('/adminPartner', 'AdminFooterController@storePartner')->name('adminPartner.store');
+
+Route::post('/adminPartner/delete/{id}', 'AdminFooterController@destroyPartner')->name('adminPartner.destroy');
+
+Route::get('/adminPartner/edit/{id}', 'AdminFooterController@editPartner')->name('adminPartner.edit');
+
+Route::post('/adminPartner/{id}', 'AdminFooterController@updatePartner')->name('adminPartner.update');

@@ -3,14 +3,14 @@
 @section('content')
 <html>
     <head>
-        
+     
     </head>
     <body>
         @if(Session::has('pesan'))
             <div class="alert alert-success">{{ Session::get('pesan') }}</div>
         @endif
         <div class="container">
-            <h4>Ubah Konten Halaman About Us</h4>
+            <h4>Edit Instansi Partner Bisnis</h4>
             @if (count($errors)>0)
                 <ul class="alert alert-danger">
                     @foreach ($errors->all() as $error)
@@ -19,13 +19,14 @@
                 </ul>
             @endif
             <div class="form-container">
-                <h4>Silahkan Lengkapi Data About Us Berikut :</h4>
-                <form method="post" action="{{route('adminAbout.update',$about->id)}}" enctype="multipart/form-data">
+                <legend>Silahkan Lengkapi Data Instansi Berikut :</legend>
+                <form method="post" action="{{route('adminPartner.update',$partner->id)}}" enctype="multipart/form-data">
                 @csrf
                     <p> 
-                        <strong><label>Gambar</label></strong> <br>
-                        <input id="inpFile" class="boxisi" type="file" name="foto" value="{{ url('/data_file/'.$about->foto) }}"><br>
-                        <i>*gambar disarankan landscape, 1920 x 1280, max:5MB</i>
+                        <label><strong>Gambar/Logo Instansi</strong></label> <br>
+                        <input id="inpFile" class="boxisi" type="file" name="foto" value="{{ asset('thumb/'.$partner->foto) }}">
+                        <br>
+                        <i>*gambar maksimal 5MB</i>
                         <div class="container">
                             <div class="row">
                                 <div class="preview-container">
@@ -39,7 +40,7 @@
                                 </div>
                                 <div  class="preview-container">
                                     <div class="">
-                                        <img class="last-img" src="{{ asset('thumb/'.$about->foto) }}">
+                                        <img class="last-img" src="{{ asset('thumb/'.$partner->foto) }}">
                                     </div>
                                     <div class="desc-text">
                                         <p>Gambar Saat Ini</p>
@@ -48,21 +49,20 @@
                                 
                             </div>
                         </div>
+                        <label><input type="radio" name="display" value="16:9" checked>Landscape</label> <br>
+                        <label><input type="radio" name="display" value="1:1">Persegi</label>
                     </p>
                     <p> 
-                        <label><strong>Tentang Kami</strong></label> <br>
-                        <textarea class="boxisi" type="textarea" name="tentangkami" id="tentangkami" value="">
-                            {{ $about->tentangkami }}
-                        </textarea>
-                        <script>
-                            // Replace the <textarea id="editor1"> with a CKEditor 4
-                            // instance, using default configuration.
-                            CKEDITOR.replace( 'tentangkami' );
-                        </script>
+                        <label><strong>Nama Instansi</strong></label> <br>
+                        <input class="boxisi" type="text" name="instansi" value="{{ $partner->instansi }}">
+                    </p>
+                    <p> 
+                        <label><strong>Link Official Instansi</strong></label> <br>
+                        <textarea class="boxisi-footer" type="textarea" name="link" placeholder="namaInstansi.com" value="">{{ $partner->link }}</textarea>
                     </p>
                     <div>
                         <button class="btn btn-warning" type="submit">Simpan</button>
-                        <a class="btn btn-success" href="{{ route('adminAbout') }}"> Batal </a>
+                        <a class="btn btn-success" href="{{ route('adminFooter') }}"> Batal </a>
                     </div>
                 </form>
             </div>

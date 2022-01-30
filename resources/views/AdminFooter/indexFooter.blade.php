@@ -179,6 +179,75 @@
                 <div>{{$data_sosial->links()}}</div>
             </div>
         </div>
+
+        <div class="flex-center position-ref con-footer">
+            
+            <div class="content">
+
+                <div class="titlepage">
+                    <h2>Partner Bisnis Mewah Rent</h2>
+                </div>
+                <div>
+                  <a class="btn btn-primary" href="{{ route('adminPartner.create') }}">  
+                     <i class="fa fa-plus-square-o" style="font-size:12px"></i>
+                     Tambah Partner Bisnis
+                  </a>
+                  
+               </div>
+
+                <table class="table table-striped" border="2" align="center">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Foto</th>
+                            <th>Nama Instansi</th>
+                            <th>Link Official</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        @foreach($data_partner as $partner)
+                            <tr>
+                                <td rowspan="2">{{ ++$no3 }}</td>
+                                <td rowspan="2">
+                                    @if($partner->display == '1:1')
+                                        <a href="{{ asset('thumb/'.$partner->foto) }}" data-lightbox="image-1" data-title="{{ $partner->instansi }}">
+                                            <img src="{{ asset('thumb/'.$partner->foto) }}" style="width: 150px; height: 150px" >
+                                        </a>
+                                    @else
+                                        <a href="{{ asset('thumb/'.$partner->foto) }}" data-lightbox="image-1" data-title="{{ $partner->instansi }}">
+                                            <img src="{{ asset('thumb/'.$partner->foto) }}" style="width: 250px; height: 150px" >
+                                        </a>
+                                    @endif
+                                </td>
+                                <td>{{ $partner->instansi }}</td>
+                                <td>{{ $partner->link }}</td>
+                                
+                            </tr>
+
+                            <tr>
+                                <th>Aksi</th>
+                                <td>
+                                    <form action="{{ route('adminPartner.destroy', $partner->id) }}" method="post">
+                                        @csrf
+                                        <a class="btn-edit btn-primary" href="{{ route('adminPartner.edit', $partner->id) }}" onClick="return confirm ('Yakin mau diubah?')"> 
+                                            Edit
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                        <button class="btn-delete btn-danger" onClick="return confirm ('Yakin mau dihapus?')">
+                                            <i class="fa fa-trash"></i>Hapus 
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr ><td colspan="4"></td></tr>
+                        @endforeach
+                    </tbody>
+
+                </table> 
+                <div>{{$data_partner->links()}}</div>
+            </div>
+        </div>
         
     </body>
 </html>

@@ -23,7 +23,7 @@
                 <form method="post" action="{{route('adminAbout.store')}}" enctype="multipart/form-data">
                 @csrf
                     <p> 
-                        <label>Gambar</label> <br>
+                        <label><strong>Gambar</strong></label> <br>
                         <input id="inpFile" class="boxisi" type="file" name="foto" value="{{old('foto')}}"><br>
                         <i>*gambar disarankan landscape, 1920 x 1280, max:5MB</i>
                         <div class="preview-box" id="imagePreview">
@@ -32,7 +32,7 @@
                         </div>
                     </p>
                     <p> 
-                        <label>Tentang Kami</label> <br>
+                        <label><strong>Tentang Kami</strong></label> <br>
                         <textarea class="boxisi" type="textarea" name="tentangkami" id="tentangkami" value="">
                             Ceritakan tentang Mewah... {{old('tentangkami')}}
                         </textarea>

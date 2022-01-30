@@ -103,7 +103,7 @@
             </div>
          </div>
       </div>
-      <!--WA Me-->
+      <!--WA Me
       <div class="wame-box">
          <a class="wame" href="https://wa.me/6289651881332">
             <img class="img-wame" src="{{ asset('images/WhatsApp-logo.png') }}" height="25" width="25">
@@ -113,38 +113,94 @@
       <!--end WA Me-->
       <!--  footer -->
       <footer>
-         <div id="contact" class="footer">
+         <div class="footer">
             <div class="container">
                <div class="row">
+
                   <div class="col-md-6">
+                     @foreach($data_lokasi as $lokasi)
                      <div class="cont">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.0456666951964!2d109.0605317902281!3d-6.90269982515536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zNsKwNTQnMTIuMCJTIDEwOcKwMDMnMzkuOCJF!5e0!3m2!1sen!2sid!4v1633410512215!5m2!1sen!2sid" 
-                        width="525" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="{{$lokasi->map}}" 
+                        width="525" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                      </div>
+                     @endforeach
+                     
                   </div>
-                  <div class="col-md-6">
+
+                  <div class="col-md-3">
                      <div class="cont_call">
-                        <h3><strong class="multi">Contact Us On</strong></h3><br>
-                        <h5><strong class="contact"><img src="{{ asset('images/pin.png') }}" height="30" width="30">
-                           Jl. Lembarawa, Sawah, Krasak, Kec. Brebes, Kabupaten Brebes, Jawa Tengah 52219
-                        </h5>
-                        <h5><strong class="contact"><img src="{{ asset('images/telephone.png') }}" height="30" width="30">
-                           0823-2288-1233
-                           </strong>
-                        </h5>
-                        <h5><strong class="contact"><img src="{{ asset('images/email.png') }}" height="30" width="30">
-                           mewahrent@gmail.com
-                           </strong>
-                        </h5>
+                        <h3><strong class="multi">Alamat</strong></h3> <!--Data Alamat dari database-->
+                        @foreach($data_lokasi as $lokasi)
+                         <img src="{{ asset('images/pin.png') }}" height="30" width="30">
+                         <h5><strong class="contact"> {{ $lokasi->alamat }} </strong></h5>
+                        @endforeach
+
+                        <h3><strong class="multi">Kontak</strong></h3> <!--Data Kontak dari database-->
+                        @foreach($data_kontak as $kontak)
+                        @if(!empty($kontak->no_telp))
+                           <h5><strong class="contact"> <i class='fa fa-phone'></i>
+                              {{ $kontak->no_telp }}
+                              </strong>
+                           </h5>
+                           @if($kontak->tipe == 'ya')
+                              <a class="btn-wa text-link" href="https://wa.me/{{ $kontak->no_telp }}">WhatssApp Now!</a> <br> <br>
+                           @endif
+                        @endif
+                        @endforeach
+
+                        @foreach($data_kontak as $kontak)
+                        @if(!empty($kontak->email))
+                           <h5><strong class="contact"> <i class='fa fa-envelope'></i>
+                              {{ $kontak->email }}
+                              </strong>
+                           </h5>
+                        @endif
+                        @endforeach
+
                      </div>
                   </div>
+
+                  <div class="col-md-3">
+                     <h3><strong class="multi">Media Sosial</strong></h3> <!--Data Kontak dari database-->
+                     @foreach($data_sosial as $sosial)
+                        <h5><strong class="contact"> <i class='fa fa-thumb-tack'></i>
+                           {{$sosial->media}} : <a class="link-social" href="{{$sosial->link}}"> {{ $sosial->username }} </a>
+                           </strong>
+                        </h5>
+                     @endforeach
+                  </div>
+                  
+               </div>
+               <hr color="white">
+
+               <div class="row">
+                  <div class="col-md-1">
+                     <h3><strong class="multi" align="center">Our Partners</strong></h3> <!--Data Kontak dari database-->
+                  </div>
+
+                  <div class="col-md-11">
+                  @foreach($data_partner as $partner)
+                  @if($partner->display == '1:1')
+                     <a href="{{ $partner->link }}">
+                        <img class="partner-pic" src="{{ asset('thumb/'.$partner->foto) }}" style="width: 30px; height: 30px"> <!--Data Kontak dari database-->
+                     </a>
+                  @else
+                     <a href="{{ $partner->link }}">
+                        <img class="partner-pic" src="{{ asset('thumb/'.$partner->foto) }}" style="width: 85px; height: 30px"> <!--Data Kontak dari database-->
+                     </a>
+                  @endif
+                  @endforeach
+                  </div>
+
                </div>
             </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved.</p>
+                        <p>
+                           © <script>document.write(new Date().getFullYear());</script> All Rights Reserved.
+                        </p>
                      </div>
                   </div>
                </div>
